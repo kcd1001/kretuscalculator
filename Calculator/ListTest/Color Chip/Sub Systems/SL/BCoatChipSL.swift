@@ -1,0 +1,114 @@
+//
+//  BCoatGarage.swift
+//  Calculator
+//
+//  Created by Kane Davidson on 5/18/21.
+//
+
+import SwiftUI
+import Combine
+
+
+var BCoatChipSLUPCA = stats2(product: "Urethane Polymer Concrete Part A:", covRate: 50, MixRat: 8)
+var BCoatChipSLUPCB = stats2(product: "Urethane Polymer Concrete Part B:", covRate: 50, MixRat: 8)
+var BCoatChipSLUPCC = stats2(product: "Urethane Polymer Concrete Part C:", covRate: 50, MixRat: 8)
+var BCoatChipSLUPCColorant = stats2(product: "Urethane Polymer Concrete Colorant", covRate: 50, MixRat: 4)
+
+struct BCoatChipSL: View {
+
+
+    @EnvironmentObject var ChipSL : ColorChipValuesSL //Used for coat selections
+    @EnvironmentObject var sf : SquareFeet //Square feet
+    @EnvironmentObject var Broadcast : statsBroadcast
+
+    var UPCColorantChoices = ["No Color (Unpigmented)", "Black", "Blue","Bone", "Brown", "Clay", "Gray", "Green", "Mustard", "Red"]
+
+    var UPCColorantCodes = ["", "EX-KUPCCLBK-EA", "EX-KUPCCLBL-EA", "EX-KUPCCLWH-EA", "EX-KUPCCLBR-EA","EX-KUPCCLCL-EA", "EX-KUPCCLGY-EA", "EX-KUPCCLGR-EA", "EX-KUPCCLCY-EA","EX-KUPCCLRD-EA"]
+    
+    let TypesB = ["AP", "EZ", "FC"]
+
+    func quant(product : stats2) -> Int {
+        let quantity : Float = (sf.squareF / product.covRate) * product.MixRat
+         let kit = Int(ceil(Float(quantity / product.MixRat)))
+         return kit
+        } // returns number of kits required
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Coating Thickness: 1/8\"")
+                    .fontWeight(.heavy)
+                Spacer()
+                ChipSLInfo()
+            }
+            .padding()
+            Text("Choose your speed:")
+             .fontWeight(.bold)
+             Picker(selection: $ChipSL.BCoatPtB,
+                 label: ZStack {
+                     Text("\(TypesB[ChipSL.BCoatPtB])")
+                         .opacity(1)
+                     Rectangle()
+                         .fill(Color.gray)
+                         .opacity(0.2)
+                         .cornerRadius(5)
+                         .frame(width: 225, height: 25)
+                       //  .padding()
+             }) {
+                 ForEach (0 ..< TypesB.count, id: \.self) { index in
+                     Text(self.TypesB[index]).tag(index)
+                 }
+             }
+             .background(Color.gray.opacity(0.2))
+             .cornerRadius(5)
+            Text("UPC Colorant:")
+             .fontWeight(.bold)
+             Picker(selection: $ChipSL.BCoatColor,
+                 label: ZStack {
+                     Text("\(UPCColorantChoices[ChipSL.BCoatColor])")
+                         .opacity(1)
+                     Rectangle()
+                         .fill(Color.gray)
+                         .opacity(0.2)
+                         .cornerRadius(5)
+                         .frame(width: 300, height: 25)
+             }) {
+                ForEach (0 ..< UPCColorantChoices.count, id: \.self) { index in
+                     Text(self.UPCColorantChoices[index]).tag(index)
+                 }
+             }
+             .background(Color.gray.opacity(0.2))
+             .cornerRadius(5)
+
+            BCoatSummarySL()
+                .environmentObject(BCoatChipSLUPCA)
+                .environmentObject(BCoatChipSLUPCB)
+                .environmentObject(BCoatChipSLUPCC)
+                .environmentObject(BCoatChipSLUPCColorant)
+
+            HStack {
+                Text("Add Waste Factor: ")
+                Spacer()
+                TextField("",value: $ChipSL.BCoatWaste, formatter: NumberFormatter())
+                    .frame(width:30, height:25)
+                    .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+                    .cornerRadius(5.0)
+                Text("kit(s)")
+            }
+            .padding()
+            HStack {
+                Text("Total:")
+                Spacer()
+                Text("\(quant(product: BCoatChipSLUPCA) + ChipSL.BCoatWaste) kit(s)")
+            }
+    }
+            .padding()
+        }
+    }
+
+
+struct BCoatChipSL_Previews: PreviewProvider {
+    static var previews: some View {
+        BCoatGarage()
+    }
+}
