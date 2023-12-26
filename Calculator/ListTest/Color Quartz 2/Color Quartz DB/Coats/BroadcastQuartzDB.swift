@@ -10,7 +10,7 @@ import Combine
 
 
 
-struct Broadcast2QuartzDB: View {
+struct BroadcastQuartzDB: View {
     
     @EnvironmentObject var QuartzDB : ColorQuartzDBValues //Used for coat selections
     @EnvironmentObject var sf : SquareFeet //Square feet
@@ -57,28 +57,97 @@ struct Broadcast2QuartzDB: View {
         {
             if QuartzDB.BroadcastSizeSelection == 0
             {
-                QuartzDB_TSAC3.covRate = 210
-                QuartzDB_TSBC3.covRate = 210
-                QuartzDB_TSColorantC3.covRate = 210
-
+                quartzTS_TSAC3.covRate = 120
+                quartzTS_TSBC3.covRate = 120
+                quartzTS_TSColorantC3.covRate = 120
             }
             
             else if QuartzDB.BroadcastSizeSelection == 1
             {
-                QuartzDB_TSAC3.covRate = 285
-                QuartzDB_TSBC3.covRate = 285
-                QuartzDB_TSColorantC3.covRate = 28
-
+                quartzTS_TSAC3.covRate = 170
+                quartzTS_TSBC3.covRate = 170
+                quartzTS_TSColorantC3.covRate = 170
             }
             else if QuartzDB.BroadcastSizeSelection == 2
             {
-                QuartzDB_TSAC3.covRate = 420
-                QuartzDB_TSBC3.covRate = 420
-                QuartzDB_TSColorantC3.covRate = 420
-
+                quartzTS_TSAC3.covRate = 200
+                quartzTS_TSBC3.covRate = 200
+                quartzTS_TSColorantC3.covRate = 200
             }
         }
-
+        // PolyA is chosen in cap coat
+        else if QuartzDB.Coat3ProductType == 1
+        {
+            if QuartzDB.BroadcastSizeSelection == 0
+            {
+                quartzTS_TSAC3.covRate = 160
+                quartzTS_TSBC3.covRate = 160
+                quartzTS_TSColorantC3.covRate = 160
+            }
+            
+            else if QuartzDB.BroadcastSizeSelection == 1
+            {
+                quartzTS_TSAC3.covRate = 230
+                quartzTS_TSBC3.covRate = 230
+                quartzTS_TSColorantC3.covRate = 230
+            }
+            else if QuartzDB.BroadcastSizeSelection == 2
+            {
+                quartzTS_TSAC3.covRate = 270
+                quartzTS_TSBC3.covRate = 270
+                quartzTS_TSColorantC3.covRate = 270
+            }
+        }
+        // PolyU in cap coat
+        else if QuartzDB.Coat3ProductType == 2
+        {
+            if QuartzDB.BroadcastSizeSelection == 0
+            {
+                quartzTS_TSAC3.covRate = 120
+                quartzTS_TSBC3.covRate = 120
+                quartzTS_TSColorantC3.covRate = 120
+            }
+            
+            else if QuartzDB.BroadcastSizeSelection == 1
+            {
+                quartzTS_TSAC3.covRate = 170
+                quartzTS_TSBC3.covRate = 170
+                quartzTS_TSColorantC3.covRate = 170
+            }
+            else if QuartzDB.BroadcastSizeSelection == 2
+            {
+                quartzTS_TSAC3.covRate = 200
+                quartzTS_TSBC3.covRate = 200
+                quartzTS_TSColorantC3.covRate = 200
+            }
+        }
+        
+        if QuartzDB.Coat4ProductType == 0
+        {
+            if QuartzDB.BroadcastSizeSelection == 0
+            {
+                quartzTS_TSAC4.covRate = 210
+                quartzTS_TSBC4.covRate = 210
+                quartzTS_TSColorantC4.covRate = 210
+                
+            }
+            
+            else if QuartzDB.BroadcastSizeSelection == 1
+            {
+                quartzTS_TSAC4.covRate = 285
+                quartzTS_TSBC4.covRate = 285
+                quartzTS_TSColorantC4.covRate = 285
+                
+            }
+            else if QuartzDB.BroadcastSizeSelection == 2
+            {
+                quartzTS_TSAC4.covRate = 420
+                quartzTS_TSBC4.covRate = 420
+                quartzTS_TSColorantC4.covRate = 420
+                
+            }
+        }
+        
     }
 
     var body: some View {
@@ -86,9 +155,9 @@ struct Broadcast2QuartzDB: View {
             HStack {
             Text("Color Chip:")
              .fontWeight(.bold)
-             Picker(selection: $QuartzDB.Broadcast2SizeSelection, //used for size of chips
+             Picker(selection: $QuartzDB.BroadcastSizeSelection, //used for size of chips
                  label: ZStack {
-                     Text("\(ChipSizes[QuartzDB.Broadcast2SizeSelection])")
+                     Text("\(ChipSizes[QuartzDB.BroadcastSizeSelection])")
                          .opacity(1)
                      Rectangle()
                          .fill(Color.gray)
@@ -103,27 +172,35 @@ struct Broadcast2QuartzDB: View {
              }
              .background(Color.gray.opacity(0.2))
              .cornerRadius(5)
-             .onChange(of: QuartzDB.Broadcast2SizeSelection) { _ in
+             .onChange(of: QuartzDB.BroadcastSizeSelection) { _ in
                  checkChipSize()
                  updateCovRate()
              }
-                Picker(selection: $QuartzDB.Broadcast2Selection,
-                    label: ZStack {
-                        Text("\(textureChoices[QuartzDB.Broadcast2Selection])")
-                            .opacity(1)
-                        Rectangle()
-                            .fill(Color.gray)
-                            .opacity(0.2)
-                            .cornerRadius(5)
-                            .frame(width: 200, height: 25)
-                          //  .padding()
-                }) {
-                   ForEach (0 ..< textureChoices.count, id: \.self) { index in
-                       Text(self.textureChoices[index]).tag(index)
-                   }
-                }
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(5)
+             .onChange(of: QuartzDB.Coat3ProductType) { _ in
+                 checkChipSize()
+                 updateCovRate()
+             }
+             .onChange(of: QuartzDB.Coat4ProductType) { _ in
+                 checkChipSize()
+                 updateCovRate()
+             }
+//                Picker(selection: $QuartzDB.BroadcastSelection,
+//                    label: ZStack {
+//                        Text("\(textureChoices[QuartzDB.BroadcastSelection])")
+//                            .opacity(1)
+//                        Rectangle()
+//                            .fill(Color.gray)
+//                            .opacity(0.2)
+//                            .cornerRadius(5)
+//                            .frame(width: 200, height: 25)
+//                          //  .padding()
+//                }) {
+//                   ForEach (0 ..< textureChoices.count, id: \.self) { index in
+//                       Text(self.textureChoices[index]).tag(index)
+//                   }
+//                }
+//                .background(Color.gray.opacity(0.2))
+//                .cornerRadius(5)
                 Spacer()
                 QuartzBroadcastInfo()
             } .padding()
@@ -145,7 +222,7 @@ struct Broadcast2QuartzDB: View {
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[QuartzDB.Broadcast2SizeSelection]) - \(textureChoices[QuartzDB.Broadcast2Selection]), 55#")
+                    Text("Color Chip \(ChipSizes[QuartzDB.BroadcastSizeSelection]) - see Kretus color chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: BroadcastQuartzTS))")
@@ -158,7 +235,7 @@ struct Broadcast2QuartzDB: View {
             HStack {
                 Text("Add Waste Factor: ")
                 Spacer()
-                TextField("",value: $QuartzDB.Broadcast2Waste, formatter: NumberFormatter())
+                TextField("",value: $QuartzDB.BroadcastWaste, formatter: NumberFormatter())
                     .frame(width:30, height:25)
                     .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
                     .cornerRadius(5.0)
@@ -168,14 +245,14 @@ struct Broadcast2QuartzDB: View {
             HStack {
                 Text("Total:")
                 Spacer()
-                Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzDB.Broadcast2Waste) bag(s)")
+                Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzDB.BroadcastWaste) bag(s)")
             }
             .padding()
         }
     }
 
 
-struct Broadcast2QuartzDB_Previews: PreviewProvider {
+struct BroadcastQuartzDB_Previews: PreviewProvider {
     static var previews: some View {
         BroadcastGarage()
     }

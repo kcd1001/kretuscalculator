@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct ColorQuartzSGSysSummary: View {
+struct ColorQuartzTSSysSummary: View {
+    
+    @EnvironmentObject var QuartzTS_TSAC4 : stats2
+    @EnvironmentObject var QuartzTS_TSBC4 : stats2
+    @EnvironmentObject var QuartzTS_TSColorantC4 : stats2
     
     @EnvironmentObject var Chip : ChipOptions
     @EnvironmentObject var ChipTS : ColorChipValuesTS //Used for coat selections
-    @EnvironmentObject var quartzSG : ColorQuartzSGValues //Used for coat selections
-    @EnvironmentObject var QuartzTS : ColorQuartzTSValues //Used for coat selections
-
+    @EnvironmentObject var QuartzTS : ColorQuartzTSValues
     @EnvironmentObject var CoveColorQuartz : EpoxyCoveSelections //Used for coat selections
     @EnvironmentObject var sf : SquareFeet //Square feet
     
@@ -22,30 +24,18 @@ struct ColorQuartzSGSysSummary: View {
     @EnvironmentObject var bCoatCoveQuartzTSColorant : stats2
     @EnvironmentObject var bCoatCoveQuartzTexture : stats2
     
-    @EnvironmentObject var QuartzTS_TSAC4 : stats2
-    @EnvironmentObject var QuartzTS_TSBC4 : stats2
-    @EnvironmentObject var QuartzTS_TSColorantC4 : stats2
-    
     var BroadcastQuartzTS = statsBroadcast(product: "Color Quartz", covRate: 0.15, MixRat: 55)
     var TSMvr = stats(product: "Epoxy MVR", covRate: 150, MixRat: 1)
 
-    let typesA = ["A Resin - Beige", "A Resin - Black", "A Resin - Clear", "A Resin - Dark Gray",
-                  "A Resin - Ench. Green", "A Resin - Handic. Blue", "A Resin - Latte", "A Resin - Light Gray",
-                  "A Resin - Medium Gray", "A Resin - Mocha", "A Resin - Safety Blue", "A Resin - Safety Red",
-                  "A Resin - Safety Yellow", "A Resin - Shadow Gray", "A Resin - Tan", "A Resin - Tile Red",
-                  "A Resin - White", "CR Resin - Clear", "LG Resin - Clear", "Commercial Resin - Clear"]
     
-    let typesACodes = ["EX-KTSARBG-01", "EX-KTSARBL-01", "EX-KTSARCL-01", "EX-KTSARDG-01",
-                       "EX-KTSAREG-01", "EX-KTSARHB-01", "EX-KTSARLT-01",
-                       "EX-KTSARLG-01", "EX-KTSARMG-01", "EX-KTSARMH-01",
-                       "EX-KTSARSB-01", "EX-KTSARSR-01", "EX-KTSARSY-01",
-                       "EX-KTSARSG-01", "EX-KTSARTN-01", "EX-KTSARTR-01",
-                       "EX-KTSARWH-01", "EX-KTSECRRC-01","Contact Distributor",
-                       "FG-TSECMRCLR-01G"]
+    let typesA = ["A Resin - Beige", "A Resin - Black", "A Resin - Clear", "A Resin - Dark Gray", "A Resin - Ench. Green", "A Resin - Handic. Blue", "A Resin - Latte", "A Resin - Light Gray", "A Resin - Medium Gray", "A Resin - Mocha", "A Resin - Safety Blue", "A Resin - Safety Red", "A Resin - Safety Yellow", "A Resin - Shadow Gray", "A Resin - Tan", "A Resin - Tile Red", "A Resin - White", "CR Resin - Clear",
+                  "LG Resin - Clear"]
+    let typesACodes = ["EX-KTSARBG-01", "EX-KTSARBL-01", "EX-KTSARCL-01", "EX-KTSARDG-01", "EX-KTSAREG-01", "EX-KTSARHB-01", "EX-KTSARLT-01",                           "EX-KTSARLG-01", "EX-KTSARMG-01", "EX-KTSARMH-01", "EX-KTSARSB-01", "EX-KTSARSR-01", "EX-KTSARSY-01", "EX-KTSARSG-01",                            "EX-KTSARTN-01", "EX-KTSARTR-01", "EX-KTSARWH-01", "EX-KTSECRRC-01",
+                       "Contact Distributor"]
     
     let typesB = ["AP", "EZ", "Fast", "TH"]
-    let typesBCodes = ["EX-KTSEAPB-EA", "EX-KTSEZB-EA", "EX-KTSEFB-EA", "EX-KTSEMVZB-EA", "EX-KTSEMVFB-EA", "EX-KTSETHB-EA"]
-
+    let typesBCodes = ["EX-KTSEAPB-EA", "EX-KTSEZB-EA", "EX-KTSEFB-EA",  "EX-KTSETHB-EA"]
+    
     let typesBMVR = ["MVR - EZ", "MVR - FC"]
     let typesBMVRCodes = ["EX-KTSEMVZB-EA", "EX-KTSEMVFB-EA", "EX-KTSEAPB-EA", "EX-KTSEZB-EA", "EX-KTSEFB-EA", "EX-KTSETHB-EA"]
     
@@ -91,13 +81,6 @@ struct ColorQuartzSGSysSummary: View {
         return kit
     } // returns number of kits required for broadcast
     
-    // for ind. sand
-    func quantSand(product : stats) -> Int {
-        let quantity : Float = (sf.squareF / product.covRate) * product.MixRat
-        let kit = Int(ceil(Float(quantity / product.covRate)))
-        return kit
-    }
-    
     var body: some View {
         
         if Chip.isPrimeCoat
@@ -121,24 +104,24 @@ struct ColorQuartzSGSysSummary: View {
             }
             
             HStack{
-                Text("\(typesACodes[quartzSG.PCoatPtA])")
+                Text("\(typesACodes[QuartzTS.PCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("TSE Part A: \(typesA[quartzSG.PCoatPtA]), 1 gal")
+                Text("TSE Part A: \(typesA[QuartzTS.PCoatPtA]), 1 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSA_QuartzTS) + quartzSG.PCoatWaste)")
+                Text("\(quant(product: TSA_QuartzTS) + QuartzTS.PCoatWaste)")
                     .font(.caption)
             }
             
             HStack{
-                Text("\(typesBCodes[quartzSG.PCoatPtB])")
+                Text("\(typesBCodes[QuartzTS.PCoatPtB])")
                     .font(.caption)
                 Spacer()
-                Text("Top Shelf® Epoxy Part B: \(typesB[quartzSG.PCoatPtB]), 1/2 gal")
+                Text("Top Shelf® Epoxy Part B: \(typesB[QuartzTS.PCoatPtB]), 1/2 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSB_QuartzTS) + quartzSG.PCoatWaste)")
+                Text("\(quant(product: TSB_QuartzTS) + QuartzTS.PCoatWaste)")
                     .font(.caption)
             }
             
@@ -153,13 +136,13 @@ struct ColorQuartzSGSysSummary: View {
                     .font(.caption)
             }
             
-            if quartzSG.PCoatTSColorant != 0
+            if QuartzTS.PCoatTSColorant != 0
             {
                 HStack {
-                    Text("\(TSColorantCodes[quartzSG.BCoatTSColorant])")
+                    Text("\(TSColorantCodes[QuartzTS.BCoatTSColorant])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[quartzSG.BCoatTSColorant]), 16 oz")
+                    Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.BCoatTSColorant]), 16 oz")
                         .font(.caption)
                     Spacer()
                     Text("\(quant(product: TSColorantBC_QuartzTS))")
@@ -193,35 +176,35 @@ struct ColorQuartzSGSysSummary: View {
                 }
                 
                 HStack{
-                    Text("\(typesACodes[quartzSG.MVRPtA])")
+                    Text("\(typesACodes[QuartzTS.MVRPtA])")
                         .font(.caption)
                     Spacer()
-                    Text("TSE Part A: \(typesA[quartzSG.MVRPtA]), 1 gal")
+                    Text("TSE Part A: \(typesA[QuartzTS.MVRPtA]), 1 gal")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSMvr) + quartzSG.MVRWaste)")
+                    Text("\(quant(product: TSMvr) + QuartzTS.MVRWaste)")
                         .font(.caption)
                 }
                 
                 HStack{
-                    Text("\(typesBMVRCodes[quartzSG.MVRPtB])")
+                    Text("\(typesBMVRCodes[QuartzTS.MVRPtB])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Part B: \(typesBMVR[quartzSG.MVRPtB]), 1/2 gal")
+                    Text("Top Shelf® Epoxy Part B: \(typesBMVR[QuartzTS.MVRPtB]), 1/2 gal")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSMvr) + quartzSG.MVRWaste)")
+                    Text("\(quant(product: TSMvr) + QuartzTS.MVRWaste)")
                         .font(.caption)
                 }
-                if quartzSG.MVRTSColorant != 0 {
+                if QuartzTS.MVRTSColorant != 0 {
                     HStack {
-                        Text("\(TSColorantCodes[quartzSG.MVRTSColorant])")
+                        Text("\(TSColorantCodes[QuartzTS.MVRTSColorant])")
                             .font(.caption)
                         Spacer()
-                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[quartzSG.MVRTSColorant]), 16 oz")
+                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.MVRTSColorant]), 16 oz")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: TSMvr) + quartzSG.MVRWaste)")
+                        Text("\(quant(product: TSMvr) + QuartzTS.MVRWaste)")
                             .font(.caption)
                     }
                     
@@ -249,48 +232,38 @@ struct ColorQuartzSGSysSummary: View {
                     .font(.caption)
             }
             HStack{
-                Text("\(typesACodes[quartzSG.BCoatPtA])")
+                Text("\(typesACodes[QuartzTS.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("TSE Part A: \(typesA[quartzSG.BCoatPtA]), 1 gal")
+                Text("TSE Part A: \(typesA[QuartzTS.BCoatPtA]), 1 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSABC_QuartzTS) + quartzSG.BCoatWaste)")
+                Text("\(quant(product: TSABC_QuartzTS) + QuartzTS.BCoatWaste)")
                     .font(.caption)
             }
             
             HStack{
-                Text("\(typesBCodes[quartzSG.BCoatPtB])")
+                Text("\(typesBCodes[QuartzTS.BCoatPtB])")
                     .font(.caption)
                 Spacer()
-                Text("Top Shelf® Epoxy Part B: \(typesB[quartzSG.BCoatPtB]), 1/2 gal")
+                Text("Top Shelf® Epoxy Part B: \(typesB[QuartzTS.BCoatPtB]), 1/2 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSBBC_QuartzTS) + quartzSG.BCoatWaste)")
+                Text("\(quant(product: TSBBC_QuartzTS) + QuartzTS.BCoatWaste)")
                     .font(.caption)
             }
-            if quartzSG.BCoatTSColorant != 0
+            if QuartzTS.BCoatTSColorant != 0
             {
                 HStack {
-                    Text("\(TSColorantCodes[quartzSG.BCoatTSColorant])")
+                    Text("\(TSColorantCodes[QuartzTS.BCoatTSColorant])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[quartzSG.BCoatTSColorant]), 16 oz")
+                    Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.BCoatTSColorant]), 16 oz")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSColorantBC_QuartzTS) + quartzSG.BCoatWaste)")
+                    Text("\(quant(product: TSColorantBC_QuartzTS) + QuartzTS.BCoatWaste)")
                         .font(.caption)
                 }
-            }
-            HStack{
-                Text("Contact Distributor ")
-                    .font(.caption)
-                Spacer()
-                Text("Industrial Sand - 16 mesh, 50 lbs")
-                    .font(.caption)
-                Spacer()
-                Text("\(quantSand(product: industrialSand))")
-                    .font(.caption)
             }
 
         }
@@ -318,10 +291,10 @@ struct ColorQuartzSGSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[quartzSG.BroadcastSizeSelection]) - \(textureChoices[quartzSG.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[QuartzTS.BroadcastSizeSelection]) - see Kretus color chart, 55#")
                     .font(.caption)
                 Spacer()
-                Text("\(quantBroadcast(product: BroadcastQuartzTS) + quartzSG.BroadcastWaste)")
+                Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzTS.BroadcastWaste)")
                     .font(.caption)
             }
         }
@@ -735,7 +708,7 @@ struct ColorQuartzSGSysSummary: View {
     }
 
 
-struct ColorQuartzSGSysSummary_Previews: PreviewProvider {
+struct ColorQuartzTSSysSummary_Previews: PreviewProvider {
     static var previews: some View {
         EpoxyCoveColorSysSummary()
     }

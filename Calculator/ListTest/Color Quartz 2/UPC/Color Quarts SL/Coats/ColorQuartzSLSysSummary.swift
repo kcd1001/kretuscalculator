@@ -7,24 +7,27 @@
 
 import SwiftUI
 
-struct ColorQuartzTSSysSummary: View {
-    
-    @EnvironmentObject var QuartzTS_TSAC4 : stats2
-    @EnvironmentObject var QuartzTS_TSBC4 : stats2
-    @EnvironmentObject var QuartzTS_TSColorantC4 : stats2
+struct ColorQuartzSLSysSummary: View {
     
     @EnvironmentObject var Chip : ChipOptions
     @EnvironmentObject var ChipTS : ColorChipValuesTS //Used for coat selections
-    @EnvironmentObject var QuartzTS : ColorQuartzTSValues
+    @EnvironmentObject var QuartzSL : ColorQuartzRCValues //Used for coat selections
+    @EnvironmentObject var QuartzRC : ColorQuartzRCValues //Used for coat selections
+
+    @EnvironmentObject var SandRC : ColorQuartzTSValues //Used for coat selections
+
     @EnvironmentObject var CoveColorQuartz : EpoxyCoveSelections //Used for coat selections
     @EnvironmentObject var sf : SquareFeet //Square feet
     
-    @EnvironmentObject var bCoatCoveQuartzTSA : stats2
-    @EnvironmentObject var bCoatCoveQuartzTSB : stats2
-    @EnvironmentObject var bCoatCoveQuartzTSColorant : stats2
+    @EnvironmentObject var bCoatCoveQuartzSLA : stats2
+    @EnvironmentObject var bCoatCoveQuartzSLB : stats2
+    @EnvironmentObject var bCoatCoveQuartzSLColorant : stats2
     @EnvironmentObject var bCoatCoveQuartzTexture : stats2
     
-    var BroadcastQuartzTS = statsBroadcast(product: "Color Quartz", covRate: 0.15, MixRat: 55)
+    @EnvironmentObject var UPC_QuartzSL : stats //Used for system stats (mixRat,CovRate, etc)
+
+    
+    var BroadcastQuartzSL = statsBroadcast(product: "Color Quartz", covRate: 1, MixRat: 50)
     var TSMvr = stats(product: "Epoxy MVR", covRate: 150, MixRat: 1)
 
     
@@ -36,8 +39,11 @@ struct ColorQuartzTSSysSummary: View {
     let typesB = ["AP", "EZ", "Fast", "TH"]
     let typesBCodes = ["EX-KTSEAPB-EA", "EX-KTSEZB-EA", "EX-KTSEFB-EA",  "EX-KTSETHB-EA"]
     
-    let typesBMVR = ["MVR - EZ", "MVR - FC"]
-    let typesBMVRCodes = ["EX-KTSEMVZB-EA", "EX-KTSEMVFB-EA", "EX-KTSEAPB-EA", "EX-KTSEZB-EA", "EX-KTSEFB-EA", "EX-KTSETHB-EA"]
+    let upcBCodes = ["EX-KUPCSLB8-EA", "EX-KUPCSLZ8-EA", "EX-KUPCSLF8-EA"]
+    
+    var UPCColorantChoices = ["No Color (Unpigmented)", "Black", "Blue","Bone", "Brown", "Clay", "Gray", "Green", "Mustard", "Red"]
+    
+    var UPCColorantCodes = ["", "EX-KUPCCLBK-EA", "EX-KUPCCLBL-EA", "EX-KUPCCLWH-EA", "EX-KUPCCLBR-EA","EX-KUPCCLCL-EA", "EX-KUPCCLGY-EA", "EX-KUPCCLGR-EA", "EX-KUPCCLCY-EA","EX-KUPCCLRD-EA"]
     
     let TSColorantChoices = ["","Beige", "Black", "Dark Gray", "Ench. Green", "Hand. Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
@@ -56,7 +62,6 @@ struct ColorQuartzTSSysSummary: View {
     let PATypes = ["Polyaspartic 72", "Polyaspartic 85", "Polyaspartic 92 Low Odor"]
     
     let PUTypes = ["Polyurethane HS"]
-    
     let PUTypesTC = ["Polyurethane HS", "Polyurethane HP Clear Gloss", "Polyurethane HP Clear Satin"]
 
     
@@ -104,48 +109,47 @@ struct ColorQuartzTSSysSummary: View {
             }
             
             HStack{
-                Text("\(typesACodes[QuartzTS.PCoatPtA])")
+                Text("EX-KUPCASL8-EA")
                     .font(.caption)
                 Spacer()
-                Text("TSE Part A: \(typesA[QuartzTS.PCoatPtA]), 1 gal")
+                Text("UPC Part A - SL/MF, 8#")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSA_QuartzTS) + QuartzTS.PCoatWaste)")
+                Text("\(quant(product: UPC_QuartzSL) + QuartzSL.PCoatWaste)")
                     .font(.caption)
             }
             
             HStack{
-                Text("\(typesBCodes[QuartzTS.PCoatPtB])")
+                Text("\(upcBCodes[QuartzSL.PCoatPtB])")
                     .font(.caption)
                 Spacer()
-                Text("Top Shelf® Epoxy Part B: \(typesB[QuartzTS.PCoatPtB]), 1/2 gal")
+                Text("UPC Part B - SL/MF \(typesB[QuartzSL.PCoatPtB]), 8#")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSB_QuartzTS) + QuartzTS.PCoatWaste)")
+                Text("\(quant(product: UPC_QuartzSL) + QuartzSL.PCoatWaste)")
+                    .font(.caption)
+            }
+            HStack{
+                Text("EX-KUPCSLC2-EA")
+                    .font(.caption)
+                Spacer()
+                Text("UPC Part C - SL, 25#")
+                    .font(.caption)
+                Spacer()
+                Text("\(quant(product: UPC_QuartzSL) + QuartzSL.PCoatWaste)")
                     .font(.caption)
             }
             
-            HStack{ // Solvent Cleaner
-                Text("EX-KSLVCLN-EA")
-                    .font(.caption)
-                Spacer()
-                Text("Solvent Cleaner, 32 oz")
-                    .font(.caption)
-                Spacer()
-                Text("\(quant(product: TSA_QuartzTS))")
-                    .font(.caption)
-            }
-            
-            if QuartzTS.PCoatTSColorant != 0
+            if QuartzSL.PCoatTSColorant != 0
             {
                 HStack {
-                    Text("\(TSColorantCodes[QuartzTS.BCoatTSColorant])")
+                    Text("\(TSColorantCodes[QuartzSL.BCoatTSColorant])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.BCoatTSColorant]), 16 oz")
+                    Text("UPC Colorant:  \(TSColorantChoices[QuartzSL.BCoatTSColorant]), 4 oz")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSColorantBC_QuartzTS))")
+                    Text("\(quant(product: UPC_QuartzSL))")
                         .font(.caption)
                 }
             }
@@ -174,42 +178,54 @@ struct ColorQuartzTSSysSummary: View {
                         .underline()
                         .font(.caption)
                 }
-                
                 HStack{
-                    Text("\(typesACodes[QuartzTS.MVRPtA])")
+                    Text("EX-KUPCARC-EA")
                         .font(.caption)
                     Spacer()
-                    Text("TSE Part A: \(typesA[QuartzTS.MVRPtA]), 1 gal")
+                    Text("UPC Part A - RC/TT, 6 lbs")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSMvr) + QuartzTS.MVRWaste)")
+                    Text("\(quant(product: TSMvr) + SandRC.MVRWaste)")
                         .font(.caption)
                 }
                 
                 HStack{
-                    Text("\(typesBMVRCodes[QuartzTS.MVRPtB])")
+                    Text("EX-BRCUVAP6-EA")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Part B: \(typesBMVR[QuartzTS.MVRPtB]), 1/2 gal")
+                    Text("UPC Part B - RC UV AP, 6 lbs")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSMvr) + QuartzTS.MVRWaste)")
+                    Text("\(quant(product: TSMvr) + SandRC.MVRWaste)")
                         .font(.caption)
                 }
-                if QuartzTS.MVRTSColorant != 0 {
-                    HStack {
-                        Text("\(TSColorantCodes[QuartzTS.MVRTSColorant])")
+                
+                HStack{
+                    Text("EX-KUPCRFC-EA")
+                        .font(.caption)
+                    Spacer()
+                    Text("UPC Part C - RC, 6 lbs")
+                        .font(.caption)
+                    Spacer()
+                    Text("\(quant(product: TSMvr) + SandRC.MVRWaste)")
+                        .font(.caption)
+                }
+                
+                if SandRC.MVRPtA != 0
+                {
+                    HStack{
+                        Text("\(UPCColorantCodes[SandRC.MVRPtA])")
                             .font(.caption)
                         Spacer()
-                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.MVRTSColorant]), 16 oz")
+                        Text("UPC Colorant - \(UPCColorantChoices[SandRC.MVRPtA]), 4 oz")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: TSMvr) + QuartzTS.MVRWaste)")
+                        Text("\(quant(product: TSMvr) + SandRC.MVRWaste)")
                             .font(.caption)
                     }
-                    
                 }
             }
+            
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
             .cornerRadius(5.0)
             .padding()
@@ -232,36 +248,48 @@ struct ColorQuartzTSSysSummary: View {
                     .font(.caption)
             }
             HStack{
-                Text("\(typesACodes[QuartzTS.BCoatPtA])")
+                Text("EX-KUPCASL8-EA")
                     .font(.caption)
                 Spacer()
-                Text("TSE Part A: \(typesA[QuartzTS.BCoatPtA]), 1 gal")
+                Text("UPC Part A - SL/MF, 8#")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSABC_QuartzTS) + QuartzTS.BCoatWaste)")
+                Text("\(quant(product: UPC_QuartzSL) + QuartzSL.BCoatWaste)")
                     .font(.caption)
             }
             
             HStack{
-                Text("\(typesBCodes[QuartzTS.BCoatPtB])")
+                Text("\(upcBCodes[QuartzSL.BCoatPtB])")
                     .font(.caption)
                 Spacer()
-                Text("Top Shelf® Epoxy Part B: \(typesB[QuartzTS.BCoatPtB]), 1/2 gal")
+                Text("UPC Part B - SL/MF \(typesB[QuartzSL.BCoatPtB]), 8#")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSBBC_QuartzTS) + QuartzTS.BCoatWaste)")
+                Text("\(quant(product: UPC_QuartzSL) + QuartzSL.BCoatWaste)")
                     .font(.caption)
             }
-            if QuartzTS.BCoatTSColorant != 0
+            
+            HStack{
+                Text("EX-KUPCSLC2-EA")
+                    .font(.caption)
+                Spacer()
+                Text("UPC Part C - SL, 25#")
+                    .font(.caption)
+                Spacer()
+                Text("\(quant(product: UPC_QuartzSL) + QuartzSL.BCoatWaste)")
+                    .font(.caption)
+            }
+            
+            if QuartzSL.BCoatTSColorant != 0
             {
                 HStack {
-                    Text("\(TSColorantCodes[QuartzTS.BCoatTSColorant])")
+                    Text("\(TSColorantCodes[QuartzSL.BCoatTSColorant])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.BCoatTSColorant]), 16 oz")
+                    Text("UPC Colorant:  \(TSColorantChoices[QuartzSL.BCoatTSColorant]), 4 oz")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSColorantBC_QuartzTS) + QuartzTS.BCoatWaste)")
+                    Text("\(quant(product: UPC_QuartzSL) + QuartzSL.BCoatWaste)")
                         .font(.caption)
                 }
             }
@@ -291,10 +319,10 @@ struct ColorQuartzTSSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[QuartzTS.BroadcastSizeSelection]) - \(textureChoices[QuartzTS.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[QuartzSL.BroadcastSizeSelection]) - see Kretus color chart, 50#")
                     .font(.caption)
                 Spacer()
-                Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzTS.BroadcastWaste)")
+                Text("\(quantBroadcast(product: BroadcastQuartzSL) + QuartzSL.BroadcastWaste)")
                     .font(.caption)
             }
         }
@@ -304,6 +332,7 @@ struct ColorQuartzTSSysSummary: View {
         
         Text("Cap Coat")
             .bold()
+        
         VStack { // Start of coat summary
             HStack {
                 Text("PRODUCT CODE")
@@ -318,82 +347,82 @@ struct ColorQuartzTSSysSummary: View {
                     .underline()
                     .font(.caption)
             }
-            if QuartzTS.Coat3ProductType == 0
+            if QuartzRC.Coat3ProductType == 0
             {
-                if QuartzTS.Coat3PtA == 4 {
+                if QuartzRC.Coat3PtA == 4 {
                     HStack{
-                        Text("\(typesACodes[QuartzTS.Coat3PtA])")
+                        Text("\(typesACodes[QuartzRC.Coat3PtA])")
                             .font(.caption)
                         Spacer()
                         Text("TSE Part A: Ench. Green, 1 gal")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                        Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                             .font(.caption)
                     }
                 }
                 else {
                     HStack{
-                        Text("\(typesACodes[QuartzTS.Coat3PtA])")
+                        Text("\(typesACodes[QuartzRC.Coat3PtA])")
                             .font(.caption)
                         Spacer()
-                        Text("TSE Part A: \(typesA[QuartzTS.Coat3PtA]), 1 gal")
+                        Text("TSE Part A: \(typesA[QuartzRC.Coat3PtA]), 1 gal")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                        Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                             .font(.caption)
                     }
                 }
                 HStack{
-                    Text("\(typesBCodes[QuartzTS.Coat3PtB])")
+                    Text("\(typesBCodes[QuartzRC.Coat3PtB])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Part B: \(typesB[QuartzTS.Coat3PtB]), 1/2 gal")
+                    Text("Top Shelf® Epoxy Part B: \(typesB[QuartzRC.Coat3PtB]), 1/2 gal")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSBC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSBC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                 }
-                if QuartzTS.Coat3TSColorant != 0 {
+                if QuartzRC.Coat3TSColorant != 0 {
                     
                     HStack {
-                        Text("\(TSColorantCodes[QuartzTS.Coat3TSColorant])")
+                        Text("\(TSColorantCodes[QuartzRC.Coat3TSColorant])")
                             .font(.caption)
                         Spacer()
-                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.Coat3TSColorant]), 16 oz")
+                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzRC.Coat3TSColorant]), 16 oz")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: TSColorantC3) + QuartzTS.Coat3Waste)")
+                        Text("\(quant(product: TSColorantC3) + QuartzRC.Coat3Waste)")
                             .font(.caption)
                     }
                     
                 }
             }
             
-            else if QuartzTS.Coat3ProductType == 1
+            else if QuartzRC.Coat3ProductType == 1
             {
                 HStack
                 {
-                    Text("\(QuartzTS.Coat3PtACode)")
+                    Text("\(QuartzRC.Coat3PtACode)")
                         .font(.caption)
                     Spacer()
-                    Text("\(PATypes[QuartzTS.Coat3PtA]) - \(hardeners[QuartzTS.Coat3PtB]), 1 gal ")
+                    Text("\(PATypes[QuartzRC.Coat3PtA]) - \(hardeners[QuartzRC.Coat3PtB]), 1 gal ")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                     
                 }
                 
                 HStack
                 {
-                    Text("\(QuartzTS.Coat3PtBCode)")
+                    Text("\(QuartzRC.Coat3PtBCode)")
                         .font(.caption)
                     Spacer()
-                    Text("\(PATypes[QuartzTS.Coat3PtA]) Part B, 1 gal ")
+                    Text("\(PATypes[QuartzRC.Coat3PtA]) Part B, 1 gal ")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                     
                 }
@@ -403,74 +432,74 @@ struct ColorQuartzTSSysSummary: View {
             {
                 HStack
                 {
-                    Text("\(QuartzTS.Coat3PtACode)")
+                    Text("\(QuartzRC.Coat3PtACode)")
                         .font(.caption)
                     Spacer()
                     // poly hs is chosen, display hardener
-                    if QuartzTS.Coat3PtA == 0
+                    if QuartzRC.Coat3PtA == 0
                     {
-                        Text("\(PUTypes[QuartzTS.Coat3PtA]) - \(hardeners[QuartzTS.Coat3PtB]) Part A, 1 gal ")
+                        Text("\(PUTypes[QuartzRC.Coat3PtA]) - \(hardeners[QuartzRC.Coat3PtB]) Part A, 1 gal ")
                             .font(.caption)
                     }
                     // Poly HP Gloss
-                    else if QuartzTS.Coat3PtA == 1
+                    else if QuartzRC.Coat3PtA == 1
                     {
-                        Text("\(PUTypes[QuartzTS.Coat3PtA]) Part A, 1/4 gal ")
+                        Text("\(PUTypes[QuartzRC.Coat3PtA]) Part A, 1/4 gal ")
                             .font(.caption)
                     }
                     // Poly HP Satin
                     else
                     {
-                        Text("\(PUTypes[QuartzTS.Coat3PtA]) Part A, 1/2 gal ")
+                        Text("\(PUTypes[QuartzRC.Coat3PtA]) Part A, 1/2 gal ")
                             .font(.caption)
                     }
                     Spacer()
-                    Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                     
                 }
                 
                 HStack
                 {
-                    Text("\(QuartzTS.Coat3PtBCode)")
+                    Text("\(QuartzRC.Coat3PtBCode)")
                         .font(.caption)
                     Spacer()
                     // Poly HS
-                    if QuartzTS.Coat3PtA == 0
+                    if QuartzRC.Coat3PtA == 0
                     {
-                        Text("\(PUTypes[QuartzTS.Coat3PtA]) Part B, 1/2 gal ")
+                        Text("\(PUTypes[QuartzRC.Coat3PtA]) Part B, 1/2 gal ")
                             .font(.caption)
                     }
                     else
                     {
-                        Text("\(PUTypes[QuartzTS.Coat3PtA]) Part B, 1 gal ")
+                        Text("\(PUTypes[QuartzRC.Coat3PtA]) Part B, 1 gal ")
                             .font(.caption)
                     }
                     Spacer()
-                    Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                     
                 }
             }
             // poly colorant
-            if QuartzTS.Coat3PColorant != 0 && QuartzTS.Coat3ProductType != 0
+            if QuartzRC.Coat3PColorant != 0 && QuartzRC.Coat3ProductType != 0
             {
                 HStack
                 {
-                    Text("\(PolyColorantCodes[QuartzTS.Coat3PColorant])")
+                    Text("\(PolyColorantCodes[QuartzRC.Coat3PColorant])")
                         .font(.caption)
                     Spacer()
                     
-                    Text("Poly Colorant - \(PolyColorantChoices[QuartzTS.Coat3PColorant]), 16 oz")
+                    Text("Poly Colorant - \(PolyColorantChoices[QuartzRC.Coat3PColorant]), 16 oz")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSColorantC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSColorantC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                     
                 }
             }
             
-            if QuartzTS.Coat3MatAdd == true
+            if QuartzRC.Coat3MatAdd == true
             {
                 HStack
                 {
@@ -480,7 +509,7 @@ struct ColorQuartzTSSysSummary: View {
                     Text("Matting Additive, 1# ")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: TSAC3) + QuartzTS.Coat3Waste)")
+                    Text("\(quant(product: TSAC3) + QuartzRC.Coat3Waste)")
                         .font(.caption)
                 }
             }
@@ -505,179 +534,179 @@ struct ColorQuartzTSSysSummary: View {
                     .underline()
                     .font(.caption)
             }
-            if QuartzTS.Coat4ProductType == 0
+            if QuartzRC.Coat4ProductType == 0
             {
-                if QuartzTS.Coat4PtA == 4 {
+                if QuartzRC.Coat4PtA == 4 {
                     HStack{
-                        Text("\(typesACodes[QuartzTS.Coat4PtA])")
+                        Text("\(typesACodes[QuartzRC.Coat4PtA])")
                             .font(.caption)
                         Spacer()
                         Text("TSE Part A: Ench. Green, 1 gal")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                        Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                             .font(.caption)
                     }
                 }
                 else {
                     HStack{
-                        Text("\(typesACodes[QuartzTS.Coat4PtA])")
+                        Text("\(typesACodes[QuartzRC.Coat4PtA])")
                             .font(.caption)
                         Spacer()
-                        Text("TSE Part A: \(typesA[QuartzTS.Coat4PtA]), 1 gal")
+                        Text("TSE Part A: \(typesA[QuartzRC.Coat4PtA]), 1 gal")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                        Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                             .font(.caption)
                     }
                 }
                 HStack
                 {
-                    Text("\(typesBCodes[QuartzTS.Coat4PtB])")
+                    Text("\(typesBCodes[QuartzRC.Coat4PtB])")
                         .font(.caption)
                     Spacer()
-                    Text("Top Shelf® Epoxy Part B: \(typesB[QuartzTS.Coat4PtB]), 1/2 gal")
+                    Text("Top Shelf® Epoxy Part B: \(typesB[QuartzRC.Coat4PtB]), 1/2 gal")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSBC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSBC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                 }
-                if QuartzTS.Coat4TSColorant != 0
+                if QuartzRC.Coat4TSColorant != 0
                 {
                     
                     HStack {
-                        Text("\(TSColorantCodes[QuartzTS.Coat4TSColorant])")
+                        Text("\(TSColorantCodes[QuartzRC.Coat4TSColorant])")
                             .font(.caption)
                         Spacer()
-                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzTS.Coat4TSColorant]), 16 oz")
+                        Text("Top Shelf® Epoxy Colorant:  \(TSColorantChoices[QuartzRC.Coat4TSColorant]), 16 oz")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: QuartzTS_TSColorantC4) + QuartzTS.Coat4Waste)")
+                        Text("\(quant(product: QuartzRC_TSColorantC4) + QuartzRC.Coat4Waste)")
                             .font(.caption)
                     }
                     
                 }
             }
-            else if QuartzTS.Coat4ProductType == 1
+            else if QuartzRC.Coat4ProductType == 1
             {
                 HStack
                 {
-                    Text("\(QuartzTS.Coat4PtACode)")
+                    Text("\(QuartzRC.Coat4PtACode)")
                         .font(.caption)
                     Spacer()
-                    Text("\(PATypes[QuartzTS.Coat4PtA]) - \(hardeners[QuartzTS.Coat4PtB]), 1 gal ")
+                    Text("\(PATypes[QuartzRC.Coat4PtA]) - \(hardeners[QuartzRC.Coat4PtB]), 1 gal ")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                     
                 }
                 
                 HStack
                 {
-                    Text("\(QuartzTS.Coat4PtBCode)")
+                    Text("\(QuartzRC.Coat4PtBCode)")
                         .font(.caption)
                     Spacer()
-                    Text("\(PATypes[QuartzTS.Coat4PtA]) Part B, 1 gal ")
+                    Text("\(PATypes[QuartzRC.Coat4PtA]) Part B, 1 gal ")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                     
                 }
             }
             // polyurethane is chosen
-            else if QuartzTS.Coat4ProductType == 2
+            else if QuartzRC.Coat4ProductType == 2
             {
                 
                 HStack
                 {
-                    Text("\(QuartzTS.Coat4PtACode)")
+                    Text("\(QuartzRC.Coat4PtACode)")
                         .font(.caption)
                     Spacer()
                     // poly hs is chosen, display hardener
-                    if QuartzTS.Coat4PtA == 0
+                    if QuartzRC.Coat4PtA == 0
                     {
-                        Text("\(PUTypesTC[QuartzTS.Coat4PtA]) - \(hardeners[QuartzTS.Coat4PtB]) Part A, 1 gal ")
+                        Text("\(PUTypesTC[QuartzRC.Coat4PtA]) - \(hardeners[QuartzRC.Coat4PtB]) Part A, 1 gal ")
                             .font(.caption)
                     }
                     // Poly HP Gloss
-                    else if QuartzTS.Coat4PtA == 1
+                    else if QuartzRC.Coat4PtA == 1
                     {
-                        Text("\(PUTypesTC[QuartzTS.Coat4PtA]) Part A, 1/4 gal ")
+                        Text("\(PUTypesTC[QuartzRC.Coat4PtA]) Part A, 1/4 gal ")
                             .font(.caption)
                     }
                     // Poly HP Satin
                     else
                     {
-                        Text("\(PUTypesTC[QuartzTS.Coat4PtA]) Part A, 1/2 gal ")
+                        Text("\(PUTypesTC[QuartzRC.Coat4PtA]) Part A, 1/2 gal ")
                             .font(.caption)
                     }
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                     
                 }
                 
                 HStack
                 {
-                    Text("\(QuartzTS.Coat4PtBCode)")
+                    Text("\(QuartzRC.Coat4PtBCode)")
                         .font(.caption)
                     Spacer()
                     // Poly HS
-                    if QuartzTS.Coat4PtA == 0
+                    if QuartzRC.Coat4PtA == 0
                     {
-                        Text("\(PUTypesTC[QuartzTS.Coat4PtA]) Part B, 1/2 gal ")
+                        Text("\(PUTypesTC[QuartzRC.Coat4PtA]) Part B, 1/2 gal ")
                             .font(.caption)
                     }
                     else
                     {
-                        Text("\(PUTypesTC[QuartzTS.Coat4PtA]) Part B, 1 gal ")
+                        Text("\(PUTypesTC[QuartzRC.Coat4PtA]) Part B, 1 gal ")
                             .font(.caption)
                     }
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                     
                 }
             }
             // poly colorant
-            if QuartzTS.Coat4PColorant != 0 && QuartzTS.Coat4ProductType != 0
+            if QuartzRC.Coat4PColorant != 0 && QuartzRC.Coat4ProductType != 0
             {
                 HStack
                 {
-                    Text("\(PolyColorantCodes[QuartzTS.Coat4PColorant])")
+                    Text("\(PolyColorantCodes[QuartzRC.Coat4PColorant])")
                         .font(.caption)
                     Spacer()
                     
-                    Text("Poly Colorant - \(PolyColorantChoices[QuartzTS.Coat4PColorant]), 16 oz")
+                    Text("Poly Colorant - \(PolyColorantChoices[QuartzRC.Coat4PColorant]), 16 oz")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSColorantC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSColorantC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                     
                 }
             }
             
-            if QuartzTS.Coat4Texture != 0 {
-                if QuartzTS.Coat4Texture < 5 {
+            if QuartzRC.Coat4Texture != 0 {
+                if QuartzRC.Coat4Texture < 5 {
                     HStack {
                         Text("Contact Distributor")
                             .font(.caption)
                         Spacer()
-                        Text("\(TextureOptions[QuartzTS.Coat4Texture]), 10#")
+                        Text("\(TextureOptions[QuartzRC.Coat4Texture]), 10#")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: ChipTextureAO))")
                             .font(.caption)
                     }
                 }
-                if QuartzTS.Coat4Texture >= 5 {
+                if QuartzRC.Coat4Texture >= 5 {
                     HStack {
                         Text("Contact Distributor")
                             .font(.caption)
                         Spacer()
-                        Text("\(TextureOptions[QuartzTS.Coat4Texture]), 32 oz")
+                        Text("\(TextureOptions[QuartzRC.Coat4Texture]), 32 oz")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: ChipTextureBead))")
@@ -686,7 +715,7 @@ struct ColorQuartzTSSysSummary: View {
                 }
             }
             
-            if QuartzTS.Coat4MatAdd == true
+            if QuartzRC.Coat4MatAdd == true
             {
                 HStack
                 {
@@ -696,7 +725,7 @@ struct ColorQuartzTSSysSummary: View {
                     Text("Matting Additive, 1# ")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: QuartzTS_TSAC4) + QuartzTS.Coat4Waste)")
+                    Text("\(quant(product: QuartzRC_TSAC4) + QuartzRC.Coat4Waste)")
                         .font(.caption)
                 }
             }
@@ -708,7 +737,7 @@ struct ColorQuartzTSSysSummary: View {
     }
 
 
-struct ColorQuartzTSSysSummary_Previews: PreviewProvider {
+struct ColorQuartzSLSysSummary_Previews: PreviewProvider {
     static var previews: some View {
         EpoxyCoveColorSysSummary()
     }

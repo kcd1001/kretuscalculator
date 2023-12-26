@@ -200,7 +200,7 @@ struct EpoxyCoveColorChipSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[CoveColorChip.BroadcastSizeSelection]) - \(ChipChoices[CoveColorChip.BroadcastSelection]), 55#")
+                Text("See Kretus color chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast) + CoveColorChip.BroadcastWaste)")

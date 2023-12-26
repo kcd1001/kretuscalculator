@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuartzDBBroadcast2Sum: View {
+struct QuartzDBBroadcast1Sum: View {
     
     @EnvironmentObject var QuartzDB : ColorQuartzDBValues //Used for coat selections
     @EnvironmentObject var sf : SquareFeet //Square feet
@@ -33,7 +33,7 @@ struct QuartzDBBroadcast2Sum: View {
     
     var body: some View {
         
-        Text("Broadcast 2")
+        Text("Broadcast 1")
             .bold()
         VStack { // Start of coat summary
             HStack {
@@ -53,10 +53,10 @@ struct QuartzDBBroadcast2Sum: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[QuartzDB.Broadcast2SizeSelection]) - \(textureChoices[QuartzDB.Broadcast2Selection]), 55#")
+                Text("Color Chip \(ChipSizes[QuartzDB.BroadcastSizeSelection]) - see Kretus color chart, 55#")
                     .font(.caption)
                 Spacer()
-                Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzDB.Broadcast2Waste)")
+                Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzDB.BroadcastWaste)")
                     .font(.caption)
             }
         }
@@ -66,7 +66,7 @@ struct QuartzDBBroadcast2Sum: View {
     }
 }
 
-struct QuartzDBBroadcast2Sum_Previews: PreviewProvider {
+struct QuartzDBBroadcast1Sum_Previews: PreviewProvider {
     static var previews: some View {
         QuartzDBPCoatSum()
     }

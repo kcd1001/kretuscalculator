@@ -98,24 +98,24 @@ struct EpoxyCoveQuartzBCoat: View {
                 //             .onChange(of: CoveColor.Coat1PtB) { _ in
                 //                 CheckCoatChoices()
                 //             }
-                Text("Texture:")
-                    .fontWeight(.bold)
-                Picker(selection: $CoveColorQuartz.Coat2TSColorant,
-                       label: ZStack {
-                    Text("\(textureChoices[CoveColorQuartz.Coat2TSColorant])")
-                        .opacity(1)
-                    Rectangle()
-                        .fill(Color.gray)
-                        .opacity(0.2)
-                        .cornerRadius(5)
-                        .frame(width: 300, height: 25)
-                }) {
-                    ForEach (0 ..< textureChoices.count, id: \.self) { index in
-                        Text(self.textureChoices[index]).tag(index)
-                    }
-                }
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(5)
+//                Text("Texture:")
+//                    .fontWeight(.bold)
+//                Picker(selection: $CoveColorQuartz.Coat2TSColorant,
+//                       label: ZStack {
+//                    Text("\(textureChoices[CoveColorQuartz.Coat2TSColorant])")
+//                        .opacity(1)
+//                    Rectangle()
+//                        .fill(Color.gray)
+//                        .opacity(0.2)
+//                        .cornerRadius(5)
+//                        .frame(width: 300, height: 25)
+//                }) {
+//                    ForEach (0 ..< textureChoices.count, id: \.self) { index in
+//                        Text(self.textureChoices[index]).tag(index)
+//                    }
+//                }
+//                .background(Color.gray.opacity(0.2))
+//                .cornerRadius(5)
             
             VStack { // Start of coat summary
                 HStack {
@@ -157,7 +157,7 @@ struct EpoxyCoveQuartzBCoat: View {
                                 Text("Contact Distributor")
                                     .font(.caption)
                                 Spacer()
-                                Text("Color Quartz - \(textureChoices[CoveColorQuartz.Coat2TSColorant]), F-Grade, 50#")
+                                Text("Color Quartz - See Kretus color chart, F-Grade, 50#")
                                     .font(.caption)
                                 Spacer()
                                 Text("\(quant(product: bCoatCoveQuartzTexture))")

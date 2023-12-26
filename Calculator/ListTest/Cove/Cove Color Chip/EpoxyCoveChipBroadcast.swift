@@ -64,23 +64,23 @@ struct EpoxyCoveChipBroadcast: View {
              .onChange(of: CoveColorChip.BroadcastSizeSelection) { _ in
                  checkChipSize()
              }
-                Picker(selection: $CoveColorChip.BroadcastSelection,
-                    label: ZStack {
-                        Text("\(ChipChoices[CoveColorChip.BroadcastSelection])")
-                            .opacity(1)
-                        Rectangle()
-                            .fill(Color.gray)
-                            .opacity(0.2)
-                            .cornerRadius(5)
-                            .frame(width: 200, height: 25)
-                          //  .padding()
-                }) {
-                   ForEach (0 ..< ChipChoices.count, id: \.self) { index in
-                       Text(self.ChipChoices[index]).tag(index)
-                   }
-                }
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(5)
+//                Picker(selection: $CoveColorChip.BroadcastSelection,
+//                    label: ZStack {
+//                        Text("\(ChipChoices[CoveColorChip.BroadcastSelection])")
+//                            .opacity(1)
+//                        Rectangle()
+//                            .fill(Color.gray)
+//                            .opacity(0.2)
+//                            .cornerRadius(5)
+//                            .frame(width: 200, height: 25)
+//                          //  .padding()
+//                }) {
+//                   ForEach (0 ..< ChipChoices.count, id: \.self) { index in
+//                       Text(self.ChipChoices[index]).tag(index)
+//                   }
+//                }
+//                .background(Color.gray.opacity(0.2))
+//                .cornerRadius(5)
                 Spacer()
                 BroadcastCoveColorChipInfo()
             }
@@ -103,7 +103,7 @@ struct EpoxyCoveChipBroadcast: View {
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[CoveColorChip.BroadcastSizeSelection]) - \(ChipChoices[CoveColorChip.BroadcastSelection]), 55#")
+                    Text("See Kretus color chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: Broadcast))")
