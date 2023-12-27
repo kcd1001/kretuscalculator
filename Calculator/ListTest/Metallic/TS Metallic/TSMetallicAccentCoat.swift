@@ -75,6 +75,7 @@ struct TSMetallicAccentCoat: View {
                 //             .onChange(of: tsMetallic.Coat1PtB) { _ in
                 //                 CheckCoatChoices()
                 //             }
+/*
                 Text("Metllic Pigment:")
                     .fontWeight(.bold)
                 Picker(selection: $tsMetallic.Coat3TSColorant,
@@ -91,6 +92,7 @@ struct TSMetallicAccentCoat: View {
                         Text(self.pigmentChoices[index]).tag(index)
                     }
                 }
+ */
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
             
@@ -134,7 +136,7 @@ struct TSMetallicAccentCoat: View {
                                 Text("\(pigmentCodes[tsMetallic.Coat3TSColorant])")
                                     .font(.caption)
                                 Spacer()
-                                Text("Metallic Pigment: \(pigmentChoices[tsMetallic.Coat3TSColorant]), 8 oz")
+                                Text("Metallic Pigment: see Kretus Color Chart, 8 oz")
                                     .font(.caption)
                                 Spacer()
                                 Text("\(quant(product: bCoatMetallicPigment))")
