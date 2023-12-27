@@ -90,6 +90,7 @@ struct TSMetallicPCoat: View {
                 //             .onChange(of: tsMetallic.Coat1PtB) { _ in
                 //                 CheckCoatChoices()
                 //             }
+/*
                 Text("Metllic Pigment:")
                     .fontWeight(.bold)
                 Picker(selection: $tsMetallic.Coat1TSColorant,
@@ -106,6 +107,7 @@ struct TSMetallicPCoat: View {
                         Text(self.pigmentChoices[index]).tag(index)
                     }
                 }
+ */
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
             
@@ -145,13 +147,14 @@ struct TSMetallicPCoat: View {
                             .font(.caption)
                     }
                 
+                // Will never be true
                 if tsMetallic.Coat1TSColorant != 0
                 {
                     HStack {
                         Text("\(pigmentCodes[tsMetallic.Coat1TSColorant])")
                             .font(.caption)
                         Spacer()
-                        Text("Metallic Pigment:  \(pigmentChoices[tsMetallic.Coat1TSColorant]), 8 oz")
+                        Text("Metallic Pigment: see Kretus Color Chart, 8 oz")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: metallicPigment))")

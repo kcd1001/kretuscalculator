@@ -71,6 +71,7 @@ struct MetallicUVBCoat: View {
                 //             .onChange(of: tsMetallicUV.Coat1PtB) { _ in
                 //                 CheckCoatChoices()
                 //             }
+/*
                 Text("UV Color:")
                     .fontWeight(.bold)
                 Picker(selection: $tsMetallicUV.Coat2TSColorant,
@@ -87,6 +88,7 @@ struct MetallicUVBCoat: View {
                         Text(self.pigmentChoices[index]).tag(index)
                     }
                 }
+ */
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
             
@@ -130,7 +132,7 @@ struct MetallicUVBCoat: View {
                                 Text("\(pigmentCodes[tsMetallicUV.Coat2TSColorant])")
                                     .font(.caption)
                                 Spacer()
-                                Text("UV Color - \(pigmentChoices[tsMetallicUV.Coat2TSColorant]), 8 oz")
+                                Text("UV Color - see Kretus Color Chart, 8 oz")
                                     .font(.caption)
                                 Spacer()
                                 Text("\(quant(product: bCoatMetallicUVPigment))")
