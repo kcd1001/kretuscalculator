@@ -58,7 +58,7 @@ struct SysSummaryChipSL: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipSL.BroadcastSizeSelection]) - \(ChipChoices[ChipSL.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[ChipSL.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast))")

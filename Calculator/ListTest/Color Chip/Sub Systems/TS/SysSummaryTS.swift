@@ -94,7 +94,7 @@ struct SysSummaryTS: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipTS.BroadcastSizeSelection]) - \(ChipChoices[ChipTS.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[ChipTS.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast))")

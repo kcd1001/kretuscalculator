@@ -52,7 +52,7 @@ struct SysSummaryPA: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipPA.BroadcastSizeSelection]) - \(ChipChoices[ChipPA.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[ChipPA.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast))")
