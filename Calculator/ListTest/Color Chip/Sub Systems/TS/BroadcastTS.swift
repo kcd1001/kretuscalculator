@@ -66,6 +66,7 @@ struct BroadcastTS: View {
              .onChange(of: ChipTS.BroadcastSizeSelection) { _ in
                  checkChipSize()
              }
+/*
                 Picker(selection: $ChipTS.BroadcastSelection,
                     label: ZStack {
                         Text("\(ChipChoices[ChipTS.BroadcastSelection])")
@@ -81,6 +82,7 @@ struct BroadcastTS: View {
                        Text(self.ChipChoices[index]).tag(index)
                    }
                 }
+*/
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
                 Spacer()
@@ -104,7 +106,7 @@ struct BroadcastTS: View {
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[ChipTS.BroadcastSizeSelection]) - \(ChipChoices[ChipTS.BroadcastSelection]), 55#")
+                    Text("Color Chip \(ChipSizes[ChipTS.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: Broadcast))")

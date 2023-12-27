@@ -70,7 +70,7 @@ struct SysSummaryChipRC: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipRC.BroadcastSizeSelection]) - \(ChipChoices[ChipRC.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[ChipRC.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast) + ChipRC.BroadcastWaste)")

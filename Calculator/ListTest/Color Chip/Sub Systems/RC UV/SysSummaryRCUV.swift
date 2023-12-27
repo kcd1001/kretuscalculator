@@ -70,7 +70,7 @@ struct SysSummaryRCUV: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipRCUV.BroadcastSizeSelection]) - \(ChipChoices[ChipRCUV.BroadcastSelection]), 55#")
+                Text("Color Chip \(ChipSizes[ChipRCUV.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast) + ChipRCUV.BroadcastWaste)")
