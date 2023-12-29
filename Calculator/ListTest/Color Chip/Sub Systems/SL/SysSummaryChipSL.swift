@@ -42,10 +42,12 @@ struct SysSummaryChipSL: View {
             Text("Broadcast")
                 .bold()
             HStack {
+/*
                 Text("PRODUCT CODE")
                     .underline()
                     .font(.caption)
                 Spacer()
+*/
                 Text("PRODUCT")
                     .underline()
                     .font(.caption)
@@ -55,9 +57,11 @@ struct SysSummaryChipSL: View {
                     .font(.caption)
             }
             HStack { // Broadcast
+/*
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
+*/
                 Text("Color Chip \(ChipSizes[ChipSL.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()

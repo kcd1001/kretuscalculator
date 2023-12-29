@@ -91,10 +91,12 @@ struct BroadcastRCUV: View {
             .padding()
             VStack { // Start of coat summary
                 HStack {
+/*
                     Text("PRODUCT CODE")
                         .underline()
                         .font(.caption)
                     Spacer()
+*/
                     Text("PRODUCT")
                         .underline()
                         .font(.caption)
@@ -104,9 +106,11 @@ struct BroadcastRCUV: View {
                         .font(.caption)
                 }
                 HStack {
+/*
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
+*/
                     Text("Color Chip \(ChipSizes[ChipRCUV.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                         .font(.caption)
                     Spacer()
