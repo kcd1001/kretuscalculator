@@ -85,10 +85,12 @@ struct BroadcastChipSL: View {
             } .padding()
             VStack { // Start of coat summary
                 HStack {
+/*
                     Text("PRODUCT CODE")
                         .underline()
                         .font(.caption)
                     Spacer()
+*/
                     Text("PRODUCT")
                         .underline()
                         .font(.caption)
@@ -98,9 +100,11 @@ struct BroadcastChipSL: View {
                         .font(.caption)
                 }
                 HStack {
+/*
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
+*/
                     Text("Color Chip \(ChipSizes[ChipSL.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                         .font(.caption)
                     Spacer()

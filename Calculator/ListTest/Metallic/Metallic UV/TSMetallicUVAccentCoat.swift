@@ -130,8 +130,10 @@ struct MetallicUVAccentCoat: View {
                     }
                     
                     HStack {
+/*
                                 Text("\(pigmentCodes[tsMetallicUV.Coat3TSColorant])")
                                     .font(.caption)
+*/
                                 Spacer()
                                 Text("Metallic Pigment: see Kretus Color Chart, 8 oz")
                                     .font(.caption)

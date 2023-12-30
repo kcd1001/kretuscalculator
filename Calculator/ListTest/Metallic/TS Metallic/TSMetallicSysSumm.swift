@@ -207,8 +207,10 @@ struct TSMetallicSysSumm: View {
             }
             
             HStack {
+/*
                 Text("\(pigmentCodes[tsMetallic.Coat2TSColorant])")
                     .font(.caption)
+*/
                 Spacer()
                 Text("Metallic Pigment: see Kretus Color Chart, 8 oz")
                     .font(.caption)

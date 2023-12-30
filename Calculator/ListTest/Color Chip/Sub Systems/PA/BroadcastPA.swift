@@ -90,10 +90,12 @@ struct BroadcastPA: View {
             } .padding()
             VStack { // Start of coat summary
                 HStack {
+/*
                     Text("PRODUCT CODE")
                         .underline()
                         .font(.caption)
                     Spacer()
+*/
                     Text("PRODUCT")
                         .underline()
                         .font(.caption)
@@ -103,9 +105,11 @@ struct BroadcastPA: View {
                         .font(.caption)
                 }
                 HStack {
+/*
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
+*/
                     Text("Color Chip \(ChipSizes[ChipPA.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                         .font(.caption)
                     Spacer()

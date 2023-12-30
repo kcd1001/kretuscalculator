@@ -151,8 +151,10 @@ struct TSMetallicPCoat: View {
                 if tsMetallic.Coat1TSColorant != 0
                 {
                     HStack {
+/*
                         Text("\(pigmentCodes[tsMetallic.Coat1TSColorant])")
                             .font(.caption)
+*/
                         Spacer()
                         Text("Metallic Pigment: see Kretus Color Chart, 8 oz")
                             .font(.caption)
