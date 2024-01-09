@@ -141,7 +141,7 @@ struct TSMetallicSysSumm: View {
                     Text("\(pigmentCodes[tsMetallic.Coat1TSColorant])")
                         .font(.caption)
                     Spacer()
-                    Text("Metallic Pigment:  \(pigmentChoices[tsMetallic.Coat1TSColorant]), 8 oz")
+                    Text("Metallic Pigment:  see Kretus Color Chart, 8 oz")
                         .font(.caption)
                     Spacer()
                     Text("\(quant(product: metallicPigment))")
@@ -207,10 +207,12 @@ struct TSMetallicSysSumm: View {
             }
             
             HStack {
+/*
                 Text("\(pigmentCodes[tsMetallic.Coat2TSColorant])")
                     .font(.caption)
+*/
                 Spacer()
-                Text("Metallic Pigment: \(pigmentChoices[tsMetallic.Coat2TSColorant]), 8 oz")
+                Text("Metallic Pigment: see Kretus Color Chart, 8 oz")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: bCoatMetallicPigment))")

@@ -66,6 +66,7 @@ struct BroadcastRCUV: View {
              .onChange(of: ChipRCUV.BroadcastSizeSelection) { _ in
                  checkChipSize()
              }
+/*
                 Picker(selection: $ChipRCUV.BroadcastSelection,
                     label: ZStack {
                         Text("\(ChipChoices[ChipRCUV.BroadcastSelection])")
@@ -81,6 +82,7 @@ struct BroadcastRCUV: View {
                        Text(self.ChipChoices[index]).tag(index)
                    }
                 }
+*/
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
                 Spacer()
@@ -89,10 +91,12 @@ struct BroadcastRCUV: View {
             .padding()
             VStack { // Start of coat summary
                 HStack {
+/*
                     Text("PRODUCT CODE")
                         .underline()
                         .font(.caption)
                     Spacer()
+*/
                     Text("PRODUCT")
                         .underline()
                         .font(.caption)
@@ -102,10 +106,12 @@ struct BroadcastRCUV: View {
                         .font(.caption)
                 }
                 HStack {
+/*
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[ChipRCUV.BroadcastSizeSelection]) - \(ChipChoices[ChipRCUV.BroadcastSelection]), 55#")
+*/
+                    Text("Color Chip \(ChipSizes[ChipRCUV.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: Broadcast))")

@@ -36,10 +36,12 @@ struct SysSummaryPA: View {
             Text("Broadcast")
                 .bold()
             HStack {
+/*
                 Text("PRODUCT CODE")
                     .underline()
                     .font(.caption)
                 Spacer()
+*/
                 Text("PRODUCT")
                     .underline()
                     .font(.caption)
@@ -49,10 +51,12 @@ struct SysSummaryPA: View {
                     .font(.caption)
             }
             HStack { // Broadcast
+/*
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipPA.BroadcastSizeSelection]) - \(ChipChoices[ChipPA.BroadcastSelection]), 55#")
+ */
+                Text("Color Chip \(ChipSizes[ChipPA.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast))")

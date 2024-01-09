@@ -61,6 +61,7 @@ struct BroadcastChipSL: View {
              .onChange(of: ChipSL.BroadcastSizeSelection) { _ in
                  checkChipSize()
              }
+/*
                 Picker(selection: $ChipSL.BroadcastSelection,
                     label: ZStack {
                         Text("\(ChipChoices[ChipSL.BroadcastSelection])")
@@ -76,6 +77,7 @@ struct BroadcastChipSL: View {
                        Text(self.ChipChoices[index]).tag(index)
                    }
                 }
+ */
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
                 Spacer()
@@ -83,10 +85,12 @@ struct BroadcastChipSL: View {
             } .padding()
             VStack { // Start of coat summary
                 HStack {
+/*
                     Text("PRODUCT CODE")
                         .underline()
                         .font(.caption)
                     Spacer()
+*/
                     Text("PRODUCT")
                         .underline()
                         .font(.caption)
@@ -96,10 +100,12 @@ struct BroadcastChipSL: View {
                         .font(.caption)
                 }
                 HStack {
+/*
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[ChipSL.BroadcastSizeSelection]) - \(ChipChoices[ChipSL.BroadcastSelection]), 55#")
+*/
+                    Text("Color Chip \(ChipSizes[ChipSL.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: Broadcast))")

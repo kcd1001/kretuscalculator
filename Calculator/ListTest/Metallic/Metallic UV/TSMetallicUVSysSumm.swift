@@ -208,10 +208,12 @@ struct MetallicUVSysSumm: View {
             }
             
             HStack {
+/*
                 Text("\(pigmentCodes[tsMetallicUV.Coat2TSColorant])")
                     .font(.caption)
+*/
                 Spacer()
-                Text("UV Color - \(pigmentChoices[tsMetallicUV.Coat2TSColorant]), 8 oz")
+                Text("UV Color - see Kretus Color Chart, 8 oz")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: bCoatMetallicUVPigment))")

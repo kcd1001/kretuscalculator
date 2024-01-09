@@ -54,10 +54,12 @@ struct SysSummaryChipRC: View {
             Text("Broadcast")
                 .bold()
             HStack {
+/*
                 Text("PRODUCT CODE")
                     .underline()
                     .font(.caption)
                 Spacer()
+*/
                 Text("PRODUCT")
                     .underline()
                     .font(.caption)
@@ -67,10 +69,12 @@ struct SysSummaryChipRC: View {
                     .font(.caption)
             }
             HStack { // Broadcast
+/*
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[ChipRC.BroadcastSizeSelection]) - \(ChipChoices[ChipRC.BroadcastSelection]), 55#")
+*/
+                Text("Color Chip \(ChipSizes[ChipRC.BroadcastSizeSelection]) - see Kretus Color Chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: Broadcast) + ChipRC.BroadcastWaste)")
