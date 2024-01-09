@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -346,6 +346,7 @@
 		F69FB8E4265574EC0051E077 /* SFFormChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FB8E3265574EC0051E077 /* SFFormChip.swift */; };
 		F69FB8E92655800E0051E077 /* BroadcastGarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69FB8E82655800E0051E077 /* BroadcastGarage.swift */; };
 		F6ADE2582A44D0BB00B5C2F5 /* SysOptionsSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6ADE2572A44D0BB00B5C2F5 /* SysOptionsSelectTS.swift */; };
+		F6B233D32B4DE8EB00258486 /* BroadcastQuartzTTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B233D22B4DE8EB00258486 /* BroadcastQuartzTTView.swift */; };
 		F6BCD3272A27C26D00B6960A /* SysOptionsESD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD3262A27C26D00B6960A /* SysOptionsESD.swift */; };
 		F6BCD32A2A27D64A00B6960A /* SelectChipTSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD3292A27D64A00B6960A /* SelectChipTSView.swift */; };
 		F6BCD32C2A27D68D00B6960A /* CoatChoicesSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectTS.swift */; };
@@ -876,6 +877,7 @@
 		F69FB8E3265574EC0051E077 /* SFFormChip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFormChip.swift; sourceTree = "<group>"; };
 		F69FB8E82655800E0051E077 /* BroadcastGarage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastGarage.swift; sourceTree = "<group>"; };
 		F6ADE2572A44D0BB00B5C2F5 /* SysOptionsSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysOptionsSelectTS.swift; sourceTree = "<group>"; };
+		F6B233D22B4DE8EB00258486 /* BroadcastQuartzTTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastQuartzTTView.swift; sourceTree = "<group>"; };
 		F6BCD3262A27C26D00B6960A /* SysOptionsESD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysOptionsESD.swift; sourceTree = "<group>"; };
 		F6BCD3292A27D64A00B6960A /* SelectChipTSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectChipTSView.swift; sourceTree = "<group>"; };
 		F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectTS.swift; sourceTree = "<group>"; };
@@ -1344,6 +1346,7 @@
 				F6404FDC28DC1D5600A5BF77 /* PCoatQuartzTT.swift */,
 				F6404FE028DC1E5A00A5BF77 /* BCoatQuartzTT.swift */,
 				F6404FE228DC263900A5BF77 /* BroadcastQuartzTTView.swift */,
+				F6B233D22B4DE8EB00258486 /* BroadcastQuartzTTView.swift */,
 				F6404FE428DC27ED00A5BF77 /* ColorQuartzTTCapCoat.swift */,
 				F6404FE628DC290600A5BF77 /* ColorQuartzTTTopCoat.swift */,
 				F6404FE828DC39BE00A5BF77 /* ColorQuartzTTSysSummary.swift */,
@@ -2675,6 +2678,7 @@
 				F657552125AE2B200066DCCB /* ProductMasterSheet.swift in Sources */,
 				F6556147292C9598004796CA /* BroadcastSandSL.swift in Sources */,
 				F6E2A6DD29110C4D00F23EF4 /* IndustrialSandTGCapCoat.swift in Sources */,
+				F6B233D32B4DE8EB00258486 /* BroadcastQuartzTTView.swift in Sources */,
 				F601CEF429F98C2900BB769E /* ThicknessESDTS.swift in Sources */,
 				F60A68C828B5B1D1005C81C7 /* ColorQuartzDBSysSummary.swift in Sources */,
 				F601CF0D29F9C3EC00BB769E /* ESDRCSysSummary.swift in Sources */,
