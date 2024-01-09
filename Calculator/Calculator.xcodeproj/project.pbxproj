@@ -138,7 +138,6 @@
 		F6404FDD28DC1D5600A5BF77 /* PCoatQuartzTT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FDC28DC1D5600A5BF77 /* PCoatQuartzTT.swift */; };
 		F6404FDF28DC1DF300A5BF77 /* ThicknessQuartzTT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FDE28DC1DF300A5BF77 /* ThicknessQuartzTT.swift */; };
 		F6404FE128DC1E5A00A5BF77 /* BCoatQuartzTT.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FE028DC1E5A00A5BF77 /* BCoatQuartzTT.swift */; };
-		F6404FE328DC263900A5BF77 /* BroadcastQuartzTTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FE228DC263900A5BF77 /* BroadcastQuartzTTView.swift */; };
 		F6404FE528DC27ED00A5BF77 /* ColorQuartzTTCapCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FE428DC27ED00A5BF77 /* ColorQuartzTTCapCoat.swift */; };
 		F6404FE728DC290600A5BF77 /* ColorQuartzTTTopCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FE628DC290600A5BF77 /* ColorQuartzTTTopCoat.swift */; };
 		F6404FE928DC39BE00A5BF77 /* ColorQuartzTTSysSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6404FE828DC39BE00A5BF77 /* ColorQuartzTTSysSummary.swift */; };
@@ -669,7 +668,6 @@
 		F6404FDC28DC1D5600A5BF77 /* PCoatQuartzTT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoatQuartzTT.swift; sourceTree = "<group>"; };
 		F6404FDE28DC1DF300A5BF77 /* ThicknessQuartzTT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThicknessQuartzTT.swift; sourceTree = "<group>"; };
 		F6404FE028DC1E5A00A5BF77 /* BCoatQuartzTT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCoatQuartzTT.swift; sourceTree = "<group>"; };
-		F6404FE228DC263900A5BF77 /* BroadcastQuartzTTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BroadcastQuartzTTView.swift; path = "ListTest/Color Quartz/UPC/Color Quartz TT /BroadcastQuartzTTView.swift"; sourceTree = SOURCE_ROOT; };
 		F6404FE428DC27ED00A5BF77 /* ColorQuartzTTCapCoat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorQuartzTTCapCoat.swift; sourceTree = "<group>"; };
 		F6404FE628DC290600A5BF77 /* ColorQuartzTTTopCoat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorQuartzTTTopCoat.swift; sourceTree = "<group>"; };
 		F6404FE828DC39BE00A5BF77 /* ColorQuartzTTSysSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorQuartzTTSysSummary.swift; sourceTree = "<group>"; };
@@ -1345,7 +1343,6 @@
 			children = (
 				F6404FDC28DC1D5600A5BF77 /* PCoatQuartzTT.swift */,
 				F6404FE028DC1E5A00A5BF77 /* BCoatQuartzTT.swift */,
-				F6404FE228DC263900A5BF77 /* BroadcastQuartzTTView.swift */,
 				F6B233D22B4DE8EB00258486 /* BroadcastQuartzTTView.swift */,
 				F6404FE428DC27ED00A5BF77 /* ColorQuartzTTCapCoat.swift */,
 				F6404FE628DC290600A5BF77 /* ColorQuartzTTTopCoat.swift */,
@@ -2782,7 +2779,6 @@
 				F6C709AC2880F0DE00ED4EFA /* CoatChoicesEpoxyCoveQuartz.swift in Sources */,
 				F601CF302A042CF800BB769E /* ESDTSDissSysSummary.swift in Sources */,
 				F6289FDA25B22E3800B242EF /* Texture.swift in Sources */,
-				F6404FE328DC263900A5BF77 /* BroadcastQuartzTTView.swift in Sources */,
 				F6E2A6CC2910F7BD00F23EF4 /* IndustrialSandSGCapCoat.swift in Sources */,
 				F60A68B828B5A7AC005C81C7 /* BCoat2QuartzDB.swift in Sources */,
 				F65C326E2755686100A06F90 /* TopCoat1PA.swift in Sources */,
