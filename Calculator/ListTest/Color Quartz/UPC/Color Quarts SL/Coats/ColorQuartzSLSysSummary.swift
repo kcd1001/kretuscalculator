@@ -319,7 +319,7 @@ struct ColorQuartzSLSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[QuartzSL.BroadcastSizeSelection]) - \(textureChoices[QuartzSL.BroadcastSelection]), 50#")
+                Text("Color Chip \(ChipSizes[QuartzSL.BroadcastSizeSelection]) - see Kretus color chart, 50#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: BroadcastQuartzSL) + QuartzSL.BroadcastWaste)")

@@ -319,7 +319,7 @@ struct ColorQuartzMFSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[QuartzMF.BroadcastSizeSelection]) - \(textureChoices[QuartzMF.BroadcastSelection]), 50#")
+                Text("Color Chip \(ChipSizes[QuartzMF.BroadcastSizeSelection]) - see Kretus color chart, 50#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: BroadcastQuartzMF) + QuartzMF.BroadcastWaste)")

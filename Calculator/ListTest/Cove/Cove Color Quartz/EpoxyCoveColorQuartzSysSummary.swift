@@ -122,7 +122,7 @@ struct EpoxyCoveColorQuartzSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Quartz - \(textureChoices[CoveColorQuartz.Coat2TSColorant]), F-Grade, 50#")
+                Text("Color Quartz - See Kretus color chart, F-Grade, 50#")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: bCoatCoveQuartzTexture))")

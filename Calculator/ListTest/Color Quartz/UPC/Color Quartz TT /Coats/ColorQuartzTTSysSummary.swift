@@ -318,7 +318,7 @@ struct ColorQuartzTTSysSummary: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[QuartzTT.BroadcastSizeSelection]) - \(textureChoices[QuartzTT.BroadcastSelection]), 50#")
+                Text("Color Chip \(ChipSizes[QuartzTT.BroadcastSizeSelection]) - see Kretus color chart, 50#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: BroadcastQuartzTT) + QuartzTT.BroadcastWaste)")

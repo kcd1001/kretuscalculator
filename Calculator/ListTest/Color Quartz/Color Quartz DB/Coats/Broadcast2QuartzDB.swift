@@ -107,23 +107,23 @@ struct Broadcast2QuartzDB: View {
                  checkChipSize()
                  updateCovRate()
              }
-                Picker(selection: $QuartzDB.Broadcast2Selection,
-                    label: ZStack {
-                        Text("\(textureChoices[QuartzDB.Broadcast2Selection])")
-                            .opacity(1)
-                        Rectangle()
-                            .fill(Color.gray)
-                            .opacity(0.2)
-                            .cornerRadius(5)
-                            .frame(width: 200, height: 25)
-                          //  .padding()
-                }) {
-                   ForEach (0 ..< textureChoices.count, id: \.self) { index in
-                       Text(self.textureChoices[index]).tag(index)
-                   }
-                }
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(5)
+//                Picker(selection: $QuartzDB.Broadcast2Selection,
+//                    label: ZStack {
+//                        Text("\(textureChoices[QuartzDB.Broadcast2Selection])")
+//                            .opacity(1)
+//                        Rectangle()
+//                            .fill(Color.gray)
+//                            .opacity(0.2)
+//                            .cornerRadius(5)
+//                            .frame(width: 200, height: 25)
+//                          //  .padding()
+//                }) {
+//                   ForEach (0 ..< textureChoices.count, id: \.self) { index in
+//                       Text(self.textureChoices[index]).tag(index)
+//                   }
+//                }
+//                .background(Color.gray.opacity(0.2))
+//                .cornerRadius(5)
                 Spacer()
                 QuartzBroadcastInfo()
             } .padding()
@@ -145,7 +145,7 @@ struct Broadcast2QuartzDB: View {
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[QuartzDB.Broadcast2SizeSelection]) - \(textureChoices[QuartzDB.Broadcast2Selection]), 55#")
+                    Text("Color Chip \(ChipSizes[QuartzDB.Broadcast2SizeSelection]) - see Kretus color chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: BroadcastQuartzTS))")

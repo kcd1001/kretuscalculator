@@ -174,23 +174,23 @@ struct BroadcastQuartzSG: View {
              .onChange(of: QuartzSG.Coat4ProductType) { _ in
                  updateCovRate()
              }
-                Picker(selection: $QuartzSG.BroadcastSelection,
-                    label: ZStack {
-                        Text("\(textureChoices[QuartzSG.BroadcastSelection])")
-                            .opacity(1)
-                        Rectangle()
-                            .fill(Color.gray)
-                            .opacity(0.2)
-                            .cornerRadius(5)
-                            .frame(width: 200, height: 25)
-                          //  .padding()
-                }) {
-                   ForEach (0 ..< textureChoices.count, id: \.self) { index in
-                       Text(self.textureChoices[index]).tag(index)
-                   }
-                }
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(5)
+//                Picker(selection: $QuartzSG.BroadcastSelection,
+//                    label: ZStack {
+//                        Text("\(textureChoices[QuartzSG.BroadcastSelection])")
+//                            .opacity(1)
+//                        Rectangle()
+//                            .fill(Color.gray)
+//                            .opacity(0.2)
+//                            .cornerRadius(5)
+//                            .frame(width: 200, height: 25)
+//                          //  .padding()
+//                }) {
+//                   ForEach (0 ..< textureChoices.count, id: \.self) { index in
+//                       Text(self.textureChoices[index]).tag(index)
+//                   }
+//                }
+//                .background(Color.gray.opacity(0.2))
+//                .cornerRadius(5)
                 Spacer()
                 QuartzSGBroadcastInfo()
             } .padding()
@@ -212,7 +212,7 @@ struct BroadcastQuartzSG: View {
                     Text("Contact Distributor")
                         .font(.caption)
                     Spacer()
-                    Text("Color Chip \(ChipSizes[QuartzSG.BroadcastSizeSelection]) - \(textureChoices[QuartzSG.BroadcastSelection]), 55#")
+                    Text("Color Chip \(ChipSizes[QuartzSG.BroadcastSizeSelection]) - see Kretus color chart, 55#")
                         .font(.caption)
                     Spacer()
                     Text("\(quantBroadcast(product: BroadcastQuartzSG))")

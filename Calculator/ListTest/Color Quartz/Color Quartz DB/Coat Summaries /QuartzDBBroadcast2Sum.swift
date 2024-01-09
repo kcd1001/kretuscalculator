@@ -53,7 +53,7 @@ struct QuartzDBBroadcast2Sum: View {
                 Text("Contact Distributor")
                     .font(.caption)
                 Spacer()
-                Text("Color Chip \(ChipSizes[QuartzDB.Broadcast2SizeSelection]) - \(textureChoices[QuartzDB.Broadcast2Selection]), 55#")
+                Text("Color Chip \(ChipSizes[QuartzDB.Broadcast2SizeSelection]) - see Kretus color chart, 55#")
                     .font(.caption)
                 Spacer()
                 Text("\(quantBroadcast(product: BroadcastQuartzTS) + QuartzDB.Broadcast2Waste)")
