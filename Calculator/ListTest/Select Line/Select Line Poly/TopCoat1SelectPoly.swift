@@ -8,9 +8,9 @@
 import SwiftUI
 
 
-struct TopCoat1SelectTS: View {
+struct TopCoat1SelectPoly: View {
     
-    @EnvironmentObject var ChipTS : ColorChipValuesSelectTS //Used for coat selections
+    @EnvironmentObject var ChipPoly : ColorChipValuesSelectPoly //Used for coat selections
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var PAPUTC1 : stats
     @EnvironmentObject var PAPUTC2 : stats2
@@ -44,13 +44,13 @@ struct TopCoat1SelectTS: View {
         } // returns number of kits required
     
     func checkTC2()  {
-        if ChipTS.TCoat2Choice == 3 { //POLY HS
+        if ChipPoly.TCoat2Choice == 3 { //POLY HS
             PAPUTC2.covRate = 560
         }
-        else if ChipTS.TCoat2Choice == 4 { //POLY HP CLEAR GLOSS
+        else if ChipPoly.TCoat2Choice == 4 { //POLY HP CLEAR GLOSS
             PAPUTC2.covRate = 575
         }
-        else if ChipTS.TCoat2Choice == 5 { //POLY HP CLEAR SATIN
+        else if ChipPoly.TCoat2Choice == 5 { //POLY HP CLEAR SATIN
             PAPUTC2.covRate = 675
         }
         else {
@@ -60,7 +60,7 @@ struct TopCoat1SelectTS: View {
     } // Changes coverage rate based off of tc2 selection, returns quantity of kits needed based off selection
     
     func new_checkTC2() {
-        switch ChipTS.TCoat2Choice {
+        switch ChipPoly.TCoat2Choice {
         case 3:
             PAPUTC2.covRate = 560 // POLY HS
         case 4:
@@ -73,8 +73,8 @@ struct TopCoat1SelectTS: View {
     }
     
     func checkTC1() { // change tc1 product coverage rate based off selection and chip size 
-        if ChipTS.BroadcastSizeSelection == 0 {
-            switch ChipTS.TCoat1Choice {
+        if ChipPoly.BroadcastSizeSelection == 0 {
+            switch ChipPoly.TCoat1Choice {
             case 3:
                 PAPUTC1.covRate = 210
             default:
@@ -82,7 +82,7 @@ struct TopCoat1SelectTS: View {
             }
         }
         else{
-            switch ChipTS.TCoat1Choice {
+            switch ChipPoly.TCoat1Choice {
             case 3:
                 PAPUTC1.covRate = 150
             default:
@@ -94,51 +94,51 @@ struct TopCoat1SelectTS: View {
     
     func checkTCoatCodes() -> Void {
     
-    if ChipTS.TCoat1Hardener == 0 {
+    if ChipPoly.TCoat1Hardener == 0 {
         TCoat1PtACode = "EX-KPLY85AZ-01"
         TCoat1PtBCode = "EX-KPLY85B-01"
     }
-    else if ChipTS.TCoat1Hardener == 1 {
+    else if ChipPoly.TCoat1Hardener == 1 {
         TCoat1PtACode = "EX-KPLY85AF-01"
         TCoat1PtBCode = "EX-KPLY85B-01"
 
     }
-//    else if ChipTS.TCoat1Choice == 1 && ChipTS.TCoat1Hardener == 0 {
+//    else if ChipPoly.TCoat1Choice == 1 && ChipPoly.TCoat1Hardener == 0 {
 //        TCoat1PtACode = "EX-KPLY85AZ-01"
 //        TCoat1PtBCode = "EX-KPLY85B-01"
 //    }
-//    else if ChipTS.TCoat1Choice == 1 && ChipTS.TCoat1Hardener == 1 {
+//    else if ChipPoly.TCoat1Choice == 1 && ChipPoly.TCoat1Hardener == 1 {
 //        TCoat1PtACode = "EX-KPLY85AF-01"
 //        TCoat1PtBCode = "EX-KPLY85B-01"
 //
 //    }
-//    else if ChipTS.TCoat1Choice == 2 && ChipTS.TCoat1Hardener == 0 {
+//    else if ChipPoly.TCoat1Choice == 2 && ChipPoly.TCoat1Hardener == 0 {
 //        TCoat1PtACode = "EX-KPLY92AZ-01"
 //        TCoat1PtBCode = "EX-KPLY92B-01"
 //
 //    }
-//    else if ChipTS.TCoat1Choice == 2 && ChipTS.TCoat1Hardener == 1 {
+//    else if ChipPoly.TCoat1Choice == 2 && ChipPoly.TCoat1Hardener == 1 {
 //        TCoat1PtACode = "EX-KPLY92AF-01"
 //        TCoat1PtBCode = "EX-KPLY92B-01"
 //
 //    }
-//    else if ChipTS.TCoat1Choice == 3 && ChipTS.TCoat1Hardener == 0 {
+//    else if ChipPoly.TCoat1Choice == 3 && ChipPoly.TCoat1Hardener == 0 {
 //        TCoat1PtACode = "EX-KPLYHSAZ-01"
 //        TCoat1PtBCode = "EX-KPLYHSB-EA"
 //        PAPUTC1.covRate = 210
 //    }
-//    else if ChipTS.TCoat1Choice == 3 && ChipTS.TCoat1Hardener == 1 {
+//    else if ChipPoly.TCoat1Choice == 3 && ChipPoly.TCoat1Hardener == 1 {
 //        TCoat1PtACode = "EX-KPLYHSAF-01"
 //        TCoat1PtBCode = "EX-KPLYHSB-EA"
 //        PAPUTC1.covRate = 210
         
      //END OF TCOAT1
         
-        if ChipTS.TCoat2Hardener == 0 {
+        if ChipPoly.TCoat2Hardener == 0 {
             TCoat2PtACode = "EX-KPLY85AZ-01"
             TCoat2PtBCode = "EX-KPLY85B-01"
         }
-        else if ChipTS.TCoat2Hardener == 1 {
+        else if ChipPoly.TCoat2Hardener == 1 {
             TCoat2PtACode = "EX-KPLY85AF-01"
             TCoat2PtBCode = "EX-KPLY85B-01"
             
@@ -151,7 +151,7 @@ struct TopCoat1SelectTS: View {
         VStack {
 
             
-//            if ChipTS.TCoat2Choice != 6
+//            if ChipPoly.TCoat2Choice != 6
 //            {
 //                HStack
 //                {
@@ -173,16 +173,16 @@ struct TopCoat1SelectTS: View {
             Spacer()
             ChipTopCoatInfo()
 
-             .onChange(of: ChipTS.TCoat1Hardener) { _ in
+             .onChange(of: ChipPoly.TCoat1Hardener) { _ in
                checkTCoatCodes()
              }
-             .onChange(of: ChipTS.BroadcastSizeSelection) { _ in
+             .onChange(of: ChipPoly.BroadcastSizeSelection) { _ in
                checkTC1()
              }
 
-//            Picker(selection: $ChipTS.TCoat1Hardener,
+//            Picker(selection: $ChipPoly.TCoat1Hardener,
 //                label: ZStack {
-//                    Text("\(TCoat1HardenerOptions[ChipTS.TCoat1Hardener])")
+//                    Text("\(TCoat1HardenerOptions[ChipPoly.TCoat1Hardener])")
 //                        .opacity(1)
 //                    Rectangle()
 //                        .fill(Color.gray)
@@ -203,14 +203,14 @@ struct TopCoat1SelectTS: View {
             Text("Top Coat 2:")
                 .fontWeight(.bold)
 
-//            switch ( ChipTS.TCoat2Choice )
+//            switch ( ChipPoly.TCoat2Choice )
 //                {
 //            case 3:
 //                HStack {
 //                    Text("Coating Thickness (TC2): 2-4 mils")
 //                        .fontWeight(.heavy)
 //                    Spacer()
-//                    ChipTSInfo()
+//                    ChipPolyInfo()
 //                }
 //                .padding()
 //            case 4:
@@ -218,7 +218,7 @@ struct TopCoat1SelectTS: View {
 //                    Text("Coating Thickness (TC2): 2-4 mils")
 //                        .fontWeight(.heavy)
 //                    Spacer()
-//                    ChipTSInfo()
+//                    ChipPolyInfo()
 //                }
 //                .padding()
 //            case 5:
@@ -226,7 +226,7 @@ struct TopCoat1SelectTS: View {
 //                    Text("Coating Thickness (TC2): 2-4 mils")
 //                        .fontWeight(.heavy)
 //                    Spacer()
-//                    ChipTSInfo()
+//                    ChipPolyInfo()
 //                }
 //                .padding()
 //                default:
@@ -234,15 +234,15 @@ struct TopCoat1SelectTS: View {
 //                        Text("Coating Thickness (TC1): 2-4 mils")
 //                            .fontWeight(.heavy)
 //                        Spacer()
-//                        ChipTSInfo()
+//                        ChipPolyInfo()
 //                    }
 //                    .padding()
 //            }
 //            }
             HStack {
-                 Picker(selection: $ChipTS.TCoat2Choice,
+                 Picker(selection: $ChipPoly.TCoat2Choice,
                      label: ZStack {
-                         Text("\(TopCoat2Options[ChipTS.TCoat2Choice])")
+                         Text("\(TopCoat2Options[ChipPoly.TCoat2Choice])")
                              .opacity(1)
                          Rectangle()
                              .fill(Color.gray)
@@ -257,20 +257,20 @@ struct TopCoat1SelectTS: View {
                  }
                  .background(Color.gray.opacity(0.2))
                  .cornerRadius(5)
-                 .onChange(of: ChipTS.TCoat2Choice) { _ in
+                 .onChange(of: ChipPoly.TCoat2Choice) { _ in
                    //checkTC1()
                    new_checkTC2()
                    checkTCoatCodes()
                  }
-                 .onChange(of: ChipTS.TCoat2Hardener) { _ in
+                 .onChange(of: ChipPoly.TCoat2Hardener) { _ in
                    checkTCoatCodes()
                  }
                  .onAppear(perform: checkTCoatCodes)
                 
-//                if ChipTS.TCoat2Choice == 1 {
-//                Picker(selection: $ChipTS.TCoat2Hardener,
+//                if ChipPoly.TCoat2Choice == 1 {
+//                Picker(selection: $ChipPoly.TCoat2Hardener,
 //                    label: ZStack {
-//                        Text("\(TCoat2HardenerOptions[ChipTS.TCoat2Hardener])")
+//                        Text("\(TCoat2HardenerOptions[ChipPoly.TCoat2Hardener])")
 //                            .opacity(1)
 //                        Rectangle()
 //                            .fill(Color.gray)
@@ -285,19 +285,19 @@ struct TopCoat1SelectTS: View {
 //                }
 //                .background(Color.gray.opacity(0.2))
 //                .cornerRadius(5)
-//                .onChange(of: ChipTS.TCoat2Choice) { _ in
+//                .onChange(of: ChipPoly.TCoat2Choice) { _ in
 //                  //checkTC1()
 //                  new_checkTC2()
 //                  checkTCoatCodes()
 //                }
 //                }
             }
-            if ChipTS.TCoat2Choice == 1 { //Displays texture if it is selected
+            if ChipPoly.TCoat2Choice == 1 { //Displays texture if it is selected
             Text("Texture:")
              .fontWeight(.bold)
-                Picker(selection: $ChipTS.texture1,
+                Picker(selection: $ChipPoly.texture1,
                     label: ZStack {
-                        Text("\(TextureOptions[ChipTS.texture1])")
+                        Text("\(TextureOptions[ChipPoly.texture1])")
                             .opacity(1)
                         Rectangle()
                             .fill(Color.gray)
@@ -312,7 +312,7 @@ struct TopCoat1SelectTS: View {
                 }
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
-                .onChange(of: ChipTS.TCoat2Choice) { _ in
+                .onChange(of: ChipPoly.TCoat2Choice) { _ in
                   //checkTC1()
                   new_checkTC2()
                   checkTCoatCodes()
@@ -354,7 +354,7 @@ struct TopCoat1SelectTS: View {
 //                            .font(.caption)
 //
 ////                    else {
-////                        Text("\(TopCoat1Options[ChipTS.TCoat1Choice]) Part B, 1/2 gal")
+////                        Text("\(TopCoat1Options[ChipPoly.TCoat1Choice]) Part B, 1/2 gal")
 ////                            .font(.caption)
 ////                    }
 //                    Spacer()
@@ -366,7 +366,7 @@ struct TopCoat1SelectTS: View {
             .cornerRadius(5.0)
             .padding()
 
-                if ChipTS.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
+                if ChipPoly.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
                     VStack {
                         Text("Top Coat 2")
                             .bold()
@@ -396,7 +396,7 @@ struct TopCoat1SelectTS: View {
                                 .font(.caption)
                         }
                         
-                        if ChipTS.texture1 != 0 {
+                        if ChipPoly.texture1 != 0 {
                                 HStack {
                                     Text("EX-KAST50-EA")
                                         .font(.caption)
@@ -418,25 +418,25 @@ struct TopCoat1SelectTS: View {
         HStack {
             Text("Add Waste Factor: ")
             Spacer()
-            TextField("",value: $ChipTS.TCoatWaste, formatter: NumberFormatter())
+            TextField("",value: $ChipPoly.TCoatWaste, formatter: NumberFormatter())
                 .frame(width:30, height:25)
                 .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
                 .cornerRadius(5.0)
             Text("kit(s)")
         }
         .padding()
-        if ChipTS.TCoat2Choice != 0 {
+        if ChipPoly.TCoat2Choice != 0 {
         HStack {
             Text("Total:")
             Spacer()
-            Text("\(quant(product: PAPUTC1) + quant(product: PAPUTC2) + ChipTS.TCoatWaste) kit(s)")
+            Text("\(quant(product: PAPUTC1) + quant(product: PAPUTC2) + ChipPoly.TCoatWaste) kit(s)")
         }
         }
         else {
         HStack {
             Text("Total:")
             Spacer()
-            Text("\(quant(product: PAPUTC1) + ChipTS.TCoatWaste) kit(s)")
+            Text("\(quant(product: PAPUTC1) + ChipPoly.TCoatWaste) kit(s)")
         }
         .padding()
         }
@@ -444,7 +444,7 @@ struct TopCoat1SelectTS: View {
     }
 //}
 
-struct TopCoat1SelectTS_Previews: PreviewProvider {
+struct TopCoat1SelectPoly_Previews: PreviewProvider {
     static var previews: some View {
         TopCoat1Garage()
     }

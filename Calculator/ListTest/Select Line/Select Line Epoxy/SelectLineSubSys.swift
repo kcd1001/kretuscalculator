@@ -15,12 +15,12 @@ struct SelectLineSubSys: View {
         
 
         List{
-            // UPC 
+            
             NavigationLink(destination: SelectChipTSView()){
-                Text("Kretus Select Epoxy")
+                Text("Kretus Select Epoxy, 3-5 mils")
             }
-            NavigationLink(destination: SelectChipTSView()){
-                Text("Kretus Select OMG Blocker")
+            NavigationLink(destination: SelectPolyView()){
+                Text("Kretus Select Poly")
             }
 
 
