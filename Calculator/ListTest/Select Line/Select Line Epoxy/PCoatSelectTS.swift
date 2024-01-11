@@ -104,7 +104,7 @@ struct PCoatSelectTS: View {
                         Text("\(kitCodes[ChipTS.PCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Select Line Kit - \(kitTypes[ChipTS.PCoatPtA])")
+                    Text("Kretus Select Epoxy Kit - \(kitTypes[ChipTS.PCoatPtA])")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: selectTSA_TS))")

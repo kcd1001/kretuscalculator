@@ -50,7 +50,7 @@ struct ContentView: View {
                                     {
                                         Text("ESD (Static Control)")
                                     }
-                                    NavigationLink(destination: SelectChipTSView())
+                                    NavigationLink(destination: SelectLineSubSys())
                                     {
                                         Text("Select Line")
                                     }

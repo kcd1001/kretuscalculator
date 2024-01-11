@@ -8,27 +8,23 @@
 import SwiftUI
 import Combine
 
-// ONLY COMMERCIAL RESIN BEIGE, CLEAR, LIGHT GRAY, AND PT B TH
 
-var selectTSABC_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 420, MixRat: 2)
-var selectTSBBC_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 420, MixRat: 1)
-// var SelectTSColorantBC_TS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 210, MixRat: 16)
 
-struct BCoatSelectTS: View {
+struct BCoatSelectOMG: View {
     
  
-    @EnvironmentObject var ChipTS : ColorChipValuesSelectTS //Used for coat selections
-    @EnvironmentObject var TSA_TS : stats //Used for system stats (mixRat,CovRate, etc)
-    @EnvironmentObject var TSB_TS : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var ChipOMG : ColorChipValuesSelectOMG //Used for coat selections
+    @EnvironmentObject var selectTSA_OMG : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var selectTSB_OMG : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var TSColorant_TS : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var SolventCleaner : stats 
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["Clear", "Light Gray", "Beige"]
+    let kitTypes = ["EZ", "FC"]
     
-    let kitCodes = ["EX-102001-KIT", "EX-10401-KIT", "EX-10101-KIT"]
-
+    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    
     let TSColorantChoices = ["No Color (pre-pigmented Part A)", "Beige", "Black", "Dark Gray", "Enchanted Green", "Handicap Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
     let TSColorantCodes = ["No Color (pre-pigmented Part A)", "EX-KTSECLBG-EA", "EX-KTSECLBL-EA", "EX-KTSECLDG-EA", "EX-KTSECLEG-EA", "EX-KTSECLHB-EA", "EX-KTSECLLT-EA", "EX-KTSECLLG-EA", "EX-KTSECLMG-EA", "EX-KTSECLMC-EA", "EX-KTSECLSB-EA", "EX-KTSECLSR-EA", "EX-KTSECLSY-EA", "EX-KTSECLSG-EA", "EX-KTSECLTN-EA", "EX-KTSECLTR-EA", "EX-KTSECLWH-01",]
@@ -39,21 +35,22 @@ struct BCoatSelectTS: View {
          return kit
         } // returns number of kits required
     
+  
+    
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: 8-12 mils")
+                Text("Coating Thickness: TBD")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipTSSelectBCoatInfo()
+                ChipOMGSelectPCoatInfo()
             }
             .padding()
-            
            Text("Choose your color:")
             .fontWeight(.bold)
-            Picker(selection: $ChipTS.BCoatPtA,
+            Picker(selection: $ChipOMG.BCoatPtA,
                 label: ZStack {
-                    Text("\(kitTypes[ChipTS.BCoatPtA])")
+                    Text("\(kitTypes[ChipOMG.BCoatPtA])")
                         .opacity(1)
                     Rectangle()
                         .fill(Color.gray)
@@ -68,15 +65,12 @@ struct BCoatSelectTS: View {
             }
             .background(Color.gray.opacity(0.2))
             .cornerRadius(5)
-            
-//             .onChange(of: ChipTS.PCoatPtB) { _ in
-//                quant(product: TSB)
-//             }
+
 //            Text("Top Shelf Epoxy® Colorant:")
 //             .fontWeight(.bold)
-//             Picker(selection: $ChipTS.BCoatTSColorant,
+//             Picker(selection: $ChipOMG.BCoatTSColorant,
 //                 label: ZStack {
-//                     Text("\(TSColorantChoices[ChipTS.BCoatTSColorant])")
+//                     Text("\(TSColorantChoices[ChipOMG.BCoatTSColorant])")
 //                         .opacity(1)
 //                     Rectangle()
 //                         .fill(Color.gray)
@@ -107,53 +101,41 @@ struct BCoatSelectTS: View {
                 }
                 
                 HStack {
-                        Text("\(kitCodes[ChipTS.BCoatPtA])")
+                        Text("\(kitCodes[ChipOMG.BCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Select Line Kit - \(kitTypes[ChipTS.BCoatPtA])")
+                    Text("Kretus Select OMG Blocker Kit - \(kitTypes[ChipOMG.BCoatPtA])")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: selectTSABC_TS))")
+                        Text("\(quant(product: selectTSA_OMG))")
                             .font(.caption)
                     }
             
-//                HStack { // Solvent Cleaner
-//                    Text("EX-KSLVCLN-EA")
-//                        .font(.caption)
-//                    Spacer()
-//                    Text("Solvent Cleaner, 32 oz")
-//                        .font(.caption)
-//                    Spacer()
-//                    Text("\(quant(product: selectTSABC_TS))")
-//                        .font(.caption)
-//                }
-//                if ChipTS.BCoatTSColorant != 0 {
+//                if ChipOMG.BCoatTSColorant != 0 {
 //                    HStack {
-//                        Text("\(TSColorantCodes[ChipTS.BCoatTSColorant])")
+//                        Text("\(TSColorantCodes[ChipOMG.BCoatTSColorant])")
 //                            .font(.caption)
 //                        Spacer()
-//                        Text("Top Shelf® Epoxy Colorant: \(TSColorantChoices[ChipTS.BCoatTSColorant]), 16 oz")
+//                        Text("Top Shelf® Epoxy Colorant: \(TSColorantChoices[ChipOMG.BCoatTSColorant]), 16 oz")
 //                            .font(.caption)
 //                        Spacer()
-//                        Text("\(quant(product: TSColorantBC_TS))")
+//                        Text("\(quant(product: TSColorant_TS))")
 //                            .font(.caption)
-//                    }
+//                            }
 //                
-//                    if ChipTS.BCoatTSColorant == 4 { //USED TO ABBREVIATE ENCHANTED GREEN TO FIT ON SCREEN
+//                    if ChipOMG.BCoatTSColorant == 4 { //USED TO ABBREVIATE ENCHANTED GREEN TO FIT ON SCREEN
 //                        HStack {
-//                            Text("\(TSColorantCodes[ChipTS.BCoatTSColorant])")
+//                            Text("\(TSColorantCodes[ChipOMG.BCoatTSColorant])")
 //                                .font(.caption)
 //                            Spacer()
 //                            Text("TSE Colorant:  Ench. Green, 16 oz")
 //                                .font(.caption)
 //                            Spacer()
-//                            Text("\(quant(product: TSColorantBC_TS))")
+//                            Text("\(quant(product: TSColorant_TS))")
 //                                .font(.caption)
-//                        }
-//                    }
-//
-//                    
-//            }
+//                                }
+//                                                    }
+//                                                }
         }
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
             .cornerRadius(5.0)
@@ -161,7 +143,7 @@ struct BCoatSelectTS: View {
             HStack {
                 Text("Add Waste Factor: ")
                 Spacer()
-                TextField("",value: $ChipTS.BCoatWaste, formatter: NumberFormatter())
+                TextField("",value: $ChipOMG.BCoatWaste, formatter: NumberFormatter())
                     .frame(width:30, height:25)
                     .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
                     .cornerRadius(5.0)
@@ -171,14 +153,14 @@ struct BCoatSelectTS: View {
             HStack {
                 Text("Total:")
                 Spacer()
-                Text("\(quant(product: selectTSABC_TS) + ChipTS.BCoatWaste) kit(s)")
+                Text("\(quant(product: selectTSA_OMG) + ChipOMG.BCoatWaste) kit(s)")
             }
             .padding()
         }
     }
 }
 
-struct BCoatSelectTS_Previews: PreviewProvider {
+struct BCoatSelectOMG_Previews: PreviewProvider {
     static var previews: some View {
         BCoatGarage()
     }
