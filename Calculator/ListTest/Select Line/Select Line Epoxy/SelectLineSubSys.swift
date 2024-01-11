@@ -22,6 +22,9 @@ struct SelectLineSubSys: View {
             NavigationLink(destination: SelectPolyView()){
                 Text("Kretus Select Poly")
             }
+            NavigationLink(destination: SelectOMGView()){
+                Text("Kretus Select OMG Blocker")
+            }
 
 
         }.opacity(0.8)
