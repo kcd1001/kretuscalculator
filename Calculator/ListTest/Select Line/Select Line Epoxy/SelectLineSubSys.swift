@@ -28,6 +28,9 @@ struct SelectLineSubSys: View {
             NavigationLink(destination: SelectCoveResinView()) {
                 Text("Kretus Select Cove Resin")
             }
+            NavigationLink(destination: SelectEConductiveView()) {
+                Text("Kretus Select Epoxy Conductive")
+            }
 
 
         }.opacity(0.8)
