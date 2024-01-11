@@ -31,6 +31,15 @@ struct SelectLineSubSys: View {
             NavigationLink(destination: SelectEConductiveView()) {
                 Text("Kretus Select Epoxy Conductive")
             }
+            NavigationLink(destination: SelectEDissipativeView()) {
+                Text("Kretus Select Epoxy Dissipative")
+            }
+            NavigationLink(destination: SelectPConductiveView()) {
+                Text("Kretus Select Poly Conductive")
+            }
+            NavigationLink(destination: SelectPDissipativeView()) {
+                Text("Kretus Select Poly Dissipative")
+            }
 
 
         }.opacity(0.8)

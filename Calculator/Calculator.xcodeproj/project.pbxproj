@@ -31,6 +31,30 @@
 		3068FB392B50898000100412 /* CoatChoicesSelectEConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB312B50898000100412 /* CoatChoicesSelectEConductive.swift */; };
 		3068FB3A2B50898000100412 /* TopCoat1SelectEConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB322B50898000100412 /* TopCoat1SelectEConductive.swift */; };
 		3068FB3B2B50898000100412 /* ChipEConductiveSelectPCoatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB332B50898000100412 /* ChipEConductiveSelectPCoatInfo.swift */; };
+		3068FB452B50909300100412 /* ChipEDissipativeSelectPCoatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB3D2B50909200100412 /* ChipEDissipativeSelectPCoatInfo.swift */; };
+		3068FB462B50909300100412 /* SysSumSelectEDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB3E2B50909200100412 /* SysSumSelectEDissipative.swift */; };
+		3068FB472B50909300100412 /* CoatChoicesSelectEDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB3F2B50909200100412 /* CoatChoicesSelectEDissipative.swift */; };
+		3068FB482B50909300100412 /* PCoatSelectEDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB402B50909200100412 /* PCoatSelectEDissipative.swift */; };
+		3068FB492B50909300100412 /* BCoatSelectEDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB412B50909200100412 /* BCoatSelectEDissipative.swift */; };
+		3068FB4A2B50909300100412 /* SelectEDissipativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB422B50909300100412 /* SelectEDissipativeView.swift */; };
+		3068FB4B2B50909300100412 /* SysOptionsSelectEDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB432B50909300100412 /* SysOptionsSelectEDissipative.swift */; };
+		3068FB4C2B50909300100412 /* TopCoat1SelectEDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB442B50909300100412 /* TopCoat1SelectEDissipative.swift */; };
+		3068FB572B50921700100412 /* SysSumSelectPConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB4F2B50921600100412 /* SysSumSelectPConductive.swift */; };
+		3068FB582B50921700100412 /* CoatChoicesSelectPConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB502B50921600100412 /* CoatChoicesSelectPConductive.swift */; };
+		3068FB592B50921700100412 /* SelectPConductiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB512B50921600100412 /* SelectPConductiveView.swift */; };
+		3068FB5A2B50921700100412 /* SysOptionsSelectPConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB522B50921600100412 /* SysOptionsSelectPConductive.swift */; };
+		3068FB5B2B50921700100412 /* ChipPConductiveSelectPCoatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB532B50921700100412 /* ChipPConductiveSelectPCoatInfo.swift */; };
+		3068FB5C2B50921700100412 /* BCoatSelectPConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB542B50921700100412 /* BCoatSelectPConductive.swift */; };
+		3068FB5D2B50921700100412 /* PCoatSelectPConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB552B50921700100412 /* PCoatSelectPConductive.swift */; };
+		3068FB5E2B50921700100412 /* TopCoat1SelectPConductive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB562B50921700100412 /* TopCoat1SelectPConductive.swift */; };
+		3068FB672B50922000100412 /* SelectPDissipativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB5F2B50922000100412 /* SelectPDissipativeView.swift */; };
+		3068FB682B50922000100412 /* BCoatSelectPDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB602B50922000100412 /* BCoatSelectPDissipative.swift */; };
+		3068FB692B50922000100412 /* SysSumSelectPDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB612B50922000100412 /* SysSumSelectPDissipative.swift */; };
+		3068FB6A2B50922000100412 /* TopCoat1SelectPDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB622B50922000100412 /* TopCoat1SelectPDissipative.swift */; };
+		3068FB6B2B50922000100412 /* PCoatSelectPDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB632B50922000100412 /* PCoatSelectPDissipative.swift */; };
+		3068FB6C2B50922000100412 /* CoatChoicesSelectPDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB642B50922000100412 /* CoatChoicesSelectPDissipative.swift */; };
+		3068FB6D2B50922000100412 /* ChipPDissipativeSelectPCoatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB652B50922000100412 /* ChipPDissipativeSelectPCoatInfo.swift */; };
+		3068FB6E2B50922000100412 /* SysOptionsSelectPDissipative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068FB662B50922000100412 /* SysOptionsSelectPDissipative.swift */; };
 		F601CEF029F98B3500BB769E /* ESDTSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601CEEF29F98B3500BB769E /* ESDTSView.swift */; };
 		F601CEF229F98BB800BB769E /* ESDTSCoatChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601CEF129F98BB800BB769E /* ESDTSCoatChoices.swift */; };
 		F601CEF429F98C2900BB769E /* ThicknessESDTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601CEF329F98C2900BB769E /* ThicknessESDTS.swift */; };
@@ -594,6 +618,30 @@
 		3068FB312B50898000100412 /* CoatChoicesSelectEConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectEConductive.swift; sourceTree = "<group>"; };
 		3068FB322B50898000100412 /* TopCoat1SelectEConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCoat1SelectEConductive.swift; sourceTree = "<group>"; };
 		3068FB332B50898000100412 /* ChipEConductiveSelectPCoatInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipEConductiveSelectPCoatInfo.swift; sourceTree = "<group>"; };
+		3068FB3D2B50909200100412 /* ChipEDissipativeSelectPCoatInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipEDissipativeSelectPCoatInfo.swift; sourceTree = "<group>"; };
+		3068FB3E2B50909200100412 /* SysSumSelectEDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSumSelectEDissipative.swift; sourceTree = "<group>"; };
+		3068FB3F2B50909200100412 /* CoatChoicesSelectEDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectEDissipative.swift; sourceTree = "<group>"; };
+		3068FB402B50909200100412 /* PCoatSelectEDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoatSelectEDissipative.swift; sourceTree = "<group>"; };
+		3068FB412B50909200100412 /* BCoatSelectEDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCoatSelectEDissipative.swift; sourceTree = "<group>"; };
+		3068FB422B50909300100412 /* SelectEDissipativeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEDissipativeView.swift; sourceTree = "<group>"; };
+		3068FB432B50909300100412 /* SysOptionsSelectEDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysOptionsSelectEDissipative.swift; sourceTree = "<group>"; };
+		3068FB442B50909300100412 /* TopCoat1SelectEDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCoat1SelectEDissipative.swift; sourceTree = "<group>"; };
+		3068FB4F2B50921600100412 /* SysSumSelectPConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSumSelectPConductive.swift; sourceTree = "<group>"; };
+		3068FB502B50921600100412 /* CoatChoicesSelectPConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectPConductive.swift; sourceTree = "<group>"; };
+		3068FB512B50921600100412 /* SelectPConductiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPConductiveView.swift; sourceTree = "<group>"; };
+		3068FB522B50921600100412 /* SysOptionsSelectPConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysOptionsSelectPConductive.swift; sourceTree = "<group>"; };
+		3068FB532B50921700100412 /* ChipPConductiveSelectPCoatInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipPConductiveSelectPCoatInfo.swift; sourceTree = "<group>"; };
+		3068FB542B50921700100412 /* BCoatSelectPConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCoatSelectPConductive.swift; sourceTree = "<group>"; };
+		3068FB552B50921700100412 /* PCoatSelectPConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoatSelectPConductive.swift; sourceTree = "<group>"; };
+		3068FB562B50921700100412 /* TopCoat1SelectPConductive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCoat1SelectPConductive.swift; sourceTree = "<group>"; };
+		3068FB5F2B50922000100412 /* SelectPDissipativeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPDissipativeView.swift; sourceTree = "<group>"; };
+		3068FB602B50922000100412 /* BCoatSelectPDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCoatSelectPDissipative.swift; sourceTree = "<group>"; };
+		3068FB612B50922000100412 /* SysSumSelectPDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSumSelectPDissipative.swift; sourceTree = "<group>"; };
+		3068FB622B50922000100412 /* TopCoat1SelectPDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCoat1SelectPDissipative.swift; sourceTree = "<group>"; };
+		3068FB632B50922000100412 /* PCoatSelectPDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoatSelectPDissipative.swift; sourceTree = "<group>"; };
+		3068FB642B50922000100412 /* CoatChoicesSelectPDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectPDissipative.swift; sourceTree = "<group>"; };
+		3068FB652B50922000100412 /* ChipPDissipativeSelectPCoatInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipPDissipativeSelectPCoatInfo.swift; sourceTree = "<group>"; };
+		3068FB662B50922000100412 /* SysOptionsSelectPDissipative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysOptionsSelectPDissipative.swift; sourceTree = "<group>"; };
 		F601CEEF29F98B3500BB769E /* ESDTSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESDTSView.swift; sourceTree = "<group>"; };
 		F601CEF129F98BB800BB769E /* ESDTSCoatChoices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESDTSCoatChoices.swift; sourceTree = "<group>"; };
 		F601CEF329F98C2900BB769E /* ThicknessESDTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThicknessESDTS.swift; sourceTree = "<group>"; };
@@ -1189,6 +1237,51 @@
 				3068FB322B50898000100412 /* TopCoat1SelectEConductive.swift */,
 			);
 			path = "Select Line Epoxy Conductive";
+			sourceTree = "<group>";
+		};
+		3068FB3C2B508FFA00100412 /* Select Line Epoxy Dissipative */ = {
+			isa = PBXGroup;
+			children = (
+				3068FB412B50909200100412 /* BCoatSelectEDissipative.swift */,
+				3068FB3D2B50909200100412 /* ChipEDissipativeSelectPCoatInfo.swift */,
+				3068FB3F2B50909200100412 /* CoatChoicesSelectEDissipative.swift */,
+				3068FB402B50909200100412 /* PCoatSelectEDissipative.swift */,
+				3068FB422B50909300100412 /* SelectEDissipativeView.swift */,
+				3068FB432B50909300100412 /* SysOptionsSelectEDissipative.swift */,
+				3068FB3E2B50909200100412 /* SysSumSelectEDissipative.swift */,
+				3068FB442B50909300100412 /* TopCoat1SelectEDissipative.swift */,
+			);
+			path = "Select Line Epoxy Dissipative";
+			sourceTree = "<group>";
+		};
+		3068FB4D2B50917B00100412 /* Select Line Poly Conductive */ = {
+			isa = PBXGroup;
+			children = (
+				3068FB542B50921700100412 /* BCoatSelectPConductive.swift */,
+				3068FB532B50921700100412 /* ChipPConductiveSelectPCoatInfo.swift */,
+				3068FB502B50921600100412 /* CoatChoicesSelectPConductive.swift */,
+				3068FB552B50921700100412 /* PCoatSelectPConductive.swift */,
+				3068FB512B50921600100412 /* SelectPConductiveView.swift */,
+				3068FB522B50921600100412 /* SysOptionsSelectPConductive.swift */,
+				3068FB4F2B50921600100412 /* SysSumSelectPConductive.swift */,
+				3068FB562B50921700100412 /* TopCoat1SelectPConductive.swift */,
+			);
+			path = "Select Line Poly Conductive";
+			sourceTree = "<group>";
+		};
+		3068FB4E2B50919800100412 /* Select Line Poly Dissipative */ = {
+			isa = PBXGroup;
+			children = (
+				3068FB602B50922000100412 /* BCoatSelectPDissipative.swift */,
+				3068FB652B50922000100412 /* ChipPDissipativeSelectPCoatInfo.swift */,
+				3068FB642B50922000100412 /* CoatChoicesSelectPDissipative.swift */,
+				3068FB632B50922000100412 /* PCoatSelectPDissipative.swift */,
+				3068FB5F2B50922000100412 /* SelectPDissipativeView.swift */,
+				3068FB662B50922000100412 /* SysOptionsSelectPDissipative.swift */,
+				3068FB612B50922000100412 /* SysSumSelectPDissipative.swift */,
+				3068FB622B50922000100412 /* TopCoat1SelectPDissipative.swift */,
+			);
+			path = "Select Line Poly Dissipative";
 			sourceTree = "<group>";
 		};
 		F601CEED29F98AF700BB769E /* ESD */ = {
@@ -1904,6 +1997,9 @@
 		F6BCD3282A27C73B00B6960A /* Select Line */ = {
 			isa = PBXGroup;
 			children = (
+				3068FB4E2B50919800100412 /* Select Line Poly Dissipative */,
+				3068FB4D2B50917B00100412 /* Select Line Poly Conductive */,
+				3068FB3C2B508FFA00100412 /* Select Line Epoxy Dissipative */,
 				3068FB2B2B5088D600100412 /* Select Line Epoxy Conductive */,
 				3068FB1A2B507D1A00100412 /* Select Line Cove Resin Kit */,
 				3046A43E2B4F36D60007602F /* Select Line OMG Blocker */,
@@ -2514,6 +2610,7 @@
 				F6E2A6E529110D7600F23EF4 /* IndustrialSandEpoxySubSys.swift in Sources */,
 				F6C7097E28584B9300ED4EFA /* MVRCoatEpoxyMVR.swift in Sources */,
 				F655614F292C9651004796CA /* CoatChoicesSandSL.swift in Sources */,
+				3068FB492B50909300100412 /* BCoatSelectEDissipative.swift in Sources */,
 				F6E2A6F92911194300F23EF4 /* IndustrialSandUPCSubSys.swift in Sources */,
 				F60A68B028B5A38E005C81C7 /* BCoatQuartzDB.swift in Sources */,
 				F6E2A6CA2910F79500F23EF4 /* BroadcastSandSG.swift in Sources */,
@@ -2539,6 +2636,7 @@
 				F6E2A6B72910DF4700F23EF4 /* BroadcastSandDBTSToggle.swift in Sources */,
 				F60A68AE28B5A34C005C81C7 /* BCoatToggle.swift in Sources */,
 				F6CC2A3A26011DF10087A4E6 /* SysSummaryConcSL.swift in Sources */,
+				3068FB682B50922000100412 /* BCoatSelectPDissipative.swift in Sources */,
 				F62107CB2A37B4C5004D4531 /* BroadcastSelectTS.swift in Sources */,
 				F68C505A2628E0BB003E2FB4 /* ColorantChoicesPT.swift in Sources */,
 				F6E2A71029146C1E00F23EF4 /* SandTopCoatDBTSSum.swift in Sources */,
@@ -2596,6 +2694,7 @@
 				F601CF0129F9BC2900BB769E /* ESDRCView.swift in Sources */,
 				F6CC2AB92614FFA90087A4E6 /* SysSummaryConcTT.swift in Sources */,
 				F68C5093262F708A003E2FB4 /* TCoatUV.swift in Sources */,
+				3068FB452B50909300100412 /* ChipEDissipativeSelectPCoatInfo.swift in Sources */,
 				3068FB352B50898000100412 /* BCoatSelectEConductive.swift in Sources */,
 				F68A00EE2988CB640000C3FA /* TSMetallicBCoat.swift in Sources */,
 				F65745A22950E3B8009C2383 /* Broadcast2SandDBRCToggle.swift in Sources */,
@@ -2617,6 +2716,7 @@
 				F68C50AF262F77BF003E2FB4 /* ThicknessUV.swift in Sources */,
 				F65C326A275563DC00A06F90 /* BCoatPA.swift in Sources */,
 				F6CC2A5F260E459A0087A4E6 /* TCoatMF.swift in Sources */,
+				3068FB6A2B50922000100412 /* TopCoat1SelectPDissipative.swift in Sources */,
 				F67238F027F64BB600822968 /* ChipSLBroadcastInfo.swift in Sources */,
 				F601CF1C29F9D02900BB769E /* ESDSLSysSummary.swift in Sources */,
 				F6B233D92B4E0B2F00258486 /* SelectPolyView.swift in Sources */,
@@ -2646,6 +2746,7 @@
 				F6E2A6D02910F87200F23EF4 /* IndustrialSandSGSysSummary.swift in Sources */,
 				F6C7099B287E09A200ED4EFA /* CoatChoicesEpoxyCoveChip.swift in Sources */,
 				F6E2A6BB2910DFDD00F23EF4 /* TCoatSandDBTSToggle.swift in Sources */,
+				3068FB462B50909300100412 /* SysSumSelectEDissipative.swift in Sources */,
 				F6D0CD1B2910D08E0060281E /* CoatChoicesSandDBTS.swift in Sources */,
 				F6CC2A1B26011A780087A4E6 /* TCoatSL.swift in Sources */,
 				F65745952950E21C009C2383 /* Broadcast2SandDBRCSum.swift in Sources */,
@@ -2721,6 +2822,7 @@
 				F64542A226E08859000D6AFD /* SysSummarPCBC.swift in Sources */,
 				F6D0CD1D2910D0A60060281E /* ThicknessSandDBTS.swift in Sources */,
 				F6404FDD28DC1D5600A5BF77 /* PCoatQuartzTT.swift in Sources */,
+				3068FB5C2B50921700100412 /* BCoatSelectPConductive.swift in Sources */,
 				F601CEF229F98BB800BB769E /* ESDTSCoatChoices.swift in Sources */,
 				F6E2A6EB2911132300F23EF4 /* PCoatIndustrialSandRC.swift in Sources */,
 				F6E2A70A29146A5D00F23EF4 /* SandBCoat2DBTSSum.swift in Sources */,
@@ -2733,6 +2835,7 @@
 				F6B233DB2B4E0B7600258486 /* SysOptionsSelectPoly.swift in Sources */,
 				F6E2A6DF29110C6100F23EF4 /* IndustrialSandTGTopCoat.swift in Sources */,
 				F6E2AB032885F57100EBB8CF /* BCoatCoveColorChipInfo.swift in Sources */,
+				3068FB5A2B50921700100412 /* SysOptionsSelectPConductive.swift in Sources */,
 				F6693EB629DB9F290045F5CB /* SandDBTSBCoatInfo.swift in Sources */,
 				3068FB162B4F38B900100412 /* CoatChoicesSelectOMG.swift in Sources */,
 				F65745912950E1A1009C2383 /* BCoat2IndustrialSandDBRCSum.swift in Sources */,
@@ -2740,6 +2843,7 @@
 				F690D87128DC4AF90069D752 /* BCoatQuartzMF.swift in Sources */,
 				F65C32832761892700A06F90 /* BCoatRCUV.swift in Sources */,
 				F6CC2A2526011ACD0087A4E6 /* Coat ChoicesSL.swift in Sources */,
+				3068FB6B2B50922000100412 /* PCoatSelectPDissipative.swift in Sources */,
 				F6E2AB1D28AD83D500EBB8CF /* ColorQuartzTSSysSummary.swift in Sources */,
 				F65C32812761825A00A06F90 /* ThicknessRCUV.swift in Sources */,
 				F67238E227F5FC2700822968 /* ChipRCBroadcastInfo.swift in Sources */,
@@ -2753,6 +2857,8 @@
 				F68E90D825B2332D00691A11 /* ColorantSwitch.swift in Sources */,
 				F65C32722755698400A06F90 /* SysSummaryPA.swift in Sources */,
 				F67238EA27F6480A00822968 /* ChipTSPrimeCoatInfo.swift in Sources */,
+				3068FB672B50922000100412 /* SelectPDissipativeView.swift in Sources */,
+				3068FB6E2B50922000100412 /* SysOptionsSelectPDissipative.swift in Sources */,
 				F63B137B2628A35D003D87BB /* UPCTTInfo.swift in Sources */,
 				F6E2A6B32910DEA300F23EF4 /* PCoatSandDBTSToggle.swift in Sources */,
 				F6E2A6ED291114DB00F23EF4 /* BCoatIndustrialSandRC.swift in Sources */,
@@ -2760,6 +2866,7 @@
 				3068FB2A2B5081D500100412 /* SysSumSelectCoveResin.swift in Sources */,
 				F6F4A4E4253E360700D919C4 /* ContentView.swift in Sources */,
 				F6E2AAFB2885F33400EBB8CF /* BCoatCoveColorInfo.swift in Sources */,
+				3068FB472B50909300100412 /* CoatChoicesSelectEDissipative.swift in Sources */,
 				F62107C72A27EF3A004D4531 /* ChipTSSelectBCoatInfo.swift in Sources */,
 				F65C327D27617D8500A06F90 /* PCoatRCUV.swift in Sources */,
 				F6CC2A862614FE4F0087A4E6 /* BCoatSwitchTT.swift in Sources */,
@@ -2862,7 +2969,9 @@
 				F655612C292C8BCC004796CA /* IndustrialSandTTView.swift in Sources */,
 				F68C5084262F7044003E2FB4 /* BCoatSwitchUV.swift in Sources */,
 				F6CC2A55260E44300087A4E6 /* SysSummaryMF.swift in Sources */,
+				3068FB5E2B50921700100412 /* TopCoat1SelectPConductive.swift in Sources */,
 				F61C55A7280606B100344693 /* CoatChoicesSplashFloorTS.swift in Sources */,
+				3068FB6C2B50922000100412 /* CoatChoicesSelectPDissipative.swift in Sources */,
 				F6CC2A07260119B60087A4E6 /* BCoatSL.swift in Sources */,
 				F65C32682755608D00A06F90 /* SysOptionsPA.swift in Sources */,
 				F601CF0729F9BC8400BB769E /* MVRCoatESDRC.swift in Sources */,
@@ -2891,6 +3000,7 @@
 				F68A01052988DC6A0000C3FA /* CoatChoicesTSMetallicUV.swift in Sources */,
 				F68C50A5262F7384003E2FB4 /* SysSummaryConcUV.swift in Sources */,
 				F60A68C228B5AEDC005C81C7 /* ColorQuartzDBTopCoat.swift in Sources */,
+				3068FB6D2B50922000100412 /* ChipPDissipativeSelectPCoatInfo.swift in Sources */,
 				F6D0CD1228F533D50060281E /* CoatChoicesSandTS.swift in Sources */,
 				F6CC2ABE2614FFCB0087A4E6 /* ThicknessTT.swift in Sources */,
 				F6E2A6C22910F60000F23EF4 /* IndustrialSandSGView.swift in Sources */,
@@ -2906,6 +3016,7 @@
 				F6CC2AA22614FEE90087A4E6 /* TCoatSwitchTT.swift in Sources */,
 				F657458A2950DE6D009C2383 /* IndustrialSandDBRCTopCoat.swift in Sources */,
 				F6ADE2582A44D0BB00B5C2F5 /* SysOptionsSelectTS.swift in Sources */,
+				3068FB692B50922000100412 /* SysSumSelectPDissipative.swift in Sources */,
 				F69FB8A6265448400051E077 /* ColorChipSubSys.swift in Sources */,
 				F68C50AA262F777E003E2FB4 /* UPCUVInfo.swift in Sources */,
 				F69E79E327CDC3BE0073624D /* ThicknessChipPA.swift in Sources */,
@@ -2922,7 +3033,9 @@
 				F6404FE728DC290600A5BF77 /* ColorQuartzTTTopCoat.swift in Sources */,
 				F68C5098262F709D003E2FB4 /* TCoatSwitchUV.swift in Sources */,
 				F69FB8C026544ACE0051E077 /* BCoatGarage.swift in Sources */,
+				3068FB592B50921700100412 /* SelectPConductiveView.swift in Sources */,
 				F6693EBC29DBA5B20045F5CB /* UPCMVRCoatInfo.swift in Sources */,
+				3068FB582B50921700100412 /* CoatChoicesSelectPConductive.swift in Sources */,
 				F68A00FD2988DA880000C3FA /* TSMetallicUVBCoat.swift in Sources */,
 				3068FB282B5081D500100412 /* CoatChoicesSelectCoveResin.swift in Sources */,
 				3068FB272B5081D500100412 /* SelectCoveResinView.swift in Sources */,
@@ -2933,6 +3046,7 @@
 				F60A68AC28B5A2D8005C81C7 /* PCoatToggle.swift in Sources */,
 				F639C17D279F1197003B5496 /* TopCoat1ChipSL.swift in Sources */,
 				F69A6B8A2563147B000AFFA5 /* TopCoatInfo.swift in Sources */,
+				3068FB4B2B50909300100412 /* SysOptionsSelectEDissipative.swift in Sources */,
 				F6D0CD232910D33D0060281E /* BCoat2IndustrialSandDBTS.swift in Sources */,
 				F6C709872873668300ED4EFA /* CoatChoicesEpoxyCove.swift in Sources */,
 				F68A00EA2988C57C0000C3FA /* ThicknessTSMetallic.swift in Sources */,
@@ -2958,8 +3072,10 @@
 				F6693EB029DB833B0045F5CB /* MVRCoatSandTG.swift in Sources */,
 				F6E2A6B92910DF8C00F23EF4 /* CapCoatSandDBTSToggle.swift in Sources */,
 				F63B136C26260F56003D87BB /* ContactInfo.swift in Sources */,
+				3068FB572B50921700100412 /* SysSumSelectPConductive.swift in Sources */,
 				F6CC2A64260E46700087A4E6 /* TCoatSwitchMF.swift in Sources */,
 				F657459E2950E361009C2383 /* BCoatSandDBRCToggle.swift in Sources */,
+				3068FB5B2B50921700100412 /* ChipPConductiveSelectPCoatInfo.swift in Sources */,
 				F65C326C2755649200A06F90 /* BCoatPicker.swift in Sources */,
 				F60A68C428B5AFA7005C81C7 /* CapCoatToggle.swift in Sources */,
 				F6CC2A8B2614FE770087A4E6 /* PCoatTT.swift in Sources */,
@@ -2986,6 +3102,7 @@
 				F6CC2A3526011DE20087A4E6 /* SysSummarySL.swift in Sources */,
 				F6404FD428DC1AD300A5BF77 /* QuartzRCBCoatInfo.swift in Sources */,
 				3068FB172B4F38B900100412 /* SysOptionsSelectOMG.swift in Sources */,
+				3068FB4A2B50909300100412 /* SelectEDissipativeView.swift in Sources */,
 				F628B8B227B8695200F29268 /* SysSummaryChipRC.swift in Sources */,
 				F657457C2950D97F009C2383 /* IndustrialSandDBRCView.swift in Sources */,
 				F6404FC728D9500800A5BF77 /* BCoatQuartzRC.swift in Sources */,
@@ -3001,6 +3118,7 @@
 				F61C55A32806042D00344693 /* SplashFloorTSCoat1.swift in Sources */,
 				F6D0CD0C28F52D570060281E /* ThicknessSandTS.swift in Sources */,
 				F6404FDA28DC1CF700A5BF77 /* CoatChoicesQuartzTT.swift in Sources */,
+				3068FB5D2B50921700100412 /* PCoatSelectPConductive.swift in Sources */,
 				F628DCCA28109C6C007CC441 /* SplashFloorTSCoat2.swift in Sources */,
 				F662631827432D3E00BB5017 /* BroadcastTS.swift in Sources */,
 				F6E2AB1728985ED500EBB8CF /* ColorQuartzTSTopCoat.swift in Sources */,
@@ -3013,6 +3131,7 @@
 				F628B8A627B85DB800F29268 /* CoatChoicesChipRC.swift in Sources */,
 				F601CF352A042E4600BB769E /* ESDSLDissCoatChoices.swift in Sources */,
 				F6E2A6C42910F63A00F23EF4 /* ThicknessSandSG.swift in Sources */,
+				3068FB4C2B50909300100412 /* TopCoat1SelectEDissipative.swift in Sources */,
 				F6E2A6E329110D1E00F23EF4 /* IndustrialSandtGSysSummary.swift in Sources */,
 				F6C709A82880F03900ED4EFA /* CoveColorQuartzView.swift in Sources */,
 				F6E2A6B02910D8FA00F23EF4 /* IndustrialSandDBTSTopCoat.swift in Sources */,
@@ -3036,6 +3155,7 @@
 				F655615E292C98DC004796CA /* IndustrialSandMFTopCoat.swift in Sources */,
 				F6E2A6AC2910D53600F23EF4 /* BroadcastSandDBTS.swift in Sources */,
 				F6C709892873672600ED4EFA /* EpoxyCovePCoat.swift in Sources */,
+				3068FB482B50909300100412 /* PCoatSelectEDissipative.swift in Sources */,
 				F60A68F028B82AAD005C81C7 /* QuartzTSBCoatInfo.swift in Sources */,
 				F65745AF296C89C3009C2383 /* ThicknessUPCCove.swift in Sources */,
 				F601CF1829F9CE8E00BB769E /* BroadcastESDSL.swift in Sources */,
