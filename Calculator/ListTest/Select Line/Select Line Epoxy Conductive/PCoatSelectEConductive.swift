@@ -21,9 +21,9 @@ struct PCoatSelectEConductive: View {
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-10402EZS", "KIT-10403EZS", "KIT-10404EZS", "KIT-10405EZS", "KIT-10406EZS", "KIT-10407EZS"]
     
     let TSColorantChoices = ["No Color (pre-pigmented Part A)", "Beige", "Black", "Dark Gray", "Enchanted Green", "Handicap Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
@@ -104,7 +104,7 @@ struct PCoatSelectEConductive: View {
                         Text("\(kitCodes[ChipEConductive.PCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Kretus Select EConductive Kit - \(kitTypes[ChipEConductive.PCoatPtA])")
+                    Text("Kretus Select Epoxy Conductive Kit - \(kitTypes[ChipEConductive.PCoatPtA])")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: selectTSA_EConductive))")

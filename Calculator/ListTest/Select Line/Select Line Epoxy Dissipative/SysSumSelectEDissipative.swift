@@ -60,9 +60,9 @@ struct SysSumPCBCSelectEDissipative: View {
     var TextureOptions = ["No Texture", "Anti-Slip Tex 50"]
 
     
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-10302EZS", "KIT-10303EZS", "KIT-10304EZS", "KIT-10305EZS", "KIT-10306EZS", "KIT-10307EZS"]
 
     var ChipSizes = ["1/4\"", "1/8\""]
 
@@ -131,7 +131,7 @@ struct SysSumPCBCSelectEDissipative: View {
                     Text("\(kitCodes[ChipEDissipative.PCoatPtA])")
                         .font(.caption)
                     Spacer()
-                    Text("Select Line Kit - \(kitTypes[ChipEDissipative.PCoatPtA])")
+                    Text("Kretus Select Epoxy Dissipative Kit - \(kitTypes[ChipEDissipative.PCoatPtA])")
                         .font(.caption)
                     Spacer()
                     Text("\(quant(product: selectTSA_TS) + ChipEDissipative.PCoatWaste)")
@@ -231,7 +231,7 @@ struct SysSumPCBCSelectEDissipative: View {
                 Text("\(kitCodes[ChipEDissipative.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("Kretus Select Poly Kit - \(kitTypes[ChipEDissipative.BCoatPtA])")
+                Text("Kretus Select Epoxy Dissipative Kit - \(kitTypes[ChipEDissipative.BCoatPtA])")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: selectTSA_TS))")
