@@ -60,7 +60,7 @@ struct SysSumPCBCSelectCoveResin: View {
     var TextureOptions = ["No Texture", "Anti-Slip Tex 50"]
 
     
-    let kitTypes = ["TH"]
+    let kitTypes = ["Clear - TH"]
     
     let kitCodes = ["KIT-10103TH01"]
 

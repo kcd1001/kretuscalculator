@@ -21,7 +21,7 @@ struct BCoatSelectCoveResin: View {
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["TH"]
+    let kitTypes = ["Clear - TH"]
     
     let kitCodes = ["KIT-10103TH01"]
     
