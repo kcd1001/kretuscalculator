@@ -21,9 +21,9 @@ struct PCoatSelectCoveResin: View {
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Clear - TH"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-10103TH01"]
     
     let TSColorantChoices = ["No Color (pre-pigmented Part A)", "Beige", "Black", "Dark Gray", "Enchanted Green", "Handicap Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
@@ -104,7 +104,7 @@ struct PCoatSelectCoveResin: View {
                         Text("\(kitCodes[ChipCoveResin.PCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Kretus Select CoveResin Kit - \(kitTypes[ChipCoveResin.PCoatPtA])")
+                    Text("Kretus Select Cove Resin Kit - \(kitTypes[ChipCoveResin.PCoatPtA])")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: selectTSA_CoveResin))")
