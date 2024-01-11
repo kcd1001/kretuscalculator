@@ -60,9 +60,9 @@ struct SysSumPCBCSelectPConductive: View {
     var TextureOptions = ["No Texture", "Anti-Slip Tex 50"]
 
     
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-20402EZS", "KIT-20403EZS", "KIT-20404EZS", "KIT-20405EZS", "KIT-20406EZS", "KIT-20407EZS"]
 
     var ChipSizes = ["1/4\"", "1/8\""]
 
@@ -131,7 +131,7 @@ struct SysSumPCBCSelectPConductive: View {
                     Text("\(kitCodes[ChipPConductive.PCoatPtA])")
                         .font(.caption)
                     Spacer()
-                    Text("Select Line Kit - \(kitTypes[ChipPConductive.PCoatPtA])")
+                    Text("Kretus Select Poly Conductive Kit - \(kitTypes[ChipPConductive.PCoatPtA])")
                         .font(.caption)
                     Spacer()
                     Text("\(quant(product: selectTSA_TS) + ChipPConductive.PCoatWaste)")
@@ -231,7 +231,7 @@ struct SysSumPCBCSelectPConductive: View {
                 Text("\(kitCodes[ChipPConductive.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("Kretus Select Poly Kit - \(kitTypes[ChipPConductive.BCoatPtA])")
+                Text("Kretus Select Poly Conductive Kit - \(kitTypes[ChipPConductive.BCoatPtA])")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: selectTSA_TS))")

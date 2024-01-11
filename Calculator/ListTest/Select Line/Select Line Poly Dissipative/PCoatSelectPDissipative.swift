@@ -21,9 +21,9 @@ struct PCoatSelectPDissipative: View {
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-20302EZS", "KIT-20303EZS", "KIT-20304EZS", "KIT-20305EZS", "KIT-20306EZS", "KIT-20307EZS"]
     
     let TSColorantChoices = ["No Color (pre-pigmented Part A)", "Beige", "Black", "Dark Gray", "Enchanted Green", "Handicap Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
@@ -104,7 +104,7 @@ struct PCoatSelectPDissipative: View {
                         Text("\(kitCodes[ChipPDissipative.PCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Kretus Select PDissipative Kit - \(kitTypes[ChipPDissipative.PCoatPtA])")
+                    Text("Kretus Select Poly Dissipative Kit - \(kitTypes[ChipPDissipative.PCoatPtA])")
                             .font(.caption)
                         Spacer()
                         Text("\(quant(product: selectTSA_PDissipative))")
