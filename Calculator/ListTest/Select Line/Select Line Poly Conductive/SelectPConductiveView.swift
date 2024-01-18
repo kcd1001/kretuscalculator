@@ -25,7 +25,7 @@ struct SelectPConductiveView: View {
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectPConductive()
-                }.navigationBarTitle("Kretus Select Epoxy Conductive", displayMode: .inline)
+                }.navigationBarTitle("Kretus Select Poly Conductive", displayMode: .inline)
             }
             .environmentObject(chip)
             .environmentObject(Broadcast)

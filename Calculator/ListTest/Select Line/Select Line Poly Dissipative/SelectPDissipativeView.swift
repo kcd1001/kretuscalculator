@@ -25,7 +25,7 @@ struct SelectPDissipativeView: View {
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectPDissipative()
-                }.navigationBarTitle("Kretus Select Epoxy Dissipative", displayMode: .inline)
+                }.navigationBarTitle("Kretus Select Poly Dissipative", displayMode: .inline)
             }
             .environmentObject(chip)
             .environmentObject(Broadcast)
