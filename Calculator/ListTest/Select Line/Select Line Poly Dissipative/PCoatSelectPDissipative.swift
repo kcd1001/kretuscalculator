@@ -10,20 +10,20 @@ import Combine
 
 
 
-struct PCoatSelectOMG: View {
+struct PCoatSelectPDissipative: View {
     
  
-    @EnvironmentObject var ChipOMG : ColorChipValuesSelectOMG //Used for coat selections
-    @EnvironmentObject var selectTSA_OMG : stats //Used for system stats (mixRat,CovRate, etc)
-    @EnvironmentObject var selectTSB_OMG : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var ChipPDissipative : ColorChipValuesSelectPDissipative //Used for coat selections
+    @EnvironmentObject var selectTSA_PDissipative : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var selectTSB_PDissipative : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var TSColorant_TS : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var SolventCleaner : stats 
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-20302EZS", "KIT-20303EZS", "KIT-20304EZS", "KIT-20305EZS", "KIT-20306EZS", "KIT-20307EZS"]
     
     let TSColorantChoices = ["No Color (pre-pigmented Part A)", "Beige", "Black", "Dark Gray", "Enchanted Green", "Handicap Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
@@ -43,14 +43,14 @@ struct PCoatSelectOMG: View {
                 Text("Coating Thickness: TBD")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipOMGSelectPCoatInfo()
+                ChipPDissipativeSelectPCoatInfo()
             }
             .padding()
            Text("Choose your color:")
             .fontWeight(.bold)
-            Picker(selection: $ChipOMG.PCoatPtA,
+            Picker(selection: $ChipPDissipative.PCoatPtA,
                 label: ZStack {
-                    Text("\(kitTypes[ChipOMG.PCoatPtA])")
+                    Text("\(kitTypes[ChipPDissipative.PCoatPtA])")
                         .opacity(1)
                     Rectangle()
                         .fill(Color.gray)
@@ -68,9 +68,9 @@ struct PCoatSelectOMG: View {
 
 //            Text("Top Shelf Epoxy® Colorant:")
 //             .fontWeight(.bold)
-//             Picker(selection: $ChipOMG.PCoatTSColorant,
+//             Picker(selection: $ChipPDissipative.PCoatTSColorant,
 //                 label: ZStack {
-//                     Text("\(TSColorantChoices[ChipOMG.PCoatTSColorant])")
+//                     Text("\(TSColorantChoices[ChipPDissipative.PCoatTSColorant])")
 //                         .opacity(1)
 //                     Rectangle()
 //                         .fill(Color.gray)
@@ -101,31 +101,31 @@ struct PCoatSelectOMG: View {
                 }
                 
                 HStack {
-                        Text("\(kitCodes[ChipOMG.PCoatPtA])")
+                        Text("\(kitCodes[ChipPDissipative.PCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Kretus Select OMG Blocker Kit - \(kitTypes[ChipOMG.PCoatPtA])")
+                    Text("Kretus Select Poly Dissipative Kit - \(kitTypes[ChipPDissipative.PCoatPtA])")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: selectTSA_OMG))")
+                        Text("\(quant(product: selectTSA_PDissipative))")
                             .font(.caption)
                     }
             
-//                if ChipOMG.PCoatTSColorant != 0 {
+//                if ChipPDissipative.PCoatTSColorant != 0 {
 //                    HStack {
-//                        Text("\(TSColorantCodes[ChipOMG.PCoatTSColorant])")
+//                        Text("\(TSColorantCodes[ChipPDissipative.PCoatTSColorant])")
 //                            .font(.caption)
 //                        Spacer()
-//                        Text("Top Shelf® Epoxy Colorant: \(TSColorantChoices[ChipOMG.PCoatTSColorant]), 16 oz")
+//                        Text("Top Shelf® Epoxy Colorant: \(TSColorantChoices[ChipPDissipative.PCoatTSColorant]), 16 oz")
 //                            .font(.caption)
 //                        Spacer()
 //                        Text("\(quant(product: TSColorant_TS))")
 //                            .font(.caption)
 //                            }
 //                
-//                    if ChipOMG.PCoatTSColorant == 4 { //USED TO ABBREVIATE ENCHANTED GREEN TO FIT ON SCREEN
+//                    if ChipPDissipative.PCoatTSColorant == 4 { //USED TO ABBREVIATE ENCHANTED GREEN TO FIT ON SCREEN
 //                        HStack {
-//                            Text("\(TSColorantCodes[ChipOMG.PCoatTSColorant])")
+//                            Text("\(TSColorantCodes[ChipPDissipative.PCoatTSColorant])")
 //                                .font(.caption)
 //                            Spacer()
 //                            Text("TSE Colorant:  Ench. Green, 16 oz")
@@ -143,7 +143,7 @@ struct PCoatSelectOMG: View {
             HStack {
                 Text("Add Waste Factor: ")
                 Spacer()
-                TextField("",value: $ChipOMG.PCoatWaste, formatter: NumberFormatter())
+                TextField("",value: $ChipPDissipative.PCoatWaste, formatter: NumberFormatter())
                     .frame(width:30, height:25)
                     .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
                     .cornerRadius(5.0)
@@ -153,14 +153,14 @@ struct PCoatSelectOMG: View {
             HStack {
                 Text("Total:")
                 Spacer()
-                Text("\(quant(product: selectTSA_OMG) + ChipOMG.PCoatWaste) kit(s)")
+                Text("\(quant(product: selectTSA_PDissipative) + ChipPDissipative.PCoatWaste) kit(s)")
             }
             .padding()
         }
     }
 }
 
-struct PCoatSelectOMG_Previews: PreviewProvider {
+struct PCoatSelectPDissipative_Previews: PreviewProvider {
     static var previews: some View {
         BCoatGarage()
     }

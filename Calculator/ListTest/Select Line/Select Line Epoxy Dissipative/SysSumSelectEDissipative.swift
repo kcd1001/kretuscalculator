@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SysSumPCBCSelectOMG: View {
-    @EnvironmentObject var ChipOMG : ColorChipValuesSelectOMG //Used for coat selections
+struct SysSumPCBCSelectEDissipative: View {
+    @EnvironmentObject var ChipEDissipative : ColorChipValuesSelectEDissipative //Used for coat selections
     @EnvironmentObject var Chip : ChipOptions //Used for checkbox options
     @EnvironmentObject var TSA_TS : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var TSB_TS : stats //Used for system stats (mixRat,CovRate, etc)
@@ -60,9 +60,9 @@ struct SysSumPCBCSelectOMG: View {
     var TextureOptions = ["No Texture", "Anti-Slip Tex 50"]
 
     
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-10302EZS", "KIT-10303EZS", "KIT-10304EZS", "KIT-10305EZS", "KIT-10306EZS", "KIT-10307EZS"]
 
     var ChipSizes = ["1/4\"", "1/8\""]
 
@@ -82,11 +82,11 @@ struct SysSumPCBCSelectOMG: View {
     
     func checkTCoatCodes() -> Void {
         
-        if ChipOMG.TCoat1Hardener == 0 {
+        if ChipEDissipative.TCoat1Hardener == 0 {
             TCoat1PtACode = "EX-KPLY85AZ-01"
             TCoat1PtBCode = "EX-KPLY85B-01"
         }
-        else if ChipOMG.TCoat1Hardener == 1 {
+        else if ChipEDissipative.TCoat1Hardener == 1 {
             TCoat1PtACode = "EX-KPLY85AF-01"
             TCoat1PtBCode = "EX-KPLY85B-01"
             
@@ -95,11 +95,11 @@ struct SysSumPCBCSelectOMG: View {
         
         //END OF TCOAT1
         
-        if ChipOMG.TCoat2Hardener == 0 {
+        if ChipEDissipative.TCoat2Hardener == 0 {
             TCoat2PtACode = "EX-KPLY85AZ-01"
             TCoat2PtBCode = "EX-KPLY85B-01"
         }
-        else if ChipOMG.TCoat2Hardener == 1 {
+        else if ChipEDissipative.TCoat2Hardener == 1 {
             TCoat2PtACode = "EX-KPLY85AF-01"
             TCoat2PtBCode = "EX-KPLY85B-01"
             
@@ -128,13 +128,13 @@ struct SysSumPCBCSelectOMG: View {
                 }
                 
                 HStack {
-                    Text("\(kitCodes[ChipOMG.PCoatPtA])")
+                    Text("\(kitCodes[ChipEDissipative.PCoatPtA])")
                         .font(.caption)
                     Spacer()
-                    Text("Kretus Select OMG Blocker Kit - \(kitTypes[ChipOMG.PCoatPtA])")
+                    Text("Kretus Select Epoxy Dissipative Kit - \(kitTypes[ChipEDissipative.PCoatPtA])")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: selectTSA_TS) + ChipOMG.PCoatWaste)")
+                    Text("\(quant(product: selectTSA_TS) + ChipEDissipative.PCoatWaste)")
                         .font(.caption)
                 }
                 
@@ -146,7 +146,7 @@ struct SysSumPCBCSelectOMG: View {
 //                    Text("Solvent Cleaner, 32 oz")
 //                        .font(.caption)
 //                    Spacer()
-//                    Text("\(quant(product: selectTSA_TS) + ChipOMG.PCoatWaste)")
+//                    Text("\(quant(product: selectTSA_TS) + ChipEDissipative.PCoatWaste)")
 //                        .font(.caption)
 //                }
 
@@ -174,34 +174,34 @@ struct SysSumPCBCSelectOMG: View {
                         .font(.caption)
                 }
                 HStack{ // Part A
-                Text("\(typesACodes[ChipOMG.MVRPtA])")
+                Text("\(typesACodes[ChipEDissipative.MVRPtA])")
                     .font(.caption)
                 Spacer()
-                Text("TSE Part A: \(typesA[ChipOMG.MVRPtA]), 1 gal")
+                Text("TSE Part A: \(typesA[ChipEDissipative.MVRPtA]), 1 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSMvr) + ChipOMG.MVRWaste)")
+                Text("\(quant(product: TSMvr) + ChipEDissipative.MVRWaste)")
                     .font(.caption)
                 }
                 HStack{ // Part B
-                Text("\(typesBCodes[ChipOMG.MVRPtB])")
+                Text("\(typesBCodes[ChipEDissipative.MVRPtB])")
                     .font(.caption)
                 Spacer()
-                Text("TSE Part B: \(typesB[ChipOMG.MVRPtB]), 1 gal")
+                Text("TSE Part B: \(typesB[ChipEDissipative.MVRPtB]), 1 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSMvr) + ChipOMG.MVRWaste)")
+                Text("\(quant(product: TSMvr) + ChipEDissipative.MVRWaste)")
                     .font(.caption)
                 }
-                if ChipOMG.MVRTSColorant != 0 {
+                if ChipEDissipative.MVRTSColorant != 0 {
                 HStack{ // Colorant
-                Text("\(TSColorantCodes[ChipOMG.MVRTSColorant])")
+                Text("\(TSColorantCodes[ChipEDissipative.MVRTSColorant])")
                     .font(.caption)
                 Spacer()
-                Text("TSE Colorant:  \(TSColorantChoices[ChipOMG.MVRTSColorant]), 16 oz")
+                Text("TSE Colorant:  \(TSColorantChoices[ChipEDissipative.MVRTSColorant]), 16 oz")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: TSMvr) + ChipOMG.MVRWaste)")
+                Text("\(quant(product: TSMvr) + ChipEDissipative.MVRWaste)")
                     .font(.caption)
                 }
                 }
@@ -228,10 +228,10 @@ struct SysSumPCBCSelectOMG: View {
             }
             
             HStack {
-                Text("\(kitCodes[ChipOMG.BCoatPtA])")
+                Text("\(kitCodes[ChipEDissipative.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("Kretus Select OMG Blocker Kit - \(kitTypes[ChipOMG.BCoatPtA])")
+                Text("Kretus Select Epoxy Dissipative Kit - \(kitTypes[ChipEDissipative.BCoatPtA])")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: selectTSA_TS))")
@@ -333,7 +333,7 @@ struct SysSumPCBCSelectOMG: View {
         .cornerRadius(5.0)
         .padding()
         
-        if ChipOMG.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
+        if ChipEDissipative.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
             VStack {
                 Text("Top Coat 2")
                     .bold()
@@ -363,7 +363,7 @@ struct SysSumPCBCSelectOMG: View {
                         .font(.caption)
                 }
                 
-                if ChipOMG.texture1 != 0 {
+                if ChipEDissipative.texture1 != 0 {
                     HStack {
                         Text("EX-KAST50-EA")
                             .font(.caption)
@@ -384,7 +384,7 @@ struct SysSumPCBCSelectOMG: View {
 }
 
 
-struct SysSumPCBCSelectOMG_Previews: PreviewProvider {
+struct SysSumPCBCSelectEDissipative_Previews: PreviewProvider {
     static var previews: some View {
         SysSummaryPCBCNew()
     }

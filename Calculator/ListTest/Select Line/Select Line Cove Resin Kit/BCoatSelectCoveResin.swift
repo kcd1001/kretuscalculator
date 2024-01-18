@@ -10,20 +10,20 @@ import Combine
 
 
 
-struct PCoatSelectOMG: View {
+struct BCoatSelectCoveResin: View {
     
  
-    @EnvironmentObject var ChipOMG : ColorChipValuesSelectOMG //Used for coat selections
-    @EnvironmentObject var selectTSA_OMG : stats //Used for system stats (mixRat,CovRate, etc)
-    @EnvironmentObject var selectTSB_OMG : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var ChipCoveResin : ColorChipValuesSelectCoveResin //Used for coat selections
+    @EnvironmentObject var selectTSA_CoveResin : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var selectTSB_CoveResin : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var TSColorant_TS : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var SolventCleaner : stats 
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : statsBroadcast
 
-    let kitTypes = ["EZ", "FC"]
+    let kitTypes = ["Clear - TH"]
     
-    let kitCodes = ["KIT-10501MEZ03", "KIT-10501MFC03"]
+    let kitCodes = ["KIT-10103TH01"]
     
     let TSColorantChoices = ["No Color (pre-pigmented Part A)", "Beige", "Black", "Dark Gray", "Enchanted Green", "Handicap Blue", "Latte", "Light Gray", "Medium Gray", "Mocha", "Safety Blue", "Safety Red", "Safety Yellow", "Shadow Gray", "Tan", "Tile Red", "White",]
     
@@ -43,14 +43,14 @@ struct PCoatSelectOMG: View {
                 Text("Coating Thickness: TBD")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipOMGSelectPCoatInfo()
+                ChipCoveResinSelectPCoatInfo()
             }
             .padding()
            Text("Choose your color:")
             .fontWeight(.bold)
-            Picker(selection: $ChipOMG.PCoatPtA,
+            Picker(selection: $ChipCoveResin.BCoatPtA,
                 label: ZStack {
-                    Text("\(kitTypes[ChipOMG.PCoatPtA])")
+                    Text("\(kitTypes[ChipCoveResin.BCoatPtA])")
                         .opacity(1)
                     Rectangle()
                         .fill(Color.gray)
@@ -68,9 +68,9 @@ struct PCoatSelectOMG: View {
 
 //            Text("Top Shelf Epoxy® Colorant:")
 //             .fontWeight(.bold)
-//             Picker(selection: $ChipOMG.PCoatTSColorant,
+//             Picker(selection: $ChipCoveResin.BCoatTSColorant,
 //                 label: ZStack {
-//                     Text("\(TSColorantChoices[ChipOMG.PCoatTSColorant])")
+//                     Text("\(TSColorantChoices[ChipCoveResin.BCoatTSColorant])")
 //                         .opacity(1)
 //                     Rectangle()
 //                         .fill(Color.gray)
@@ -101,31 +101,31 @@ struct PCoatSelectOMG: View {
                 }
                 
                 HStack {
-                        Text("\(kitCodes[ChipOMG.PCoatPtA])")
+                        Text("\(kitCodes[ChipCoveResin.BCoatPtA])")
                             .font(.caption)
                         Spacer()
-                    Text("Kretus Select OMG Blocker Kit - \(kitTypes[ChipOMG.PCoatPtA])")
+                    Text("Kretus Select Cove Resin Kit - \(kitTypes[ChipCoveResin.BCoatPtA])")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: selectTSA_OMG))")
+                        Text("\(quant(product: selectTSA_CoveResin))")
                             .font(.caption)
                     }
             
-//                if ChipOMG.PCoatTSColorant != 0 {
+//                if ChipCoveResin.BCoatTSColorant != 0 {
 //                    HStack {
-//                        Text("\(TSColorantCodes[ChipOMG.PCoatTSColorant])")
+//                        Text("\(TSColorantCodes[ChipCoveResin.BCoatTSColorant])")
 //                            .font(.caption)
 //                        Spacer()
-//                        Text("Top Shelf® Epoxy Colorant: \(TSColorantChoices[ChipOMG.PCoatTSColorant]), 16 oz")
+//                        Text("Top Shelf® Epoxy Colorant: \(TSColorantChoices[ChipCoveResin.BCoatTSColorant]), 16 oz")
 //                            .font(.caption)
 //                        Spacer()
 //                        Text("\(quant(product: TSColorant_TS))")
 //                            .font(.caption)
 //                            }
 //                
-//                    if ChipOMG.PCoatTSColorant == 4 { //USED TO ABBREVIATE ENCHANTED GREEN TO FIT ON SCREEN
+//                    if ChipCoveResin.BCoatTSColorant == 4 { //USED TO ABBREVIATE ENCHANTED GREEN TO FIT ON SCREEN
 //                        HStack {
-//                            Text("\(TSColorantCodes[ChipOMG.PCoatTSColorant])")
+//                            Text("\(TSColorantCodes[ChipCoveResin.BCoatTSColorant])")
 //                                .font(.caption)
 //                            Spacer()
 //                            Text("TSE Colorant:  Ench. Green, 16 oz")
@@ -143,7 +143,7 @@ struct PCoatSelectOMG: View {
             HStack {
                 Text("Add Waste Factor: ")
                 Spacer()
-                TextField("",value: $ChipOMG.PCoatWaste, formatter: NumberFormatter())
+                TextField("",value: $ChipCoveResin.BCoatWaste, formatter: NumberFormatter())
                     .frame(width:30, height:25)
                     .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
                     .cornerRadius(5.0)
@@ -153,14 +153,14 @@ struct PCoatSelectOMG: View {
             HStack {
                 Text("Total:")
                 Spacer()
-                Text("\(quant(product: selectTSA_OMG) + ChipOMG.PCoatWaste) kit(s)")
+                Text("\(quant(product: selectTSA_CoveResin) + ChipCoveResin.BCoatWaste) kit(s)")
             }
             .padding()
         }
     }
 }
 
-struct PCoatSelectOMG_Previews: PreviewProvider {
+struct BCoatSelectCoveResin_Previews: PreviewProvider {
     static var previews: some View {
         BCoatGarage()
     }
