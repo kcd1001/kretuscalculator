@@ -21,7 +21,7 @@ struct SelectEDissipativeView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    SysOptionsSelectEDissipative()
+                    //SysOptionsSelectEDissipative()
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectEDissipative()

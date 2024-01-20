@@ -46,7 +46,7 @@ struct PCoatSelectOMG: View {
                 ChipOMGSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipOMG.PCoatPtA,
                 label: ZStack {

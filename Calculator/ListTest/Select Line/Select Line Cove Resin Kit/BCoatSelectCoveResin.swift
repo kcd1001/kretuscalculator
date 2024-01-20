@@ -46,7 +46,7 @@ struct BCoatSelectCoveResin: View {
                 ChipCoveResinSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipCoveResin.BCoatPtA,
                 label: ZStack {

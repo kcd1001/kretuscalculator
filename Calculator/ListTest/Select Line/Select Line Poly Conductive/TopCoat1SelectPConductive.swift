@@ -199,7 +199,7 @@ struct TopCoat1SelectPConductive: View {
 //            .cornerRadius(5)
         }
         .padding()
-            
+/*
             Text("Top Coat 2:")
                 .fontWeight(.bold)
 
@@ -318,6 +318,7 @@ struct TopCoat1SelectPConductive: View {
                   checkTCoatCodes()
                 }
            } //Displays picker for TC2 if a second top coat is selected
+ */
             VStack { // Start of coat summary
                 Text("Top Coat 1")
                     .bold()

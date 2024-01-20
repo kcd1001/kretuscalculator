@@ -21,7 +21,7 @@ struct SelectCoveResinView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    SysOptionsSelectCoveResin()
+                    //SysOptionsSelectCoveResin()
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectCoveResin()

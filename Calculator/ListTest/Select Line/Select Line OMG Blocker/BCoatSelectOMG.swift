@@ -46,7 +46,7 @@ struct BCoatSelectOMG: View {
                 ChipOMGSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipOMG.BCoatPtA,
                 label: ZStack {

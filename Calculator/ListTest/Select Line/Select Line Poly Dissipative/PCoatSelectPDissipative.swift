@@ -46,7 +46,7 @@ struct PCoatSelectPDissipative: View {
                 ChipPDissipativeSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipPDissipative.PCoatPtA,
                 label: ZStack {
