@@ -21,7 +21,7 @@ struct SelectOMGView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    SysOptionsSelectOMG()
+                    //SysOptionsSelectOMG()
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectOMG()

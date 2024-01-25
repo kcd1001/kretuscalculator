@@ -46,7 +46,7 @@ struct BCoatSelectEDissipative: View {
                 ChipEDissipativeSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipEDissipative.BCoatPtA,
                 label: ZStack {

@@ -46,7 +46,7 @@ struct BCoatSelectEConductive: View {
                 ChipEConductiveSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipEConductive.BCoatPtA,
                 label: ZStack {

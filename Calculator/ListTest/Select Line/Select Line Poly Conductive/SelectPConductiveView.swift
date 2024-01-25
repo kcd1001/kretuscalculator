@@ -21,7 +21,7 @@ struct SelectPConductiveView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    SysOptionsSelectPConductive()
+                    //SysOptionsSelectPConductive()
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectPConductive()

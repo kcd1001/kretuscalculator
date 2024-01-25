@@ -46,7 +46,7 @@ struct PCoatSelectPConductive: View {
                 ChipPConductiveSelectPCoatInfo()
             }
             .padding()
-           Text("Choose your color:")
+           Text("Choose speed:")
             .fontWeight(.bold)
             Picker(selection: $ChipPConductive.PCoatPtA,
                 label: ZStack {
