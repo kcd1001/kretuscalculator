@@ -52,7 +52,7 @@ struct ContentView: View {
                                     }
                                     NavigationLink(destination: SelectLineSubSys())
                                     {
-                                        Text("Select Line")
+                                        Text("Select Boxed Kits")
                                     }
                                 }
                                 .opacity(0.8)

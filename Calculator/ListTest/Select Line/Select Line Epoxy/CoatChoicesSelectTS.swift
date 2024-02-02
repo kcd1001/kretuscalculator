@@ -8,8 +8,8 @@
 import SwiftUI
 import Combine
 
-var selectTSA_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 900, MixRat: 2)
-var selectTSB_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 900, MixRat: 1)
+var selectTSA_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 225, MixRat: 2)
+var selectTSB_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 225, MixRat: 1)
 
 class ColorChipValuesSelectTS : ObservableObject {
     @Published var BCoatPtA : Int = 0 // Used for part pickers in base coat
@@ -113,7 +113,7 @@ struct CoatChoicesSelectTS: View {
        
         if showingPicker == true { // Only base coat selected
             Toggle(isOn: $showingBCoat) {
-                Text("Base Coat")
+                Text("Customize your kit")
                     .fontWeight(.bold)
             }
             .toggleStyle(DropDownToggle())
@@ -135,18 +135,18 @@ struct CoatChoicesSelectTS: View {
             if showingBroadcast == true {
                 BroadcastSelectTS()
             }
-            Toggle(isOn: $showingTCoat1) {
-                Text("Top Coat(s)")
-                    .fontWeight(.bold)
-            }
-            .toggleStyle(DropDownToggle())
-            .padding()
-            .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-            if showingTCoat1 == true {
-                TopCoat1SelectTS()
-                    .environmentObject(PAPUTC1)
-                    .environmentObject(PAPUTC2)
-            }
+//            Toggle(isOn: $showingTCoat1) {
+//                Text("Top Coat(s)")
+//                    .fontWeight(.bold)
+//            }
+//            .toggleStyle(DropDownToggle())
+//            .padding()
+//            .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+//            if showingTCoat1 == true {
+//                TopCoat1SelectTS()
+//                    .environmentObject(PAPUTC1)
+//                    .environmentObject(PAPUTC2)
+//            }
 
             if showingPicker == true {
                 Toggle(isOn: $showingSysSummary) {

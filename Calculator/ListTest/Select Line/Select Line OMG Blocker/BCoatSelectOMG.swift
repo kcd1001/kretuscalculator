@@ -40,10 +40,10 @@ struct BCoatSelectOMG: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: TBD")
+                Text("Spread Rate: 100 sf/gal (300 sf/kit)")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipOMGSelectPCoatInfo()
+//                ChipOMGSelectPCoatInfo()
             }
             .padding()
            Text("Choose speed:")

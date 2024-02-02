@@ -8,8 +8,8 @@
 import SwiftUI
 import Combine
 
-var selectTSA_OMG = stats(product: "Top Shelf® Epoxy Part A:", covRate: 350, MixRat: 2)
-var selectTSB_OMG = stats(product: "Top Shelf® Epoxy Part B:", covRate: 350, MixRat: 1)
+var selectTSA_OMG = stats(product: "Top Shelf® Epoxy Part A:", covRate: 300, MixRat: 2)
+var selectTSB_OMG = stats(product: "Top Shelf® Epoxy Part B:", covRate: 300, MixRat: 1)
 
 class ColorChipValuesSelectOMG : ObservableObject {
     @Published var BCoatPtA : Int = 0 // Used for part pickers in base coat
@@ -113,7 +113,7 @@ struct CoatChoicesSelectOMG: View {
        
         if showingPicker == true { // Only base coat selected
             Toggle(isOn: $showingBCoat) {
-                Text("Base Coat")
+                Text("Customize your kit")
                     .fontWeight(.bold)
             }
             .toggleStyle(DropDownToggle())
@@ -135,6 +135,7 @@ struct CoatChoicesSelectOMG: View {
 //            if showingBroadcast == true {
 //                BroadcastSelectTS()
 //            }
+            /*
             Toggle(isOn: $showingTCoat1) {
                 Text("Top Coat(s)")
                     .fontWeight(.bold)
@@ -147,6 +148,7 @@ struct CoatChoicesSelectOMG: View {
                     .environmentObject(PAPUTC1)
                     .environmentObject(PAPUTC2)
             }
+             */
 
             if showingPicker == true {
                 Toggle(isOn: $showingSysSummary) {

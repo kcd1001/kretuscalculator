@@ -14,6 +14,7 @@ struct BCoatSelectCoveResin: View {
     
  
     @EnvironmentObject var ChipCoveResin : ColorChipValuesSelectCoveResin //Used for coat selections
+    @EnvironmentObject var CoveColor : EpoxyCoveSelections //Used for coat selections
     @EnvironmentObject var selectTSA_CoveResin : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var selectTSB_CoveResin : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var TSColorant_TS : stats //Used for system stats (mixRat,CovRate, etc)
@@ -40,10 +41,18 @@ struct BCoatSelectCoveResin: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: TBD")
-                    .fontWeight(.heavy)
+                if CoveColor.ThicknessSelectSelection == 0
+                {
+                    Text("Spread Rate: @4\": 40 sf/gal (60 lf/kit)")
+                        .fontWeight(.heavy)
+                }
+                else
+                {
+                    Text("Spread Rate: @6\": 25 sf/gal (40 lf/kit)")
+                        .fontWeight(.heavy)
+                }
                 Spacer()
-                ChipCoveResinSelectPCoatInfo()
+//                ChipCoveResinSelectPCoatInfo()
             }
             .padding()
            Text("Choose speed:")

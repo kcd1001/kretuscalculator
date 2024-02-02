@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChipTSSelectPCoatInfo: View {
+struct PolySelectInfo: View {
     @State var showingAlert = false
     
     var body: some View {
@@ -15,17 +15,17 @@ struct ChipTSSelectPCoatInfo: View {
         Button(action: {
                 self.showingAlert = true})
         {
-            Text("System Specs")
+            Text("Coat Specs")
                 .underline()
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Select Line Prime Coat Specs"), message:
-                    Text("Mixing Ratio: A:B:SC = 2 gal:1 gal:1 qt \n\n Coverage Rates: \n @3-5 mils: 900 sf/kit "), dismissButton: .default(Text("Close")))
+            Alert(title: Text("Kretus Select Poly Info"), message:
+                    Text("Kretus Select Poly Kit: 350 sf/kit"), dismissButton: .default(Text("Close")))
         }
     }
 }
 
-struct ChipTSSelectPCoatInfo_Previews: PreviewProvider {
+struct PolySelectInfo_test: PreviewProvider {
     static var previews: some View {
         ChipGarageInfo()
     }

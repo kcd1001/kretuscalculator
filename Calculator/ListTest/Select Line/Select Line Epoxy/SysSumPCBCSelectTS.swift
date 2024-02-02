@@ -211,7 +211,7 @@ struct SysSumPCBCSelectTS: View {
             .padding()
         }
         VStack { // Start of coat summary
-            Text("Base Coat")
+            Text("Select Epoxy Kit")
                 .bold()
             HStack {
                 Text("PRODUCT CODE")
@@ -231,7 +231,7 @@ struct SysSumPCBCSelectTS: View {
                 Text("\(kitCodes[ChipTS.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("Select Line Kit - \(kitTypes[ChipTS.BCoatPtA])")
+                Text("Kretus Select Epoxy Kit - \(kitTypes[ChipTS.BCoatPtA])")
                     .font(.caption)
                 Spacer()
                 Text("\(quant(product: selectTSABC_TS) + ChipTS.BCoatWaste)")
@@ -266,9 +266,7 @@ struct SysSumPCBCSelectTS: View {
                     .underline()
                     .font(.caption)
                 Spacer()
-                Text("QUANTITY")
-                    .underline()
-                    .font(.caption)
+
             }
             HStack { // Broadcast
                 Text("Contact Distributor")
@@ -277,14 +275,14 @@ struct SysSumPCBCSelectTS: View {
                 Text("\(ChipSizes[ChipTS.BroadcastSizeSelection]) Approved Chips, 55#")
                     .font(.caption)
                 Spacer()
-                Text("\(quantBroadcast(product: Broadcast))")
+                Text("\(quantBroadcast(product: Broadcast) + ChipTS.BroadcastWaste)")
                     .font(.caption)
             }
         }
-        .padding()
         .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
         .cornerRadius(5.0)
-
+        .padding()
+        /*
         VStack { // Start of coat summary
             Text("Top Coat 1")
                 .bold()
@@ -297,9 +295,7 @@ struct SysSumPCBCSelectTS: View {
                     .underline()
                     .font(.caption)
                 Spacer()
-                Text("QUANTITY")
-                    .underline()
-                    .font(.caption)
+
             }
             
             HStack {
@@ -309,8 +305,7 @@ struct SysSumPCBCSelectTS: View {
                 Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: PAPUTC1))")
-                    .font(.caption)
+
             }
             
             //                HStack {
@@ -347,9 +342,7 @@ struct SysSumPCBCSelectTS: View {
                         .underline()
                         .font(.caption)
                     Spacer()
-                    Text("QUANTITY")
-                        .underline()
-                        .font(.caption)
+
                 }
                 
                 HStack {
@@ -359,8 +352,6 @@ struct SysSumPCBCSelectTS: View {
                     Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: PAPUTC1))")
-                        .font(.caption)
                 }
                 
                 if ChipTS.texture1 != 0 {
@@ -371,8 +362,6 @@ struct SysSumPCBCSelectTS: View {
                         Text("Anti-Slip Tex 50, 2.75#")
                             .font(.caption)
                         Spacer()
-                        Text("\(quant(product: ChipTextureAO))")
-                            .font(.caption)
                     }
                 }
             }
@@ -380,6 +369,7 @@ struct SysSumPCBCSelectTS: View {
             .cornerRadius(5.0)
             .padding()
         }
+        */
         }
 }
 

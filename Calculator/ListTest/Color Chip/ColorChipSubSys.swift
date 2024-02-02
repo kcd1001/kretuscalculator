@@ -10,11 +10,10 @@ import SwiftUI
 struct ColorChipSubSys: View {
     var body: some View {
         List{
-//            HStack {
-//                NavigationLink(destination: ChipGarageView()){
-//                    Text("Color Chip Garage, 24 mils")
-//                }
-//            }
+            NavigationLink(destination: SelectChipTSView()){
+                Text("Color Chip Select")
+            }
+            
             NavigationLink(destination: ChipTSView()){
                 Text("Color Chip TS, 35 mils")
             }

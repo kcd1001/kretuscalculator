@@ -21,7 +21,7 @@ struct SelectPolyView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    SysOptionsSelectPoly()
+                    //SysOptionsSelectPoly()
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectPoly()

@@ -40,10 +40,10 @@ struct BCoatSelectPoly: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: TBD")
+                Text("Spread Rate: 265 sf/gal (400 sf/kit)")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipPolySelectPCoatInfo()
+//                PolySelectInfo()
             }
             .padding()
            Text("Choose your color:")

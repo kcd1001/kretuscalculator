@@ -13,14 +13,20 @@ struct SelectCoveResinView: View {
         
         let chip = ChipOptions()
         let ChipCoveResin = ColorChipValuesSelectCoveResin()
+        
+        var selectTSA_CoveResin = stats(product: "Top Shelf® Epoxy Part A:", covRate: 60, MixRat: 2)
+        var selectTSB_CoveResin = stats(product: "Top Shelf® Epoxy Part B:", covRate: 60, MixRat: 1)
+        
         let Broadcast = statsBroadcast(product: "Color Chip", covRate: 0.1, MixRat: 55)
         let TSColorant_TS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 450, MixRat: 16)
         let sf = SquareFeet()
+        let EpoxyCove = EpoxyCoveSelections()
+
         
             ScrollView {
                 VStack {
-                    SFFormChip()
-                    ThicknessTS()
+                    SFFormCove()
+                    ThicknessSelectCove()
                     //SysOptionsSelectCoveResin()
                   //  UPC_Colorant_()
                   //    .padding()
@@ -32,6 +38,10 @@ struct SelectCoveResinView: View {
             .environmentObject(TSColorant_TS)
             .environmentObject(sf)
             .environmentObject(ChipCoveResin)
+            .environmentObject(EpoxyCove)
+            .environmentObject(selectTSA_CoveResin)
+            .environmentObject(selectTSB_CoveResin)
+            
         }
     }
 

@@ -21,12 +21,12 @@ struct SelectChipTSView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    SysOptionsSelectTS()
+                  //SysOptionsSelectTS()
                   //  UPC_Colorant_()
                   //    .padding()
                     CoatChoicesSelectTS()
-                }.navigationBarTitle("Select Line, 35 mils", displayMode: .inline)
-            }
+                }
+            } .navigationBarTitle("Epoxy", displayMode: .inline)
             .environmentObject(chip)
             .environmentObject(Broadcast)
             .environmentObject(TSColorant_TS)

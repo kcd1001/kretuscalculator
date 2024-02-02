@@ -24,7 +24,7 @@ struct CoveColorQuartzView: View {
         
             ScrollView {
                 VStack {
-                    SFFormCSplash()
+                    SFFormCove()
                     ThicknessEpoxyCoveColorQuartz()
 
                     CoatChoicesEpoxyCoveQuartz()

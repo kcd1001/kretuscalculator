@@ -40,10 +40,10 @@ struct BCoatSelectPConductive: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: TBD")
-                    .fontWeight(.heavy)
+//                Text("Coating Thickness: TBD")
+//                    .fontWeight(.heavy)
                 Spacer()
-                ChipPConductiveSelectPCoatInfo()
+                PolySelectInfo()
             }
             .padding()
            Text("Choose your color:")

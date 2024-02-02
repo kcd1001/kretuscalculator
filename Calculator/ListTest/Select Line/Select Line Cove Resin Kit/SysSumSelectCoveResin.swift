@@ -12,6 +12,11 @@ struct SysSumPCBCSelectCoveResin: View {
     @EnvironmentObject var Chip : ChipOptions //Used for checkbox options
     @EnvironmentObject var TSA_TS : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var TSB_TS : stats //Used for system stats (mixRat,CovRate, etc)
+    
+    @EnvironmentObject var selectTSA_CoveResin : stats //Used for system stats (mixRat,CovRate, etc)
+    @EnvironmentObject var selectTSB_CoveResin : stats //Used for system stats (mixRat,CovRate, etc)
+    
+    
     @EnvironmentObject var TSColorant : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var Broadcast : statsBroadcast
     @State var showingAlert = false
@@ -211,7 +216,7 @@ struct SysSumPCBCSelectCoveResin: View {
             .padding()
         }
         VStack { // Start of coat summary
-            Text("Base Coat")
+            Text("Select Cove Kit")
                 .bold()
             HStack {
                 Text("PRODUCT CODE")
@@ -234,7 +239,7 @@ struct SysSumPCBCSelectCoveResin: View {
                 Text("Kretus Select Cove Resin Kit - \(kitTypes[ChipCoveResin.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: selectTSA_TS))")
+                Text("\(quant(product: selectTSA_CoveResin) + ChipCoveResin.BCoatWaste)")
                     .font(.caption)
             }
             

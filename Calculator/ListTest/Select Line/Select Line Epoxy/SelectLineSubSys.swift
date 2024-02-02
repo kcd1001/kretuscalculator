@@ -17,34 +17,34 @@ struct SelectLineSubSys: View {
         List{
             
             NavigationLink(destination: SelectChipTSView()){
-                Text("Kretus Select Epoxy, 3-5 mils")
+                Text("Epoxy")
             }
             NavigationLink(destination: SelectPolyView()){
-                Text("Kretus Select Poly")
+                Text("Polyaspartic")
             }
             NavigationLink(destination: SelectOMGView()){
-                Text("Kretus Select OMG Blocker")
+                Text("OMG Blocker")
             }
             NavigationLink(destination: SelectCoveResinView()) {
-                Text("Kretus Select Cove Resin")
+                Text("Cove Resin")
             }
             NavigationLink(destination: SelectEConductiveView()) {
-                Text("Kretus Select Epoxy Conductive")
+                Text("Epoxy Conductive")
             }
             NavigationLink(destination: SelectEDissipativeView()) {
-                Text("Kretus Select Epoxy Dissipative")
+                Text("Epoxy Dissipative")
             }
             NavigationLink(destination: SelectPConductiveView()) {
-                Text("Kretus Select Poly Conductive")
+                Text("Poly Conductive")
             }
             NavigationLink(destination: SelectPDissipativeView()) {
-                Text("Kretus Select Poly Dissipative")
+                Text("Poly Dissipative")
             }
 
 
         }.opacity(0.8)
         .background(KretusLogo())
-        .navigationBarTitle("Kretus Select Line Sub-Systems")
+        .navigationBarTitle("Select Boxed Kits")
     }
         
 

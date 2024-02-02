@@ -15,12 +15,12 @@ struct ChipTSSelectBCoatInfo: View {
         Button(action: {
                 self.showingAlert = true})
         {
-            Text("System Specs")
+            Text("Coat Specs")
                 .underline()
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Select Line Base Coat Specs"), message:
-                    Text("Mixing Ratio: A:B:SC = 2 gal:1 gal:1 qt \n\n Coverage Rates: \n @3-5 mils: 420 sf/kit "), dismissButton: .default(Text("Close")))
+            Alert(title: Text("Kretus Select Line Chip Specs"), message:
+                    Text("Kretus Select Epoxy Kit: 150 sf/gal"), dismissButton: .default(Text("Close")))
         }
     }
 }

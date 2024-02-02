@@ -10,8 +10,8 @@ import Combine
 
 // ONLY COMMERCIAL RESIN BEIGE, CLEAR, LIGHT GRAY, AND PT B TH
 
-var selectTSABC_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 420, MixRat: 2)
-var selectTSBBC_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 420, MixRat: 1)
+var selectTSABC_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 225, MixRat: 2)
+var selectTSBBC_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 225, MixRat: 1)
 // var SelectTSColorantBC_TS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 210, MixRat: 16)
 
 struct BCoatSelectTS: View {
@@ -42,10 +42,10 @@ struct BCoatSelectTS: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: 8-12 mils")
+                Text("Spread Rate: 150 sf/gal (225 sf/kit)")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipTSSelectBCoatInfo()
+ //               ChipTSSelectBCoatInfo()
             }
             .padding()
             
