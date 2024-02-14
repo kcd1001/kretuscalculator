@@ -16,8 +16,11 @@ struct SelectLineSubSys: View {
 
         List{
             
-            NavigationLink(destination: SelectChipTSView()){
+            NavigationLink(destination: SelectTSView()){
                 Text("Epoxy")
+            }
+            NavigationLink(destination: SelectChipView()){
+                Text("Epoxy Chip")
             }
             NavigationLink(destination: SelectPolyView()){
                 Text("Polyaspartic")

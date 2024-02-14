@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectChipTSView: View {
+struct SelectChipView: View {
     
     var body: some View {
         
@@ -24,7 +24,7 @@ struct SelectChipTSView: View {
                   //SysOptionsSelectTS()
                   //  UPC_Colorant_()
                   //    .padding()
-                    CoatChoicesSelectTS()
+                    CoatChoicesSelectChip()
                 }
             } .navigationBarTitle("Epoxy", displayMode: .inline)
             .environmentObject(chip)

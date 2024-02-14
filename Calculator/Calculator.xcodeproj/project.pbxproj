@@ -406,8 +406,8 @@
 		F6B233E72B4E15D200258486 /* TopCoat1SelectPoly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B233E62B4E15D200258486 /* TopCoat1SelectPoly.swift */; };
 		F6B233E92B4E181900258486 /* ChipPolySelectPCoatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B233E82B4E181900258486 /* ChipPolySelectPCoatInfo.swift */; };
 		F6BCD3272A27C26D00B6960A /* SysOptionsESD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD3262A27C26D00B6960A /* SysOptionsESD.swift */; };
-		F6BCD32A2A27D64A00B6960A /* SelectChipTSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD3292A27D64A00B6960A /* SelectChipTSView.swift */; };
-		F6BCD32C2A27D68D00B6960A /* CoatChoicesSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectTS.swift */; };
+		F6BCD32A2A27D64A00B6960A /* SelectChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD3292A27D64A00B6960A /* SelectChipView.swift */; };
+		F6BCD32C2A27D68D00B6960A /* CoatChoicesSelectChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectChip.swift */; };
 		F6BCD32E2A27D6CB00B6960A /* PCoatSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD32D2A27D6CB00B6960A /* PCoatSelectTS.swift */; };
 		F6BCD3302A27DE0F00B6960A /* BCoatSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD32F2A27DE0F00B6960A /* BCoatSelectTS.swift */; };
 		F6BCD3322A27EAEA00B6960A /* SysSumPCBCSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BCD3312A27EAEA00B6960A /* SysSumPCBCSelectTS.swift */; };
@@ -573,6 +573,8 @@
 		F6F4A4F4253E360A00D919C4 /* ListTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F4A4F3253E360A00D919C4 /* ListTestTests.swift */; };
 		F6F4A4FF253E360A00D919C4 /* ListTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F4A4FE253E360A00D919C4 /* ListTestUITests.swift */; };
 		F6F4A518253E402300D919C4 /* UPCSubSys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F4A517253E402300D919C4 /* UPCSubSys.swift */; };
+		F6F8CA242B7D6A48003D9912 /* SelectTSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8CA232B7D6A48003D9912 /* SelectTSView.swift */; };
+		F6F8CA262B7D6A60003D9912 /* CoatChoicesSelectTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8CA252B7D6A60003D9912 /* CoatChoicesSelectTS.swift */; };
 		F6FD067D282C6EC40024EF95 /* SplashFloorTSCoat3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FD067C282C6EC40024EF95 /* SplashFloorTSCoat3.swift */; };
 		F6FD067F282C77950024EF95 /* SplashFloorTSSysSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FD067E282C77950024EF95 /* SplashFloorTSSysSummary.swift */; };
 		F6FEFFD025BB525A00A291DE /* SysSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEFFCF25BB525A00A291DE /* SysSummary.swift */; };
@@ -995,8 +997,8 @@
 		F6B233E62B4E15D200258486 /* TopCoat1SelectPoly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCoat1SelectPoly.swift; sourceTree = "<group>"; };
 		F6B233E82B4E181900258486 /* ChipPolySelectPCoatInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipPolySelectPCoatInfo.swift; sourceTree = "<group>"; };
 		F6BCD3262A27C26D00B6960A /* SysOptionsESD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysOptionsESD.swift; sourceTree = "<group>"; };
-		F6BCD3292A27D64A00B6960A /* SelectChipTSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectChipTSView.swift; sourceTree = "<group>"; };
-		F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectTS.swift; sourceTree = "<group>"; };
+		F6BCD3292A27D64A00B6960A /* SelectChipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectChipView.swift; sourceTree = "<group>"; };
+		F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectChip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectChip.swift; sourceTree = "<group>"; };
 		F6BCD32D2A27D6CB00B6960A /* PCoatSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoatSelectTS.swift; sourceTree = "<group>"; };
 		F6BCD32F2A27DE0F00B6960A /* BCoatSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCoatSelectTS.swift; sourceTree = "<group>"; };
 		F6BCD3312A27EAEA00B6960A /* SysSumPCBCSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysSumPCBCSelectTS.swift; sourceTree = "<group>"; };
@@ -1168,6 +1170,8 @@
 		F6F4A4FE253E360A00D919C4 /* ListTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTestUITests.swift; sourceTree = "<group>"; };
 		F6F4A500253E360A00D919C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F4A517253E402300D919C4 /* UPCSubSys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSubSys.swift; sourceTree = "<group>"; };
+		F6F8CA232B7D6A48003D9912 /* SelectTSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTSView.swift; sourceTree = "<group>"; };
+		F6F8CA252B7D6A60003D9912 /* CoatChoicesSelectTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoatChoicesSelectTS.swift; sourceTree = "<group>"; };
 		F6FD067C282C6EC40024EF95 /* SplashFloorTSCoat3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashFloorTSCoat3.swift; sourceTree = "<group>"; };
 		F6FD067E282C77950024EF95 /* SplashFloorTSSysSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFloorTSSysSummary.swift; sourceTree = "<group>"; };
 		F6FEFFCF25BB525A00A291DE /* SysSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysSummary.swift; sourceTree = "<group>"; };
@@ -1972,8 +1976,10 @@
 				F6ADE2572A44D0BB00B5C2F5 /* SysOptionsSelectTS.swift */,
 				F62107C42A27EF02004D4531 /* PolySelectInfo.swift */,
 				F62107C62A27EF3A004D4531 /* ChipTSSelectBCoatInfo.swift */,
-				F6BCD3292A27D64A00B6960A /* SelectChipTSView.swift */,
-				F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectTS.swift */,
+				F6BCD3292A27D64A00B6960A /* SelectChipView.swift */,
+				F6F8CA232B7D6A48003D9912 /* SelectTSView.swift */,
+				F6BCD32B2A27D68D00B6960A /* CoatChoicesSelectChip.swift */,
+				F6F8CA252B7D6A60003D9912 /* CoatChoicesSelectTS.swift */,
 				F6BCD32D2A27D6CB00B6960A /* PCoatSelectTS.swift */,
 				F6BCD32F2A27DE0F00B6960A /* BCoatSelectTS.swift */,
 				F62107CA2A37B4C5004D4531 /* BroadcastSelectTS.swift */,
@@ -2652,7 +2658,7 @@
 				F6E2A6D529110B0B00F23EF4 /* IndustrialSandTGView.swift in Sources */,
 				F690D87728DC4B890069D752 /* ColorQuartzMFTopCoat.swift in Sources */,
 				3068FB232B5081D500100412 /* BCoatSelectCoveResin.swift in Sources */,
-				F6BCD32A2A27D64A00B6960A /* SelectChipTSView.swift in Sources */,
+				F6BCD32A2A27D64A00B6960A /* SelectChipView.swift in Sources */,
 				F65C32922773BA6000A06F90 /* ChipSLInfo.swift in Sources */,
 				F60A68EA28B827A3005C81C7 /* ColorQuartzSGSysSummary.swift in Sources */,
 				F6E2A6FF291464BE00F23EF4 /* Broadcast2SandDBTSToggle.swift in Sources */,
@@ -2813,6 +2819,7 @@
 				F65C328D2771004700A06F90 /* SysSummarPCBCRCUV.swift in Sources */,
 				F6404FF328DC3F4E00A5BF77 /* CoatChoicesQuartzSL.swift in Sources */,
 				F6BCD3302A27DE0F00B6960A /* BCoatSelectTS.swift in Sources */,
+				F6F8CA262B7D6A60003D9912 /* CoatChoicesSelectTS.swift in Sources */,
 				F68A00F22988CDE00000C3FA /* TSMetallicCCoat.swift in Sources */,
 				F60A68B628B5A633005C81C7 /* QuartzBroadcastInfo.swift in Sources */,
 				F6E2AB112898513500EBB8CF /* BCoatQuartzTS.swift in Sources */,
@@ -2986,6 +2993,7 @@
 				F648CE3D2540D85D00B7DCD2 /* UPC Colorant .swift in Sources */,
 				F6D0CD0A28F52CC70060281E /* IndustrialSandTSView.swift in Sources */,
 				F6BCD32E2A27D6CB00B6960A /* PCoatSelectTS.swift in Sources */,
+				F6F8CA242B7D6A48003D9912 /* SelectTSView.swift in Sources */,
 				F63C6D2A25C48D670096A25F /* ColorantFinalSwitch.swift in Sources */,
 				F6693EAA29DB82240045F5CB /* MVRCoatSandTS.swift in Sources */,
 				F601CF0B29F9BF1F00BB769E /* PrimerCoatESDRC.swift in Sources */,
@@ -3090,7 +3098,7 @@
 				3068FB362B50898000100412 /* SysOptionsSelectEConductive.swift in Sources */,
 				F628B8A227B85D6600F29268 /* ChipRCInfo.swift in Sources */,
 				F63B13762628A307003D87BB /* UPCMFInfo.swift in Sources */,
-				F6BCD32C2A27D68D00B6960A /* CoatChoicesSelectTS.swift in Sources */,
+				F6BCD32C2A27D68D00B6960A /* CoatChoicesSelectChip.swift in Sources */,
 				F6556143292C9481004796CA /* PCoatIndustrialSandSL.swift in Sources */,
 				F6FD067F282C77950024EF95 /* SplashFloorTSSysSummary.swift in Sources */,
 				F68A00F92988DA120000C3FA /* TSMetallicUVView.swift in Sources */,
