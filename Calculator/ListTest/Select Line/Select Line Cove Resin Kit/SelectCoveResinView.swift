@@ -14,8 +14,8 @@ struct SelectCoveResinView: View {
         let chip = ChipOptions()
         let ChipCoveResin = ColorChipValuesSelectCoveResin()
         
-        var selectTSA_CoveResin = stats(product: "Top Shelf® Epoxy Part A:", covRate: 60, MixRat: 2)
-        var selectTSB_CoveResin = stats(product: "Top Shelf® Epoxy Part B:", covRate: 60, MixRat: 1)
+        let selectTSA_CoveResin = stats(product: "Top Shelf® Epoxy Part A:", covRate: 60, MixRat: 2)
+        let selectTSB_CoveResin = stats(product: "Top Shelf® Epoxy Part B:", covRate: 60, MixRat: 1)
         
         let Broadcast = statsBroadcast(product: "Color Chip", covRate: 0.1, MixRat: 55)
         let TSColorant_TS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 450, MixRat: 16)

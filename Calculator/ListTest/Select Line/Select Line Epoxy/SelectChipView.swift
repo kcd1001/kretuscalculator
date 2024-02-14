@@ -26,7 +26,7 @@ struct SelectChipView: View {
                   //    .padding()
                     CoatChoicesSelectChip()
                 }
-            } .navigationBarTitle("Epoxy", displayMode: .inline)
+            } .navigationBarTitle("Epoxy Chip", displayMode: .inline)
             .environmentObject(chip)
             .environmentObject(Broadcast)
             .environmentObject(TSColorant_TS)
