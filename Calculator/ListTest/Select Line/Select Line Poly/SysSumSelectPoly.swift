@@ -122,9 +122,9 @@ struct SysSumPCBCSelectPoly: View {
                         .underline()
                         .font(.caption)
                     Spacer()
-                    Text("QUANTITY")
-                        .underline()
-                        .font(.caption)
+//                    Text("QUANTITY")
+//                        .underline()
+//                        .font(.caption)
                 }
                 
                 HStack {
@@ -134,8 +134,8 @@ struct SysSumPCBCSelectPoly: View {
                     Text("Select Line Kit - \(kitTypes[ChipPoly.PCoatPtA])")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: selectTSA_TS) + ChipPoly.PCoatWaste)")
-                        .font(.caption)
+//                    Text("\(quant(product: selectTSA_TS) + ChipPoly.PCoatWaste)")
+//                        .font(.caption)
                 }
                 
                 
@@ -211,7 +211,7 @@ struct SysSumPCBCSelectPoly: View {
             .padding()
         }
         VStack { // Start of coat summary
-            Text("Base Coat")
+            Text("Select Poly Kit")
                 .bold()
             HStack {
                 Text("PRODUCT CODE")
@@ -222,9 +222,9 @@ struct SysSumPCBCSelectPoly: View {
                     .underline()
                     .font(.caption)
                 Spacer()
-                Text("QUANTITY")
-                    .underline()
-                    .font(.caption)
+//                Text("QUANTITY")
+//                    .underline()
+//                    .font(.caption)
             }
             
             HStack {
@@ -234,7 +234,7 @@ struct SysSumPCBCSelectPoly: View {
                 Text("Kretus Select Poly Kit - \(kitTypes[ChipPoly.BCoatPtA])")
                     .font(.caption)
                 Spacer()
-                Text("\(quant(product: selectTSA_TS))")
+                Text("\(quant(product: selectTSA_Poly) + ChipPoly.BCoatWaste)")
                     .font(.caption)
             }
             
@@ -284,7 +284,7 @@ struct SysSumPCBCSelectPoly: View {
 //        .padding()
 //        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
 //        .cornerRadius(5.0)
-
+        /*
         VStack { // Start of coat summary
             Text("Top Coat 1")
                 .bold()
@@ -380,6 +380,7 @@ struct SysSumPCBCSelectPoly: View {
             .cornerRadius(5.0)
             .padding()
         }
+        */
         }
 }
 

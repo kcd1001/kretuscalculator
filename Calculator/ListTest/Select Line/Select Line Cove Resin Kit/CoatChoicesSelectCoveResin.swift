@@ -8,8 +8,7 @@
 import SwiftUI
 import Combine
 
-var selectTSA_CoveResin = stats(product: "Top Shelf® Epoxy Part A:", covRate: 350, MixRat: 2)
-var selectTSB_CoveResin = stats(product: "Top Shelf® Epoxy Part B:", covRate: 350, MixRat: 1)
+
 
 class ColorChipValuesSelectCoveResin : ObservableObject {
     @Published var BCoatPtA : Int = 0 // Used for part pickers in base coat
@@ -58,6 +57,10 @@ struct CoatChoicesSelectCoveResin: View {
     @EnvironmentObject var TSColorant : stats //Used for system stats (mixRat,CovRate, etc)
     @EnvironmentObject var sf : SquareFeet //Square feet
     @EnvironmentObject var Broadcast : stats
+    
+    @EnvironmentObject var selectTSA_CoveResin : stats
+    @EnvironmentObject var selectTSB_CoveResin : stats
+
     @State var showingPicker : Bool = false
     @State var showingMVR : Bool = false 
     @State var showingPCoat : Bool = false
@@ -113,7 +116,7 @@ struct CoatChoicesSelectCoveResin: View {
        
         if showingPicker == true { // Only base coat selected
             Toggle(isOn: $showingBCoat) {
-                Text("Base Coat")
+                Text("Customize your kit")
                     .fontWeight(.bold)
             }
             .toggleStyle(DropDownToggle())
@@ -135,6 +138,8 @@ struct CoatChoicesSelectCoveResin: View {
 //            if showingBroadcast == true {
 //                BroadcastSelectTS()
 //            }
+            
+            /*
             Toggle(isOn: $showingTCoat1) {
                 Text("Top Coat(s)")
                     .fontWeight(.bold)
@@ -147,6 +152,7 @@ struct CoatChoicesSelectCoveResin: View {
                     .environmentObject(PAPUTC1)
                     .environmentObject(PAPUTC2)
             }
+             */
 
             if showingPicker == true {
                 Toggle(isOn: $showingSysSummary) {

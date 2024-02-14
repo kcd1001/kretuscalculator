@@ -43,7 +43,7 @@ struct PCoatSelectTS: View {
                 Text("Coating Thickness: 3-5 mils")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipTSSelectPCoatInfo()
+                //ChipTSSelectPCoatInfo()
             }
             .padding()
            Text("Choose your color:")

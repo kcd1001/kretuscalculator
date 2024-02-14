@@ -40,13 +40,13 @@ struct BCoatSelectEConductive: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Coating Thickness: TBD")
+                Text("Spread Rate: 400 sqft/kit (1.5 gal kit)")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipEConductiveSelectPCoatInfo()
+//                ChipEConductiveSelectPCoatInfo()
             }
             .padding()
-           Text("Choose speed:")
+           Text("Choose color:")
             .fontWeight(.bold)
             Picker(selection: $ChipEConductive.BCoatPtA,
                 label: ZStack {

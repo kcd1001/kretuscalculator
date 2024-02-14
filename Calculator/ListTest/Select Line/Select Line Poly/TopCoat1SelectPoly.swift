@@ -171,7 +171,7 @@ struct TopCoat1SelectPoly: View {
                 .fontWeight(.bold)
             
             Spacer()
-            ChipTopCoatInfo()
+            PolySelectInfo()
 
              .onChange(of: ChipPoly.TCoat1Hardener) { _ in
                checkTCoatCodes()
@@ -330,9 +330,9 @@ struct TopCoat1SelectPoly: View {
                         .underline()
                         .font(.caption)
                     Spacer()
-                    Text("QUANTITY")
-                        .underline()
-                        .font(.caption)
+//                    Text("QUANTITY")
+//                        .underline()
+//                        .font(.caption)
                 }
                 
                 HStack {
@@ -342,8 +342,8 @@ struct TopCoat1SelectPoly: View {
                     Text("Kretus Select Poly FC, Clear Kit, 2 gal")
                         .font(.caption)
                     Spacer()
-                    Text("\(quant(product: PAPUTC1))")
-                        .font(.caption)
+//                    Text("\(quant(product: PAPUTC1))")
+//                        .font(.caption)
                 }
                 
 //                HStack {
@@ -380,9 +380,9 @@ struct TopCoat1SelectPoly: View {
                                 .underline()
                                 .font(.caption)
                             Spacer()
-                            Text("QUANTITY")
-                                .underline()
-                                .font(.caption)
+//                            Text("QUANTITY")
+//                                .underline()
+//                                .font(.caption)
                         }
                         
                         HStack {
@@ -392,8 +392,8 @@ struct TopCoat1SelectPoly: View {
                             Text("Kretus Select Poly FC, Clear Kit, 2 gal")
                                 .font(.caption)
                             Spacer()
-                            Text("\(quant(product: PAPUTC1))")
-                                .font(.caption)
+//                            Text("\(quant(product: PAPUTC1))")
+//                                .font(.caption)
                         }
                         
                         if ChipPoly.texture1 != 0 {
@@ -404,8 +404,8 @@ struct TopCoat1SelectPoly: View {
                                     Text("Anti-Slip Tex 50, 2.75#")
                                         .font(.caption)
                                     Spacer()
-                                    Text("\(quant(product: ChipTextureAO))")
-                                        .font(.caption)
+//                                    Text("\(quant(product: ChipTextureAO))")
+//                                        .font(.caption)
                                         }
                                                 }
                     }
@@ -415,31 +415,31 @@ struct TopCoat1SelectPoly: View {
                 }
                 
         }
-        HStack {
-            Text("Add Waste Factor: ")
-            Spacer()
-            TextField("",value: $ChipPoly.TCoatWaste, formatter: NumberFormatter())
-                .frame(width:30, height:25)
-                .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-                .cornerRadius(5.0)
-            Text("kit(s)")
-        }
+//        HStack {
+//            Text("Add Waste Factor: ")
+//            Spacer()
+//            TextField("",value: $ChipPoly.TCoatWaste, formatter: NumberFormatter())
+//                .frame(width:30, height:25)
+//                .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+//                .cornerRadius(5.0)
+//            Text("kit(s)")
+//        }
         .padding()
-        if ChipPoly.TCoat2Choice != 0 {
-        HStack {
-            Text("Total:")
-            Spacer()
-            Text("\(quant(product: PAPUTC1) + quant(product: PAPUTC2) + ChipPoly.TCoatWaste) kit(s)")
-        }
-        }
-        else {
-        HStack {
-            Text("Total:")
-            Spacer()
-            Text("\(quant(product: PAPUTC1) + ChipPoly.TCoatWaste) kit(s)")
-        }
-        .padding()
-        }
+//        if ChipPoly.TCoat2Choice != 0 {
+//        HStack {
+//            Text("Total:")
+//            Spacer()
+//            Text("\(quant(product: PAPUTC1) + quant(product: PAPUTC2) + ChipPoly.TCoatWaste) kit(s)")
+//        }
+//        }
+//        else {
+//        HStack {
+//            Text("Total:")
+//            Spacer()
+//            Text("\(quant(product: PAPUTC1) + ChipPoly.TCoatWaste) kit(s)")
+//        }
+//        .padding()
+//        }
         }
     }
 //}

@@ -113,7 +113,7 @@ struct CoatChoicesSelectPConductive: View {
        
         if showingPicker == true { // Only base coat selected
             Toggle(isOn: $showingBCoat) {
-                Text("Base Coat")
+                Text("Customize your kit")
                     .fontWeight(.bold)
             }
             .toggleStyle(DropDownToggle())
@@ -135,6 +135,7 @@ struct CoatChoicesSelectPConductive: View {
 //            if showingBroadcast == true {
 //                BroadcastSelectTS()
 //            }
+            /*
             Toggle(isOn: $showingTCoat1) {
                 Text("Top Coat(s)")
                     .fontWeight(.bold)
@@ -147,7 +148,7 @@ struct CoatChoicesSelectPConductive: View {
                     .environmentObject(PAPUTC1)
                     .environmentObject(PAPUTC2)
             }
-
+             */
             if showingPicker == true {
                 Toggle(isOn: $showingSysSummary) {
                     Text("KRETUS® Order Summary")

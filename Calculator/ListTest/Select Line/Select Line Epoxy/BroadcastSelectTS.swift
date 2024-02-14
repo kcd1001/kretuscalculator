@@ -68,7 +68,7 @@ struct BroadcastSelectTS: View {
              }
 
                 Spacer()
-                ChipRCBroadcastInfo()
+                //ChipRCBroadcastInfo()
             } .padding()
             VStack { // Start of coat summary
                 HStack {

@@ -8,10 +8,12 @@
 import SwiftUI
 import Combine
 
-var selectTSA_OMG = stats(product: "Top Shelf® Epoxy Part A:", covRate: 300, MixRat: 2)
-var selectTSB_OMG = stats(product: "Top Shelf® Epoxy Part B:", covRate: 300, MixRat: 1)
+var selectTSA_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 225, MixRat: 2)
+var selectTSB_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 225, MixRat: 1)
 
-class ColorChipValuesSelectOMG : ObservableObject {
+
+
+class ColorChipValuesSelectTS : ObservableObject {
     @Published var BCoatPtA : Int = 0 // Used for part pickers in base coat
     @Published var BCoatPtB : Int = 0 // Used for part pickers in base coat
     @Published var BCoatTSColorant : Int = 0 // Used for part pickers in base coat
@@ -52,7 +54,7 @@ class ColorChipValuesSelectOMG : ObservableObject {
     @Published var MVRWaste : Int = 0
 }
 
-struct CoatChoicesSelectOMG: View {
+struct CoatChoicesSelectChip: View {
     
     @EnvironmentObject var Chip : ChipOptions
     @EnvironmentObject var TSColorant : stats //Used for system stats (mixRat,CovRate, etc)
@@ -90,9 +92,9 @@ struct CoatChoicesSelectOMG: View {
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
             
             if showingPCoat == true {
-                PCoatSelectOMG()
-                    .environmentObject(selectTSA_OMG)
-                    .environmentObject(selectTSB_OMG)
+                PCoatSelectTS()
+                    .environmentObject(selectTSA_TS)
+                    .environmentObject(selectTSB_TS)
             }
         }
         if showingPicker == true && Chip.isMVR == true {  // Base coat + prime coat
@@ -121,34 +123,32 @@ struct CoatChoicesSelectOMG: View {
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
             
             if showingBCoat == true {
-                BCoatSelectOMG()
-                    .environmentObject(selectTSA_OMG)
-                    .environmentObject(selectTSB_OMG)
+                BCoatSelectTS()
+                    .environmentObject(selectTSABC_TS)
+                    .environmentObject(selectTSBBC_TS)
             }
-//            Toggle(isOn: $showingBroadcast) {
-//                Text("Broadcast")
-//                    .fontWeight(.bold)
-//            }
-//            .toggleStyle(DropDownToggle())
-//            .padding()
-//            .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-//            if showingBroadcast == true {
-//                BroadcastSelectTS()
-//            }
-            /*
-            Toggle(isOn: $showingTCoat1) {
-                Text("Top Coat(s)")
+            Toggle(isOn: $showingBroadcast) {
+                Text("Broadcast")
                     .fontWeight(.bold)
             }
             .toggleStyle(DropDownToggle())
             .padding()
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-            if showingTCoat1 == true {
-                TopCoat1SelectOMG()
-                    .environmentObject(PAPUTC1)
-                    .environmentObject(PAPUTC2)
+            if showingBroadcast == true {
+                BroadcastSelectTS()
             }
-             */
+//            Toggle(isOn: $showingTCoat1) {
+//                Text("Top Coat(s)")
+//                    .fontWeight(.bold)
+//            }
+//            .toggleStyle(DropDownToggle())
+//            .padding()
+//            .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+//            if showingTCoat1 == true {
+//                TopCoat1SelectTS()
+//                    .environmentObject(PAPUTC1)
+//                    .environmentObject(PAPUTC2)
+//            }
 
             if showingPicker == true {
                 Toggle(isOn: $showingSysSummary) {
@@ -161,9 +161,9 @@ struct CoatChoicesSelectOMG: View {
                 .padding()
                 .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
                 if showingSysSummary == true {
-                    SysSumPCBCSelectOMG()
-                        .environmentObject(selectTSA_OMG)
-                        .environmentObject(selectTSB_OMG)
+                    SysSumPCBCSelectTS()
+                        .environmentObject(selectTSA_TS)
+                        .environmentObject(selectTSB_TS)
                         .environmentObject(Broadcast)
             }
             
@@ -173,12 +173,7 @@ struct CoatChoicesSelectOMG: View {
     }
 }
 
-    
-    
-
-
-
-struct CoatChoicesSelectOMG_Previews: PreviewProvider {
+struct CoatChoicesSelectChip_Previews: PreviewProvider {
     static var previews: some View {
         CoatChoicesGarage()
     }

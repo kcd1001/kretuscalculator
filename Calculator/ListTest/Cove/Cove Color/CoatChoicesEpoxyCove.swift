@@ -50,6 +50,8 @@ class EpoxyCoveSelections : ObservableObject {
     @Published var Coat4PtBCode = "EX-KPLY72BZ-01"
 
     @Published var ThicknessSelection : Int = 0
+    @Published var ThicknessSelectSelection : Int = 0
+
     
     @Published var BroadcastSelection : Int = 0
     @Published var BroadcastSizeSelection : Int = 0

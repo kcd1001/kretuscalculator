@@ -171,7 +171,7 @@ struct TopCoat1SelectPDissipative: View {
                 .fontWeight(.bold)
             
             Spacer()
-            ChipTopCoatInfo()
+            PolySelectInfo()
 
              .onChange(of: ChipPDissipative.TCoat1Hardener) { _ in
                checkTCoatCodes()

@@ -20,7 +20,7 @@ struct ChipEConductiveSelectPCoatInfo: View {
         }
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Select Line Prime/Base Coat Specs"), message:
-                    Text("Mixing Ratio: A:B = 1 gal:1 gal \n\n Coverage Rates: \n @TBD mils: 350 sf/kit "), dismissButton: .default(Text("Close")))
+                    Text("Kretus Select Epoxy Conductive Kit: 350 sf/kit"), dismissButton: .default(Text("Close")))
         }
     }
 }

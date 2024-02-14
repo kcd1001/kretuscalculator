@@ -20,8 +20,8 @@ struct SysSumPCBCSelectPConductive: View {
     @State var TCoat2PtACode = ""
     @State var TCoat2PtBCode = ""
     var TSMvr = stats(product: "Epoxy MVR", covRate: 150, MixRat: 1)
-
-
+    
+    
     @EnvironmentObject var sf : SquareFeet //Square feet
     var ChipTextureAO = stats(product: "Aluminum Oxide", covRate: 750, MixRat: 1 )
     var ChipTextureBead = stats(product: "Anti-Slip Bead", covRate: 750, MixRat: 16 )
@@ -55,23 +55,23 @@ struct SysSumPCBCSelectPConductive: View {
     
     var TopCoat2Options = ["No Top Coat 2", "Polyaspartic 85 FC Clear"]
     var TCoat2HardenerOptions = ["EZ - Clear", "Fast - Clear"]
-
+    
     
     var TextureOptions = ["No Texture", "Anti-Slip Tex 50"]
-
+    
     
     let kitTypes = ["Stone", "Slate", "Greige", "Baja", "Ocean", "Maroon"]
     
     let kitCodes = ["KIT-20402EZS", "KIT-20403EZS", "KIT-20404EZS", "KIT-20405EZS", "KIT-20406EZS", "KIT-20407EZS"]
-
+    
     var ChipSizes = ["1/4\"", "1/8\""]
-
+    
     
     func quant(product : stats) -> Int {
         let quantity : Float = (sf.squareF / product.covRate) * product.MixRat
-         let kit = Int(ceil(Float(quantity / product.MixRat)))
-         return kit
-        } // returns number of kits required
+        let kit = Int(ceil(Float(quantity / product.MixRat)))
+        return kit
+    } // returns number of kits required
     
     
     func quantBroadcast(product : statsBroadcast) -> Int {
@@ -91,7 +91,7 @@ struct SysSumPCBCSelectPConductive: View {
             TCoat1PtBCode = "EX-KPLY85B-01"
             
         }
-
+        
         
         //END OF TCOAT1
         
@@ -106,7 +106,7 @@ struct SysSumPCBCSelectPConductive: View {
         }
         
     }
-
+    
     var body: some View {
         if Chip.isPrimeCoat == true
         {
@@ -139,17 +139,17 @@ struct SysSumPCBCSelectPConductive: View {
                 }
                 
                 
-//                HStack { // Solvent Cleaner
-//                    Text("EX-KSLVCLN-EA")
-//                        .font(.caption)
-//                    Spacer()
-//                    Text("Solvent Cleaner, 32 oz")
-//                        .font(.caption)
-//                    Spacer()
-//                    Text("\(quant(product: selectTSA_TS) + ChipPConductive.PCoatWaste)")
-//                        .font(.caption)
-//                }
-
+                //                HStack { // Solvent Cleaner
+                //                    Text("EX-KSLVCLN-EA")
+                //                        .font(.caption)
+                //                    Spacer()
+                //                    Text("Solvent Cleaner, 32 oz")
+                //                        .font(.caption)
+                //                    Spacer()
+                //                    Text("\(quant(product: selectTSA_TS) + ChipPConductive.PCoatWaste)")
+                //                        .font(.caption)
+                //                }
+                
             }
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
             .cornerRadius(5.0)
@@ -174,36 +174,36 @@ struct SysSumPCBCSelectPConductive: View {
                         .font(.caption)
                 }
                 HStack{ // Part A
-                Text("\(typesACodes[ChipPConductive.MVRPtA])")
-                    .font(.caption)
-                Spacer()
-                Text("TSE Part A: \(typesA[ChipPConductive.MVRPtA]), 1 gal")
-                    .font(.caption)
-                Spacer()
-                Text("\(quant(product: TSMvr) + ChipPConductive.MVRWaste)")
-                    .font(.caption)
+                    Text("\(typesACodes[ChipPConductive.MVRPtA])")
+                        .font(.caption)
+                    Spacer()
+                    Text("TSE Part A: \(typesA[ChipPConductive.MVRPtA]), 1 gal")
+                        .font(.caption)
+                    Spacer()
+                    Text("\(quant(product: TSMvr) + ChipPConductive.MVRWaste)")
+                        .font(.caption)
                 }
                 HStack{ // Part B
-                Text("\(typesBCodes[ChipPConductive.MVRPtB])")
-                    .font(.caption)
-                Spacer()
-                Text("TSE Part B: \(typesB[ChipPConductive.MVRPtB]), 1 gal")
-                    .font(.caption)
-                Spacer()
-                Text("\(quant(product: TSMvr) + ChipPConductive.MVRWaste)")
-                    .font(.caption)
+                    Text("\(typesBCodes[ChipPConductive.MVRPtB])")
+                        .font(.caption)
+                    Spacer()
+                    Text("TSE Part B: \(typesB[ChipPConductive.MVRPtB]), 1 gal")
+                        .font(.caption)
+                    Spacer()
+                    Text("\(quant(product: TSMvr) + ChipPConductive.MVRWaste)")
+                        .font(.caption)
                 }
                 if ChipPConductive.MVRTSColorant != 0 {
-                HStack{ // Colorant
-                Text("\(TSColorantCodes[ChipPConductive.MVRTSColorant])")
-                    .font(.caption)
-                Spacer()
-                Text("TSE Colorant:  \(TSColorantChoices[ChipPConductive.MVRTSColorant]), 16 oz")
-                    .font(.caption)
-                Spacer()
-                Text("\(quant(product: TSMvr) + ChipPConductive.MVRWaste)")
-                    .font(.caption)
-                }
+                    HStack{ // Colorant
+                        Text("\(TSColorantCodes[ChipPConductive.MVRTSColorant])")
+                            .font(.caption)
+                        Spacer()
+                        Text("TSE Colorant:  \(TSColorantChoices[ChipPConductive.MVRTSColorant]), 16 oz")
+                            .font(.caption)
+                        Spacer()
+                        Text("\(quant(product: TSMvr) + ChipPConductive.MVRWaste)")
+                            .font(.caption)
+                    }
                 }
             }
             .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
@@ -238,155 +238,156 @@ struct SysSumPCBCSelectPConductive: View {
                     .font(.caption)
             }
             
-//            HStack { // Solvent Cleaner
-//                Text("EX-KSLVCLN-EA")
-//                    .font(.caption)
-//                Spacer()
-//                Text("Solvent Cleaner, 32 oz")
-//                    .font(.caption)
-//                Spacer()
-//                Text("\(quant(product: selectTSABC_TS) + ChipPoly.BCoatWaste)")
-//                    .font(.caption)
-//            }
-
+            //            HStack { // Solvent Cleaner
+            //                Text("EX-KSLVCLN-EA")
+            //                    .font(.caption)
+            //                Spacer()
+            //                Text("Solvent Cleaner, 32 oz")
+            //                    .font(.caption)
+            //                Spacer()
+            //                Text("\(quant(product: selectTSABC_TS) + ChipPoly.BCoatWaste)")
+            //                    .font(.caption)
+            //            }
+            
         }
         .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
         .cornerRadius(5.0)
         .padding()
         
-//        VStack {
-//            Text("Broadcast")
-//                .bold()
-//            HStack {
-//                Text("PRODUCT CODE")
-//                    .underline()
-//                    .font(.caption)
-//                Spacer()
-//                Text("PRODUCT")
-//                    .underline()
-//                    .font(.caption)
-//                Spacer()
-//                Text("QUANTITY")
-//                    .underline()
-//                    .font(.caption)
-//            }
-//            HStack { // Broadcast
-//                Text("Contact Distributor")
-//                    .font(.caption)
-//                Spacer()
-//                Text("\(ChipSizes[ChipPoly.BroadcastSizeSelection]) Approved Chips, 55#")
-//                    .font(.caption)
-//                Spacer()
-//                Text("\(quantBroadcast(product: Broadcast))")
-//                    .font(.caption)
-//            }
-//        }
-//        .padding()
-//        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-//        .cornerRadius(5.0)
-
-        VStack { // Start of coat summary
-            Text("Top Coat 1")
-                .bold()
-            HStack {
-                Text("PRODUCT CODE")
-                    .underline()
-                    .font(.caption)
-                Spacer()
-                Text("PRODUCT")
-                    .underline()
-                    .font(.caption)
-                Spacer()
-                Text("QUANTITY")
-                    .underline()
-                    .font(.caption)
-            }
-            
-            HStack {
-                Text("EX-285FCPU-KIT")
-                    .font(.caption)
-                Spacer()
-                Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
-                    .font(.caption)
-                Spacer()
-                Text("\(quant(product: PAPUTC1))")
-                    .font(.caption)
-            }
-            
-            //                HStack {
-            //                    Text("\(TCoat1PtBCode)")
-            //                        .font(.caption)
-            //                    Spacer()
-            //                        Text("Polyaspartic 85 Part B, 1 gal")
-            //                            .font(.caption)
-            //
-            ////                    else {
-            ////                        Text("\(TopCoat1Options[ChipPoly.TCoat1Choice]) Part B, 1/2 gal")
-            ////                            .font(.caption)
-            ////                    }
-            //                    Spacer()
-            //                    Text("\(quant(product: PAPUTC1))")
-            //                        .font(.caption)
-            //                }
+        //        VStack {
+        //            Text("Broadcast")
+        //                .bold()
+        //            HStack {
+        //                Text("PRODUCT CODE")
+        //                    .underline()
+        //                    .font(.caption)
+        //                Spacer()
+        //                Text("PRODUCT")
+        //                    .underline()
+        //                    .font(.caption)
+        //                Spacer()
+        //                Text("QUANTITY")
+        //                    .underline()
+        //                    .font(.caption)
+        //            }
+        //            HStack { // Broadcast
+        //                Text("Contact Distributor")
+        //                    .font(.caption)
+        //                Spacer()
+        //                Text("\(ChipSizes[ChipPoly.BroadcastSizeSelection]) Approved Chips, 55#")
+        //                    .font(.caption)
+        //                Spacer()
+        //                Text("\(quantBroadcast(product: Broadcast))")
+        //                    .font(.caption)
+        //            }
+        //        }
+        //        .padding()
+        //        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+        //        .cornerRadius(5.0)
+        /*
+         VStack { // Start of coat summary
+         Text("Top Coat 1")
+         .bold()
+         HStack {
+         Text("PRODUCT CODE")
+         .underline()
+         .font(.caption)
+         Spacer()
+         Text("PRODUCT")
+         .underline()
+         .font(.caption)
+         Spacer()
+         Text("QUANTITY")
+         .underline()
+         .font(.caption)
+         }
+         
+         HStack {
+         Text("EX-285FCPU-KIT")
+         .font(.caption)
+         Spacer()
+         Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
+         .font(.caption)
+         Spacer()
+         Text("\(quant(product: PAPUTC1))")
+         .font(.caption)
+         }
+         
+         //                HStack {
+         //                    Text("\(TCoat1PtBCode)")
+         //                        .font(.caption)
+         //                    Spacer()
+         //                        Text("Polyaspartic 85 Part B, 1 gal")
+         //                            .font(.caption)
+         //
+         ////                    else {
+         ////                        Text("\(TopCoat1Options[ChipPoly.TCoat1Choice]) Part B, 1/2 gal")
+         ////                            .font(.caption)
+         ////                    }
+         //                    Spacer()
+         //                    Text("\(quant(product: PAPUTC1))")
+         //                        .font(.caption)
+         //                }
+         }
+         .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+         .cornerRadius(5.0)
+         .padding()
+         
+         if ChipPConductive.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
+         VStack {
+         Text("Top Coat 2")
+         .bold()
+         
+         HStack {
+         Text("PRODUCT CODE")
+         .underline()
+         .font(.caption)
+         Spacer()
+         Text("PRODUCT")
+         .underline()
+         .font(.caption)
+         Spacer()
+         Text("QUANTITY")
+         .underline()
+         .font(.caption)
+         }
+         
+         HStack {
+         Text("EX-285FCPU-KIT")
+         .font(.caption)
+         Spacer()
+         Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
+         .font(.caption)
+         Spacer()
+         Text("\(quant(product: PAPUTC1))")
+         .font(.caption)
+         }
+         
+         if ChipPConductive.texture1 != 0 {
+         HStack {
+         Text("EX-KAST50-EA")
+         .font(.caption)
+         Spacer()
+         Text("Anti-Slip Tex 50, 2.75#")
+         .font(.caption)
+         Spacer()
+         Text("\(quant(product: ChipTextureAO))")
+         .font(.caption)
+         }
+         }
+         }
+         .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+         .cornerRadius(5.0)
+         .padding()
+         }
+         }
+         */
+    }
+    
+    
+    struct SysSumPCBCSelectPConductive_Previews: PreviewProvider {
+        static var previews: some View {
+            SysSummaryPCBCNew()
         }
-        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-        .cornerRadius(5.0)
-        .padding()
-        
-        if ChipPConductive.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
-            VStack {
-                Text("Top Coat 2")
-                    .bold()
-                
-                HStack {
-                    Text("PRODUCT CODE")
-                        .underline()
-                        .font(.caption)
-                    Spacer()
-                    Text("PRODUCT")
-                        .underline()
-                        .font(.caption)
-                    Spacer()
-                    Text("QUANTITY")
-                        .underline()
-                        .font(.caption)
-                }
-                
-                HStack {
-                    Text("EX-285FCPU-KIT")
-                        .font(.caption)
-                    Spacer()
-                    Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
-                        .font(.caption)
-                    Spacer()
-                    Text("\(quant(product: PAPUTC1))")
-                        .font(.caption)
-                }
-                
-                if ChipPConductive.texture1 != 0 {
-                    HStack {
-                        Text("EX-KAST50-EA")
-                            .font(.caption)
-                        Spacer()
-                        Text("Anti-Slip Tex 50, 2.75#")
-                            .font(.caption)
-                        Spacer()
-                        Text("\(quant(product: ChipTextureAO))")
-                            .font(.caption)
-                    }
-                }
-            }
-            .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-            .cornerRadius(5.0)
-            .padding()
-        }
-        }
-}
-
-
-struct SysSumPCBCSelectPConductive_Previews: PreviewProvider {
-    static var previews: some View {
-        SysSummaryPCBCNew()
     }
 }
-

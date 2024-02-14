@@ -171,7 +171,7 @@ struct TopCoat1SelectPConductive: View {
                 .fontWeight(.bold)
             
             Spacer()
-            ChipTopCoatInfo()
+            PolySelectInfo()
 
              .onChange(of: ChipPConductive.TCoat1Hardener) { _ in
                checkTCoatCodes()

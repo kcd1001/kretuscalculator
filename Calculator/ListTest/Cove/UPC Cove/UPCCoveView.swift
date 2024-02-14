@@ -24,9 +24,8 @@ struct UPCCoveView: View {
         
             ScrollView {
                 VStack {
-                    SFFormCSplash()
+                    SFFormCove()
                     ThicknessUPCCove()
-
                     CoatChoicesUPCCove()
                 }.navigationBarTitle("UPC Cove, 4-6\"", displayMode: .inline)
             }

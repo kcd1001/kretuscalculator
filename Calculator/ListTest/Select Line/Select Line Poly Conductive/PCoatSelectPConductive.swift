@@ -43,7 +43,7 @@ struct PCoatSelectPConductive: View {
                 Text("Coating Thickness: TBD")
                     .fontWeight(.heavy)
                 Spacer()
-                ChipPConductiveSelectPCoatInfo()
+                PolySelectInfo()
             }
             .padding()
            Text("Choose speed:")

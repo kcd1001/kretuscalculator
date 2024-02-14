@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SelectPolyView: View {
+struct SelectTSView: View {
     
     var body: some View {
         
         let chip = ChipOptions()
-        let ChipPoly = ColorChipValuesSelectPoly()
+        let ChipTS = ColorChipValuesSelectTS()
         let Broadcast = statsBroadcast(product: "Color Chip", covRate: 0.1, MixRat: 55)
         let TSColorant_TS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 450, MixRat: 16)
         let sf = SquareFeet()
@@ -21,22 +21,22 @@ struct SelectPolyView: View {
                 VStack {
                     SFFormChip()
                     ThicknessTS()
-                    //SysOptionsSelectPoly()
+                  //SysOptionsSelectTS()
                   //  UPC_Colorant_()
                   //    .padding()
-                    CoatChoicesSelectPoly()
-                }.navigationBarTitle("Kretus Select Poly", displayMode: .inline)
-            }
+                    CoatChoicesSelectTS()
+                }
+            } .navigationBarTitle("Epoxy", displayMode: .inline)
             .environmentObject(chip)
             .environmentObject(Broadcast)
             .environmentObject(TSColorant_TS)
             .environmentObject(sf)
-            .environmentObject(ChipPoly)
+            .environmentObject(ChipTS)
         }
     }
 
 
-struct SelectPolyView_Previews: PreviewProvider {
+struct SelectTSView_Previews: PreviewProvider {
     static var previews: some View {
         ChipTSView()
     }

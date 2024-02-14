@@ -24,7 +24,7 @@ struct CoveColorChipView: View {
         
             ScrollView {
                 VStack {
-                    SFFormCSplash()
+                    SFFormCove()
                     ThicknessEpoxyCoveColor()
 
                     CoatChoicesEpoxyCoveChip()
