@@ -10,7 +10,7 @@ import SwiftUI
 struct ColorChipSubSys: View {
     var body: some View {
         List{
-            NavigationLink(destination: SelectChipTSView()){
+            NavigationLink(destination: SelectChipView()){
                 Text("Color Chip Select")
             }
             
