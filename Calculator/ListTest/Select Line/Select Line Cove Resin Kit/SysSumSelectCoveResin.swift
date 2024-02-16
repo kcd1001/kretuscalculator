@@ -290,53 +290,53 @@ struct SysSumPCBCSelectCoveResin: View {
 //        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
 //        .cornerRadius(5.0)
 
-        VStack { // Start of coat summary
-            Text("Top Coat 1")
-                .bold()
-            HStack {
-                Text("PRODUCT CODE")
-                    .underline()
-                    .font(.caption)
-                Spacer()
-                Text("PRODUCT")
-                    .underline()
-                    .font(.caption)
-                Spacer()
-                Text("QUANTITY")
-                    .underline()
-                    .font(.caption)
-            }
-            
-            HStack {
-                Text("EX-285FCPU-KIT")
-                    .font(.caption)
-                Spacer()
-                Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
-                    .font(.caption)
-                Spacer()
-                Text("\(quant(product: PAPUTC1))")
-                    .font(.caption)
-            }
-            
-            //                HStack {
-            //                    Text("\(TCoat1PtBCode)")
-            //                        .font(.caption)
-            //                    Spacer()
-            //                        Text("Polyaspartic 85 Part B, 1 gal")
-            //                            .font(.caption)
-            //
-            ////                    else {
-            ////                        Text("\(TopCoat1Options[ChipPoly.TCoat1Choice]) Part B, 1/2 gal")
-            ////                            .font(.caption)
-            ////                    }
-            //                    Spacer()
-            //                    Text("\(quant(product: PAPUTC1))")
-            //                        .font(.caption)
-            //                }
-        }
-        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
-        .cornerRadius(5.0)
-        .padding()
+//        VStack { // Start of coat summary
+//            Text("Top Coat 1")
+//                .bold()
+//            HStack {
+//                Text("PRODUCT CODE")
+//                    .underline()
+//                    .font(.caption)
+//                Spacer()
+//                Text("PRODUCT")
+//                    .underline()
+//                    .font(.caption)
+//                Spacer()
+//                Text("QUANTITY")
+//                    .underline()
+//                    .font(.caption)
+//            }
+//            
+//            HStack {
+//                Text("EX-285FCPU-KIT")
+//                    .font(.caption)
+//                Spacer()
+//                Text("Polyaspartic 85 - FC Clear Select Kit, 2 gal")
+//                    .font(.caption)
+//                Spacer()
+//                Text("\(quant(product: PAPUTC1))")
+//                    .font(.caption)
+//            }
+//            
+//            //                HStack {
+//            //                    Text("\(TCoat1PtBCode)")
+//            //                        .font(.caption)
+//            //                    Spacer()
+//            //                        Text("Polyaspartic 85 Part B, 1 gal")
+//            //                            .font(.caption)
+//            //
+//            ////                    else {
+//            ////                        Text("\(TopCoat1Options[ChipPoly.TCoat1Choice]) Part B, 1/2 gal")
+//            ////                            .font(.caption)
+//            ////                    }
+//            //                    Spacer()
+//            //                    Text("\(quant(product: PAPUTC1))")
+//            //                        .font(.caption)
+//            //                }
+//        }
+//        .background(Color(red:239.0/255.0, green: 243.0/255.0, blue: 244.0/250, opacity: 1.0))
+//        .cornerRadius(5.0)
+//        .padding()
         
         if ChipCoveResin.TCoat2Choice == 1 { //Displays TC2 products if a second tc is chosen
             VStack {
