@@ -35,14 +35,14 @@ struct ThicknessEpoxyMVR: View {
                 .padding()
                 .onChange(of: sysOptions.ThicknessSelection) { _ in
                     if sysOptions.ThicknessSelection == 0 {
-                        MVRCoatTSA.covRate = 210
-                        MVRCoatTSB.covRate = 210
+                        MVRCoatTSA.covRate = 202
+                        MVRCoatTSB.covRate = 202
                         
                         
                     }
                     if sysOptions.ThicknessSelection == 1 {
-                        MVRCoatTSA.covRate = 120
-                        MVRCoatTSB.covRate = 120
+                        MVRCoatTSA.covRate = 150
+                        MVRCoatTSB.covRate = 150
                         
                         
                     }

@@ -8,8 +8,8 @@
 import SwiftUI
 import Combine
 
-var TSA_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 450, MixRat: 1)
-var TSB_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 450, MixRat: 0.5)
+var TSA_TS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 412, MixRat: 1)
+var TSB_TS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 412, MixRat: 0.5)
 
 
 class ColorChipValuesTS : ObservableObject {

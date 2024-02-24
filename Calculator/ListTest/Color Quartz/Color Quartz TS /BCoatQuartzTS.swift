@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+// base coat variables 
 var TSABC_QuartzTS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 210, MixRat: 1)
 var TSBBC_QuartzTS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 210, MixRat: 0.5)
 var TSColorantBC_QuartzTS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 210, MixRat: 16)

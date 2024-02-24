@@ -8,10 +8,12 @@
 import SwiftUI
 import Combine
 
+// prime coat variables
 var TSA_QuartzSG = stats(product: "Top Shelf® Epoxy Part A:", covRate: 450, MixRat: 1)
 var TSB_QuartzSG = stats(product: "Top Shelf® Epoxy Part B:", covRate: 450, MixRat: 0.5)
 var TSColorant_QuartzSG = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 450, MixRat: 16)
 
+// cap coat variables 
 var quartzSG_TSAC3 = stats2(product: "Top Shelf® Epoxy Part A:", covRate: 120, MixRat: 1)
 var quartzSG_TSBC3 = stats2(product: "Top Shelf® Epoxy Part B:", covRate: 120, MixRat: 0.5)
 var quartzSG_TSColorantC3 = stats2(product: "Top Shelf® Epoxy Colorant:", covRate: 120, MixRat: 16)

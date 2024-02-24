@@ -43,22 +43,7 @@ struct TopCoat1TS: View {
          return kit
         } // returns number of kits required
     
-    func checkTC2()  {
-        if ChipTS.TCoat2Choice == 3 { //POLY HS
-            PAPUTC2.covRate = 560
-        }
-        else if ChipTS.TCoat2Choice == 4 { //POLY HP CLEAR GLOSS
-            PAPUTC2.covRate = 575
-        }
-        else if ChipTS.TCoat2Choice == 5 { //POLY HP CLEAR SATIN
-            PAPUTC2.covRate = 675
-        }
-        else {
-            PAPUTC2.covRate = 750 
-        }
-       
-    } // Changes coverage rate based off of tc2 selection, returns quantity of kits needed based off selection
-    
+    // Changes coverage rate based off of tc2 selection, returns quantity of kits needed based off selection
     func new_checkTC2() {
         switch ChipTS.TCoat2Choice {
         case 3:
