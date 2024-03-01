@@ -10,9 +10,9 @@ import Combine
 
 
 
-var PAPtABC = stats(product: "Top Shelf® Epoxy Part A:", covRate: 260, MixRat: 1)
-var PAPtBBC = stats(product: "Top Shelf® Epoxy Part B:", covRate: 260, MixRat: 0.5)
-var PAPolyColorantBC = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 260, MixRat: 16)
+var PAPtABC = stats(product: "Top Shelf® Epoxy Part A:", covRate: 330, MixRat: 1)
+var PAPtBBC = stats(product: "Top Shelf® Epoxy Part B:", covRate: 330, MixRat: 0.5)
+var PAPolyColorantBC = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 330, MixRat: 16)
 
 struct BCoatPA: View {
     

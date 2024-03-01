@@ -9,9 +9,9 @@ import SwiftUI
 import Combine
 
 // prime coat variables 
-var TSA_QuartzTS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 450, MixRat: 1)
-var TSB_QuartzTS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 450, MixRat: 0.5)
-var TSColorant_QuartzTS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 450, MixRat: 16)
+var TSA_QuartzTS = stats(product: "Top Shelf® Epoxy Part A:", covRate: 412, MixRat: 1)
+var TSB_QuartzTS = stats(product: "Top Shelf® Epoxy Part B:", covRate: 412, MixRat: 0.5)
+var TSColorant_QuartzTS = stats(product: "Top Shelf® Epoxy Colorant:", covRate: 412, MixRat: 16)
 
 
 

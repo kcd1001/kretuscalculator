@@ -8,8 +8,8 @@
 import SwiftUI
 import Combine
 
-var PAPtA = stats(product: "Top Shelf® Epoxy Part A:", covRate: 600, MixRat: 1)
-var PAPtB = stats(product: "Top Shelf® Epoxy Part B:", covRate: 600, MixRat: 0.5)
+var PAPtA = stats(product: "Top Shelf® Epoxy Part A:", covRate: 700, MixRat: 1)
+var PAPtB = stats(product: "Top Shelf® Epoxy Part B:", covRate: 700, MixRat: 0.5)
 
 class ColorChipValuesPA : ObservableObject {
     @Published var BCoatPtA : Int = 0 // Used for part pickers in base coat

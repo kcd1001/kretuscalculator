@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 // prime coat variables 
-var TSA_QuartzDB = stats(product: "Top Shelf® Epoxy Part A:", covRate: 450, MixRat: 1)
-var TSB_QuartzDB = stats(product: "Top Shelf® Epoxy Part B:", covRate: 450, MixRat: 0.5)
+var TSA_QuartzDB = stats(product: "Top Shelf® Epoxy Part A:", covRate: 412, MixRat: 1)
+var TSB_QuartzDB = stats(product: "Top Shelf® Epoxy Part B:", covRate: 412, MixRat: 0.5)
 
 
 class ColorQuartzDBValues : ObservableObject {
